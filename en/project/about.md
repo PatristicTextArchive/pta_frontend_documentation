@@ -1,0 +1,10 @@
+The “Patristic Text Archive” offers anyone interested a collection of texts and translations of Christian texts from antiquity (i.e. “Patristic” is conceived in a very broad sense). At the moment the archive mainly contains Greek texts, but it is explicitly open to all languages ​​in which texts from Christian antiquity have come down to us. The archive is also a place for translations of Patristic texts into all modern languages.
+
+In the Patristic Text Archive, all texts are published under an open [Creative Commons License](https://creativecommons.org/) (CC-BY, CC-BY-SA) for use and re-use. All texts are available as XML files and are encoded in accordance with the [Guidelines for Electronic Text Encoding and Interchange (in version P5) of the Text Encoding Initiative (TEI)](http://www.tei-c.org/) using its own [schema](../project/encoding-guidelines). Besides, all files are deposited following the [CapiTainS Guidelines](http://capitains.org) in order to ensure the greatest possible compatibility with other text archives. Further information is  [here](../project/documentation) to be found.
+
+As far as it is not a new critical edition created in the project of “[Alexandrian and Antiochene Bible Exegesis in Late Antiquity](https://bibelexegese.bbaw.de)”, critical editions will be used as far as possible and, if it is legal and feasible, the text-critical information is also digitized. Where this is not possible, older and/or non-critical editions will also be made available.
+
+Where possible, the editions in the archive also contain further annotations, such as references to the bible, to places (with links to the [Pleiades Gazetteer](https://pleiades.stoa.org/) or to the [Translators Individualized Proper Names with all References](https://github.com/tyndale/STEPBible-Data) list) or to persons (with links to the [Translators Individualized Proper Names with all References](https://github.com/tyndale/STEPBible-Data) list or the project's persons index).
+
+
+[Contributions](../project/contributing) to the archive are very welcome!

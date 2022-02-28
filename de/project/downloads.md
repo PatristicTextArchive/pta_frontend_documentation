@@ -1,0 +1,2 @@
+- [Alle Texte als XML-Dateien](https://github.com/PatristicTextArchive/pta_data)
+- [Schema](https://github.com/PatristicTextArchive/Schema)
