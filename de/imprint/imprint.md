@@ -18,8 +18,10 @@ DE 167 449 058 (gemäß §27 a Umsatzsteuergesetz)
 
 ## Technische Realisierung
 
-TELOTA (Berlin-Brandenburgische Akademie der Wissenschaften)
-telota@bbaw.de
+TELOTA (Berlin-Brandenburgische Akademie der Wissenschaften)  
+telota@bbaw.de  
+CTS-Api: Dr. Martin Fechner  
+Web-App: Jan Köster
 
 ## Urheberrecht
 
@@ -35,4 +37,19 @@ Eine Vervielfältigung oder Verwendung solcher Grafiken, Tondokumente, Video-Seq
 
 ## Hinweise zum Datenschutz
 
-Diese Website benutzt Matomo, eine Open-Source-Software zur statistischen Auswertung der Besucherzugriffe. Matomo verwendet sog. „Cookies”, Textdateien, die auf Ihrem Computer gespeichert werden und die eine Analyse der Benutzung der Website durch Sie ermöglichen. Die durch den Cookie erzeugten Informationen über Ihre Benutzung dieses Internetangebotes werden auf einem Server der Berlin-Brandenburgischen Akademie der Wissenschaften in Deutschland gespeichert. Die IP-Adresse wird sofort nach der Verarbeitung und vor deren Speicherung anonymisiert.
+Bei jedem Zugriff eines Nutzers auf das Internet-Angebot der Berlin-Brandenburgischen Akademie der Wissenschaften und bei jedem Abruf einer Datei werden Daten über diesen Vorgang technisch bedingt vorübergehend in einer Protokolldatei gespeichert und verarbeitet:
+*  die IP-Adresse (diese wird unmittelbar nach dem Zugriff anonymisiert)
+*  Datum und Uhrzeit
+*  aufgerufene Seite/Name der abgerufenen Datei
+*  übertragene Datenmenge
+*  Meldung, ob der Zugriff/Abruf erfolgreich war
+Zweck der Datenerhebung ist der verpflichtende Schutz vor Angriffen des Netzwerks, die Verbesserung des Angebots sowie die Erstellung von Nutzungsstatistiken. Diese Daten werden eine Woche gespeichert.
+
+Rechtsgrundlage für die Datenverarbeitung ist Art. 6 Abs. 1 S. 1 lit. b DSGVO (Erforderlichkeit zur Wahrung berechtigter Interessen).
+
+Für das reibungslose Funktionieren einiger Seiten müssen Cookies gesetzt werden. Diese Cookies beinhalten keine personenbezogenen Daten und werden nicht weiter ausgewertet. Da es sich um eine technische Notwendigkeit handelt, bedarf es keiner ausdrücklichen Zustimmung durch den Nutzer.
+
+Diese Website benutzt Matomo (vormals Piwik), eine Open-Source-Software zur statistischen Auswertung der Besucherzugriffe. Matomo verwendet keine Tracker Cookies (Es arbeitet mit der Funktion: Tracking ohne Cookies erzwingen)! 
+Die IP-Adresse wird sofort nach der Verarbeitung und vor deren Speicherung anonymisiert.
+
+Zweck der Datenerhebung ist die Verbesserung des Angebots sowie die Erstellung von Nutzungsstatistiken. Rechtsgrundlage für die Datenverarbeitung ist Art. 6 Abs. 1 S. 1 lit. b DSGVO (Erforderlichkeit zur Wahrung berechtigter Interessen).
