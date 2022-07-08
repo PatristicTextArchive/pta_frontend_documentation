@@ -1,7 +1,19 @@
 ## Data
 - Texts: <https://github.com/PatristicTextArchive/pta_data/commits/public>
 - Manuscripts: <https://github.com/PatristicTextArchive/pta_manuscripts/commits/public>
+
+### 5 Jul 2022
+- Personens, groups, places, biblical references, manuscripts, texte metadata formatted as LOD 
+
 ## Frontend
+### 5 Jul 2022
+- New: Distance search (lemmatised)
+- New: Versioned Permalinks
+- New: Show two texts besides each other
+- New: Added *Bailly 2020 Hugo Chavez* as dictionary
+- New: Filter for texts (by PTA-ID and title) in manuscripts database
+- New: Index of groups and organisations
+- The user interface (and the backend) has been completely redesigned
 
 ### 28 Feb 2022
 - Improved rendering of texts in the reader

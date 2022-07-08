@@ -1,7 +1,18 @@
 ## Daten
 - Texte: <https://github.com/PatristicTextArchive/pta_data/commits/public>
 - Handschriften: <https://github.com/PatristicTextArchive/pta_manuscripts/commits/public>
+
+### 5. Juli 2022
+- Personen, Gruppen, Orte, Bibelreferenzen, Handschriften, Text-Metdaten für LOD aufbereitet 
 ## Benutzerschnittstelle
+### 5. Juli 2022
+- Neu: Distanzsuche (lemmatisiert)
+- Neu: Versionierte Permalinks
+- Neu: Parallele Anzeige zweier beliebiger Texte
+- Neu: *Bailly 2020 Hugo Chavez* als weiteres Wörterbuch
+- Neu: Handschriftendatenbank nach Texten (PTA-IDs und Titel) filterbar
+- Neu: Index der Organisationen und Personengruppen
+- Rundum erneuerte Benutzerschnittstelle (und Backend)
 
 ### 28. Februar 2022
 - Verbesserte Darstellung der Texte im Reader
