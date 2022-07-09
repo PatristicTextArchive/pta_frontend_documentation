@@ -42,6 +42,8 @@ In den Editionen vorkommende Bibelzitate (oder -anspielungen) werden ebenfalls n
 
 Die ausgezeichneten Stellen werden in einem Apparat nachgewiesen und zitieren die jeweilige Bibelstelle. Dabei wird für alttestamentliche Stellen auf die Digitalisierung der Septuaginta-Edition von *Rahlfs* und für neutestamentlichen Stellen auf das SBL Greek New Testament (Copyright © 2010 [Society of Biblical Literature](http://www.sbl-site.org) and [Logos Bible Software](http://www.logos.com), markiert mit *[SBLGNT](http://sblgnt.com)*) in der Fassung zurückgegriffen, in der sie unter <https://pta.bbaw.de/text/urn:cts:pta:pta9999> einzusehen sind.
 
+Bei Stellen aus der Hexapla wird die entsprechende Seite von *Frederick Field (ed.): Origenis hexaplorum quae supersunt: sive veterum interpretum Graecorum in totum vetus testamentum fragmenta. Post Flaminium nobilium, Drusium, et Montefalconium, adhibita etiam versione Syro-Hexaplari. 2 vols. Oxford: Clarendon Press, 1875 ([vol. 1: Genesis – Esther](https://archive.org/details/origenhexapla01unknuoft); [vol. 2: Hiob – Maleachi](https://archive.org/details/origenhexapla02unknuoft)* verlinkt, bei Stellen aus der Vulgata auf die online Version von *[Robert Weber/Roger Gryson (edd.), Biblia Sacra iuxta Vulgatam versionem. Editio quinta. Stuttgart: Deutsche Bibelgesellschaft, 2007](https://www.bibelwissenschaft.de/online-bibeln/biblia-sacra-vulgata/lesen-im-bibeltext/)*.
+
 Es wird ein [Register](https://pta.bbaw.de/indices/biblical-references) aller annotierten Bibelstellen bereitgestellt.
 
 ### Lexikon

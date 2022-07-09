@@ -37,7 +37,10 @@ An [Index](https://pta.bbaw.de/indices/places) of all annotated places is provid
 
 Biblical quotes (and allusions) are also encoded as far as possible.
 
-The references for the encoded quotes are  (not for Eusebius' Commentary on the Psalms) shown in a popup, which also shows the respective quote from the Bible. For the Old Testament the digitized version of *Rahlfs'* edition of the Septuagint is used, for the New Testament the SBL Greek New Testament (Copyright © 2010 [Society of Biblical Literature](http://www.sbl-site.org) and [Logos Bible Software](http://www.logos.com), marked as *[SBLGNT](http://sblgnt.com)*), as provided at <https://pta.bbaw.de/text/urn:cts:pta:pta9999>.
+The references for the encoded quotes are  (not for Eusebius' Commentary on the Psalms) shown in an apparatus, which also shows the respective quote from the Bible. For the Old Testament the digitized version of *Rahlfs'* edition of the Septuagint is used, for the New Testament the SBL Greek New Testament (Copyright © 2010 [Society of Biblical Literature](http://www.sbl-site.org) and [Logos Bible Software](http://www.logos.com), marked as *[SBLGNT](http://sblgnt.com)*), as provided at <https://pta.bbaw.de/text/urn:cts:pta:pta9999>.
+
+For references to the Hexapla links to *Frederick Field (ed.): Origenis hexaplorum quae supersunt: sive veterum interpretum Graecorum in totum vetus testamentum fragmenta. Post Flaminium nobilium, Drusium, et Montefalconium, adhibita etiam versione Syro-Hexaplari. 2 vols. Oxford: Clarendon Press, 1875 ([vol. 1: Genesis – Esther](https://archive.org/details/origenhexapla01unknuoft); [vol. 2: Hiob – Maleachi](https://archive.org/details/origenhexapla02unknuoft)* and for references to the Vulgata links to the online version of *[Robert Weber/Roger Gryson (edd.), Biblia Sacra iuxta Vulgatam versionem. Editio quinta. Stuttgart: Deutsche Bibelgesellschaft, 2007](https://www.bibelwissenschaft.de/online-bibeln/biblia-sacra-vulgata/lesen-im-bibeltext/)* are provided.
+
 
 An [Index](https://pta.bbaw.de/indices/biblical-references) of all annotated biblical references is provided.
 ### Dictionary

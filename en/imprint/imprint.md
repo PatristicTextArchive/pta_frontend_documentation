@@ -20,7 +20,7 @@ DE 167 449 058 (gemäß §27 a Umsatzsteuergesetz)
 ## Technical Realization
 TELOTA (Berlin-Brandenburgische Akademie der Wissenschaften) 
 telota@bbaw.de  
-CTS-Api: Dr. Martin Fechner
+API: Dr. Martin Fechner
 Web-App: Jan Köster
 
 ## Copyright

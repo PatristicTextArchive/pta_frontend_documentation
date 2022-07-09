@@ -35,15 +35,17 @@ unter Verwendung von [Pinakes](https://pinakes.irht.cnrs.fr)
 - [pta_manuscripts_diktyon_beacon.txt](https://github.com/PatristicTextArchive/pta_metadata/blob/main/LOD/pta_manuscripts_diktyon_beacon.txt), [pta_manuscripts_diktyon.xml](https://github.com/PatristicTextArchive/pta_metadata/blob/main/LOD/pta_manuscripts_diktyon.xml), [pta_manuscripts_diktyon.ttl](https://github.com/PatristicTextArchive/pta_metadata/blob/main/LOD/pta_manuscripts_diktyon.ttl), [pta_manuscripts_diktyon.json-ld](https://github.com/PatristicTextArchive/pta_metadata/blob/main/LOD/pta_manuscripts_diktyon.json-ld) (Alle Handschriften, die durch eine Diktyon-ID identifiziert sind)
 
 ### Biblische Referenzen in den Texten des PTA
+Folgende Editionen werden verwendet: Hexapla, LXX = Septuagint, NA = Greek New Testament, Vg = Vulgata
+
 Die biblischen Bücher werden folgendermaßen abgekürzt: 
 - Gn, Ex, Lv, Num, Dt, Jos, Judg, Rt, 1Sa, 2Sa, 1Ko, 2Ko, 1Chr, 2Chr, 3Esr, Esr, Est, Jdt, Tob, 1Mak, 2Mak, 3Mak, 4Mak, Ps, Oden, Prov, Eccl, Song, Job, Wis, Sir, PsSal, Hos, Am, Mi, Joel, Ob, Jon, Nah, Hab, Zeph, Hag, Sach, Mal, Is, Jr, Bar, Lam, EpistJer, Hes, Sus, Dn, Bel
 - Mt, Mk, Lk, Jn, Act, Rom, 1Cor, 2Cor, Gal, Eph, Phil, Col, 1Th, 2Th, 1Tim, 2Tim, Tt, Phm, Heb, Jak, 1P, 2P, 1Jn, 2Jn, 3Jn, Jud, Rev
 
 #### Links zu den entsprechenden Stellen in den Texten
-- [pta_biblereferences.csv](https://github.com/PatristicTextArchive/pta_metadata/blob/main/LOD/pta_biblereferences.csv) (Spalten: Quotation-URL,Reference)
+- [pta_biblereferences.csv](https://github.com/PatristicTextArchive/pta_metadata/blob/main/LOD/pta_biblereferences.csv) (Spalten: Quotation-URL,Edition,Reference)
 
 #### Links zum Bibelstellenindex
-- [pta_biblereferences_index.csv](https://github.com/PatristicTextArchive/pta_metadata/blob/main/LOD/pta_biblereferences_index.csv) (Spalten: Reference,Reference in Index)
+- [pta_biblereferences_index.csv](https://github.com/PatristicTextArchive/pta_metadata/blob/main/LOD/pta_biblereferences_index.csv) (Spalten: Edition,Reference,Reference in Index)
 
 ### Personen in den Texten des PTA
 unter Verwendung der [Gemeinsamen Normdatei](http://d-nb.info/gnd/) und von [Wikidata](https://www.wikidata.org/)

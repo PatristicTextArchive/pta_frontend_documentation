@@ -35,15 +35,17 @@ using [Pinakes](https://pinakes.irht.cnrs.fr)
 - [pta_manuscripts_diktyon_beacon.txt](https://github.com/PatristicTextArchive/pta_metadata/blob/main/LOD/pta_manuscripts_diktyon_beacon.txt), [pta_manuscripts_diktyon.xml](https://github.com/PatristicTextArchive/pta_metadata/blob/main/LOD/pta_manuscripts_diktyon.xml), [pta_manuscripts_diktyon.ttl](https://github.com/PatristicTextArchive/pta_metadata/blob/main/LOD/pta_manuscripts_diktyon.ttl), [pta_manuscripts_diktyon.json-ld](https://github.com/PatristicTextArchive/pta_metadata/blob/main/LOD/pta_manuscripts_diktyon.json-ld) (all manuscript descriptions identified by a Diktyon-ID)
 
 ### Biblical references in the texts of the PTA
+Editions used are: Hexapla, LXX = Septuagint, NA = Greek New Testament, Vg = Vulgata
+
 Biblical books are abbreviated as follows: 
 - Gn, Ex, Lv, Num, Dt, Jos, Judg, Rt, 1Sa, 2Sa, 1Ko, 2Ko, 1Chr, 2Chr, 3Esr, Esr, Est, Jdt, Tob, 1Mak, 2Mak, 3Mak, 4Mak, Ps, Oden, Prov, Eccl, Song, Job, Wis, Sir, PsSal, Hos, Am, Mi, Joel, Ob, Jon, Nah, Hab, Zeph, Hag, Sach, Mal, Is, Jr, Bar, Lam, EpistJer, Hes, Sus, Dn, Bel
 - Mt, Mk, Lk, Jn, Act, Rom, 1Cor, 2Cor, Gal, Eph, Phil, Col, 1Th, 2Th, 1Tim, 2Tim, Tt, Phm, Heb, Jak, 1P, 2P, 1Jn, 2Jn, 3Jn, Jud, Rev
 
 #### linking to the texts
-- [pta_biblereferences.csv](https://github.com/PatristicTextArchive/pta_metadata/blob/main/LOD/pta_biblereferences.csv) (columns: Quotation-URL,Reference)
+- [pta_biblereferences.csv](https://github.com/PatristicTextArchive/pta_metadata/blob/main/LOD/pta_biblereferences.csv) (columns: Quotation-URL,Edition,Reference)
 
 #### linking to the index
-- [pta_biblereferences_index.csv](https://github.com/PatristicTextArchive/pta_metadata/blob/main/LOD/pta_biblereferences_index.csv) (columns: Reference,Reference in Index)
+- [pta_biblereferences_index.csv](https://github.com/PatristicTextArchive/pta_metadata/blob/main/LOD/pta_biblereferences_index.csv) (columns: Edition,Reference,Reference in Index)
 
 ### Persons mentioned in texts in the PTA
 using [Gemeinsame Normdatei](http://d-nb.info/gnd/) and [Wikidata](https://www.wikidata.org/)
