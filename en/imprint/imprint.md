@@ -17,10 +17,14 @@ Public corporation with legal capacity
 
 DE 167 449 058 (gemäß §27 a Umsatzsteuergesetz)
 
+## Editorial Design
+
+Dr. Annette von Stockhausen (AV Die alexandrinische und antiochenische Bibelexegese in der Spätantike)
+
 ## Technical Realization
 TELOTA (Berlin-Brandenburgische Akademie der Wissenschaften) 
 telota@bbaw.de  
-API: Dr. Martin Fechner
+API (ediarum.Web), eXist-db: Dr. Martin Fechner
 Web-App: Jan Köster
 
 ## Copyright

@@ -16,11 +16,15 @@ Umsatzsteuer-Identifikationsnummer
 
 DE 167 449 058 (gemäß §27 a Umsatzsteuergesetz)
 
+## Konzeption
+
+Dr. Annette von Stockhausen (AV Die alexandrinische und antiochenische Bibelexegese in der Spätantike)
+
 ## Technische Realisierung
 
 TELOTA (Berlin-Brandenburgische Akademie der Wissenschaften)  
 telota@bbaw.de  
-API: Dr. Martin Fechner  
+API (ediarum.Web), eXist-db: Dr. Martin Fechner  
 Web-App: Jan Köster
 
 ## Urheberrecht
