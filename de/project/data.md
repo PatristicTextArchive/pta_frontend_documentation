@@ -52,6 +52,8 @@ unter Verwendung der [Gemeinsamen Normdatei](http://d-nb.info/gnd/) und von [Wik
 
 #### Links zu den entsprechenden Stellen in den Texten
 - [pta_persons.csv](https://github.com/PatristicTextArchive/pta_metadata/blob/main/LOD/pta_persons.csv) (Spalten: GND-ID,Wikidata-Entity,mentioned in)
+- [pta_persons_gnd_beacon.txt](https://github.com/PatristicTextArchive/pta_metadata/blob/main/LOD/pta_persons_gnd_beacon.txt), [pta_persons_gnd.xml](https://github.com/PatristicTextArchive/pta_metadata/blob/main/LOD/pta_persons_gnd.xml), [pta_persons_gnd.ttl](https://github.com/PatristicTextArchive/pta_metadata/blob/main/LOD/pta_persons_gnd.ttl), [pta_persons_gnd.json-ld](https://github.com/PatristicTextArchive/pta_metadata/blob/main/LOD/pta_persons_gnd.json-ld) (Alle Erwähnungen von Personen, die durch eine GND-ID identifiziert sind)
+- [pta_persons_wikidata_beacon.txt](https://github.com/PatristicTextArchive/pta_metadata/blob/main/LOD/pta_persons_wikidata_beacon.txt), [pta_persons_wikidata.xml](https://github.com/PatristicTextArchive/pta_metadata/blob/main/LOD/pta_persons_wikidata.xml), [pta_persons_wikidata.ttl](https://github.com/PatristicTextArchive/pta_metadata/blob/main/LOD/pta_persons_wikidata.ttl), [pta_persons_wikidata.json-ld](https://github.com/PatristicTextArchive/pta_metadata/blob/main/LOD/pta_persons_wikidata.json-ld) (Alle Erwähnungen von Personen, die durch eine Wikidata-ID identifiziert sind)
 
 #### Links zum Personenindex
 - [pta_persons_index.csv](https://github.com/PatristicTextArchive/pta_metadata/blob/main/LOD/pta_persons_index.csv) (Spalten: GND-ID,Wikidata-Entity,Person in index)
@@ -63,6 +65,8 @@ unter Verwendung der [Gemeinsamen Normdatei](http://d-nb.info/gnd/) und von [Wik
 
 #### Links zu den entsprechenden Stellen in den Texten
 - [pta_orgs.csv](https://github.com/PatristicTextArchive/pta_metadata/blob/main/LOD/pta_orgs.csv) (columns: GND-ID,Wikidata-Entity,mentioned in)
+- [pta_orgs_gnd_beacon.txt](https://github.com/PatristicTextArchive/pta_metadata/blob/main/LOD/pta_orgs_gnd_beacon.txt), [pta_orgs_gnd.xml](https://github.com/PatristicTextArchive/pta_metadata/blob/main/LOD/pta_orgs_gnd.xml), [pta_orgs_gnd.ttl](https://github.com/PatristicTextArchive/pta_metadata/blob/main/LOD/pta_orgs_gnd.ttl), [pta_orgs_gnd.json-ld](https://github.com/PatristicTextArchive/pta_metadata/blob/main/LOD/pta_orgs_gnd.json-ld) (Alle Erwähnungen von Gruppen, die durch eine GND-ID identifiziert sind)
+- [pta_orgs_wikidata_beacon.txt](https://github.com/PatristicTextArchive/pta_metadata/blob/main/LOD/pta_orgs_wikidata_beacon.txt), [pta_orgs_wikidata.xml](https://github.com/PatristicTextArchive/pta_metadata/blob/main/LOD/pta_orgs_wikidata.xml), [pta_orgs_wikidata.ttl](https://github.com/PatristicTextArchive/pta_metadata/blob/main/LOD/pta_orgs_wikidata.ttl), [pta_orgs_wikidata.json-ld](https://github.com/PatristicTextArchive/pta_metadata/blob/main/LOD/pta_orgs_wikidata.json-ld) (Alle Erwähnungen von Gruppen, die durch eine Wikidata-ID identifziert sind)
 
 #### Links zum Gruppenindex
 - [pta_orgs_index.csv](https://github.com/PatristicTextArchive/pta_metadata/blob/main/LOD/pta_orgs_index.csv) (Spalten: GND-ID,Wikidata-Entity,Person in index)
@@ -74,6 +78,7 @@ unter Verwendung des [Pleiades Gazetteer](https://pleiades.stoa.org/)
 
 #### Links zu den entsprechenden Stellen in den Texten
 - [pta_places.csv](https://github.com/PatristicTextArchive/pta_metadata/blob/main/LOD/pta_places.csv) (Spalten: Place,mentioned in)
+- [pta_places_beacon.txt](https://github.com/PatristicTextArchive/pta_metadata/blob/main/LOD/pta_places_beacon.txt), [pta_places.xml](https://github.com/PatristicTextArchive/pta_metadata/blob/main/LOD/pta_places.xml), [pta_places.ttl](https://github.com/PatristicTextArchive/pta_metadata/blob/main/LOD/pta_places.ttl), [pta_places.json-ld](https://github.com/PatristicTextArchive/pta_metadata/blob/main/LOD/pta_places.json-ld) (Alle Erwähnungen von Orten, die durch eine Pleiades Gazetteer ID identifziert sind)
 
 #### Links zum Ortindex
 - [pta_places_index.csv](https://github.com/PatristicTextArchive/pta_metadata/blob/main/LOD/pta_places_index.csv) (Spalten: Place,Place in index)
