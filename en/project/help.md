@@ -146,7 +146,7 @@ The selected text is displayed to the right of the current text, it is navigated
 
 | Rendering | Meaning |
 |----|-----|
-| <span style="color:darkred;font-style:italic;">»text«</span> | quoted lemma |
+| <span style="color:#d50000">Text</span> | quoted lemma |
 | »text_, insertion,_ text« | quote (with inserted text) |
 | ›text‹ | pseudo-quote (or quote in quote or quote in direct speech) |
 | „text ‚text‘ text“ | direct speech |

@@ -144,8 +144,8 @@ Der ausgewählte Text wird dann in einem zweiten „Fenster“ rechts neben dem 
 
 | Darstellung | Phänomen |
 |----|-----|
-| <span style="color:darkred;font-style:italic;">»Text«</span> | Lemma-Zitat |
-| »Text_, Einfügung,_ Text« | Zitat (mit Einfügung) |
+| <span style="color:#d50000">Text</span> | Lemma-Zitat |
+| «Text_, Einfügung,_ Text» | Zitat (mit Einfügung) |
 | ›Text‹ | Pseudozitat (bzw. Zitat im Zitat oder in wörtl. Rede) |
 | „Text ‚Text‘ Text“ | Wörtliche Rede |
 | _Text_ | Anspielung |
