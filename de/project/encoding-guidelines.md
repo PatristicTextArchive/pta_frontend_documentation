@@ -620,7 +620,8 @@ Est, Jdt, Tob, 1Mak, 2Mak, 3Mak, 4Mak,
 Ps, Oden, Prov, Eccl, Song, Job, Wis,
 Sir, PsSal, Hos, Am, Mi, Joel, Ob, Jon,
 Nah, Hab, Zeph, Hag, Sach, Mal, Is, Jr,
-Bar, Lam, EpistJer, Hes, Sus, Dn, Bel.
+Bar, Lam, EpistJer, Hes, Sus (Sus-LXX), Dn (Dn-LXX), Bel (Bel-LXX).
+  
 ```  
   
 Die im PTA verwendeten Abkürzungen für die Bücher des Neuen Testamentes sind:
@@ -761,13 +762,19 @@ moderne Sprachen genannt und in ihrem kritischen Wert gewürdigt werden.
 Grundsätzlich ist es dabei sinnvoll, die Angaben, die im `<teiHeader>`
 gemacht wurden, zu verlinken.
   
-Unterabschnitte können mit Hilfe von `<div type="section" n="1">` eingerichtet werden, die im Element `<head>` auch eigene Überschriften enthalten können.
+Unterabschnitte können mit Hilfe von `<div type="section" n="1">` (und 
+diesem untergeordnet `<div type="subsection" n="1">`) eingerichtet werden, 
+die im Element `<head>` auch eigene Überschriften enthalten können.
   
 ```xml
 <div type="praefatio" xml:lang="deu">
     <div type="section" n="1">
         <head>Vorbemerkung</head>
         <p>Text</p>
+        <div type="subsection" n="1">
+            <head>Überschrift</head>
+            <p>Text</p>
+        </div>
     </div>
 </div>
 ```  

@@ -746,7 +746,8 @@ Est, Jdt, Tob, 1Mak, 2Mak, 3Mak, 4Mak,
 Ps, Oden, Prov, Eccl, Song, Job, Wis,
 Sir, PsSal, Hos, Am, Mi, Joel, Ob, Jon,
 Nah, Hab, Zeph, Hag, Sach, Mal, Is, Jr,
-Bar, Lam, EpistJer, Hes, Sus, Dn, Bel.
+Bar, Lam, EpistJer, Hes, Sus (Sus-LXX), Dn (Dn-LXX), Bel (Bel-LXX).
+  
 ```  
   
 The abbreviations used in the PTA for the books of the New Testament
@@ -890,7 +891,8 @@ languages should be mentioned and appreciated in their critical value.
 In principle, it makes sense to link the information given in the
 `<teiHeader>`.
   
-Subsections can be set up using `<div type="section" n="1">`, which can
+Subsections can be set up using `<div type="section" n="1">` (and 
+`<div type="subsection" n="1">` for subdivisions), which can
 also contain their own headings in a `<head>` element.
   
 ```xml
@@ -898,6 +900,10 @@ also contain their own headings in a `<head>` element.
     <div type="section" n="1">
         <head>Vorbemerkung</head>
         <p>Text</p>
+        <div type="subsection" n="1">
+            <head>Überschrift</head>
+            <p>Text</p>
+        </div>
     </div>
 </div>
 ```  
