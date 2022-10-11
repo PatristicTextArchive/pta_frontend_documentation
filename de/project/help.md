@@ -57,6 +57,7 @@
 </svg>
 
 - Vorerst nur für Griechisch implementiert; es liegt noch nicht für alle Texte die dafür nötige Lemmatisierung vor.
+- Bitte beachten: Es handelt sich um eine automatisch durchgeführte Lemmatisierung, die fehlerbehaftet ist.
 
 ### Bibelstellen
 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16">
@@ -72,6 +73,7 @@
 </svg>
 
 - Im Text referenzierte Orte
+- Bitte beachten: Noch nicht alle Orte sind in allen Texten ausgezeichnet und/oder mit einer Pleiades-ID versehen. Orte, die nicht mit einer ID versehen sind, sind daran zu erkennen, dass sie in der originalsprachlichen Fassung der jeweiligen Stelle angeführt werden. 
 
 ### Personen
 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
@@ -79,6 +81,7 @@
 </svg>
 
 - Im Text referenzierte Personen
+- Bitte beachten: Noch nicht alle Personen sind in allen Texten ausgezeichnet und/oder mit einer TIPNR- oder PTA-Personen-ID versehen. Personen, die nicht mit einer ID versehen sind, sind daran zu erkennen, dass sie in der originalsprachlichen Fassung der jeweiligen Stelle angeführt werden. 
 
 ### Personengruppen
 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-people" viewBox="0 0 16 16">
@@ -86,6 +89,7 @@
 </svg>
 
 - Im Text referenzierte Organisationen und Personengruppen
+- Bitte beachten: Noch nicht alle Gruppen sind in allen Texten ausgezeichnet und/oder mit einer PTA-Gruppen-ID versehen. Gruppen, die nicht mit einer ID versehen sind, sind daran zu erkennen, dass sie in der originalsprachlichen Fassung der jeweiligen Stelle angeführt werden.
 
 ## Parallele Anzeige eines zweiten Textes im Reader
 
