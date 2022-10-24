@@ -1149,8 +1149,8 @@ following values of this attribute are possible:
 -   `orthographic`, when a variant is interpreted by the editor as
     affecting only the spelling, i.e., in the case of Greek manuscripts,
     for example, as most likely being due to itacism.
--   `homoioteleuton` or `homoiarkton` if, in the opinion of the editor,
-    a variant is due to homoioteleuton or homoiarkton.
+-   `homoioteleuton` or `homoiarkton` or `saut_du_meme` if, in the opinion of the editor,
+    a variant is due to homoioteleuton or homoiarkton or a saut du même au même.
 -   `dittography`, when a variant is interpreted as a dittography.
   
 ```xml
@@ -1230,6 +1230,11 @@ content (“self-closing”).
   
 Unreadable text is marked as `<@cause="illegible">`. The element
 `<rdg>` is without text content (“self-closing”).
+  
+######  Gap in text of a manuscript
+  
+  
+A gap im text of a manuscripts is (following the rules for transcription) marked as `<@cause="damage">` (damage) als `<@cause="fenestra">` (intentional gap) oder als `<@cause="deletion">` (deleted). The element `<rdg>` is without text content (“self-closing”).
   
 ######  Transpositions
   
@@ -1451,18 +1456,11 @@ corruption as a self-closing (“empty”) element.
 ######  Variants within variants
   
   
-Variants can also be nested within each other. In this case, the lemma
-of the overlapping apparatus entry does not receive an `@wit` attribute,
-since the attestation can be calculated from the
-`@wit` attributes of the elements `<lem>` and `<rdg>` in the inner apparatus entry.
-  
-The inner `<app>` element must necessarily be in the `<lem>` element, i.e.
-in the reconstructed text, of the outer apparatus entry, never in the
-`<rdg>` element.
+Variants can also be nested within each other, i.e. a `<lem>` or a `<rdg>` element can enclose a variant (`<app>`). The `wit` attribute of the outer `<app>` element includes *all* sigla of the inner `<app>` element (both of `<lem>` and of `<rdg>`):
   
 ```xml
 <app type="textcritical">
- <lem>οὐδεμίαν 
+ <lem wit="#Pb #Pt #Pc #Pa #Be #Pd #Ma #My #Ha #Va">οὐδεμίαν 
   <app type="textcritical">
    <lem wit="#Pt #Pc #Pa #Be #Pd #Ma #My #Ha #Va">εὑρήσεις</lem>
    <rdg wit="#Pb" type="orthographic">εὑρήσῃς</rdg>
@@ -1570,10 +1568,11 @@ can be added within the `<app>` element. In this case, the
 `<witDetail>` element in an attribute `@target`.
   
 ```xml
-<app type="textcritical">
+<app type="textcritical" xml:id="var1">
   <lem wit="#Pt #Pc #Pb #Pd #My #Ma #Ha #Va #Ab">ἀπαστράπτει</lem>
   <rdg wit="#Pa #Be" xml:id="lac-Pa">ἀ</rdg>
   <witDetail wit="#Pa" target="#lac-Pa">Blattausfall.</witDetail>
+  <note target="#var1">Sich auf die gesamte Variante beziehende Anmerkung</note>
 </app>
 ```  
   
