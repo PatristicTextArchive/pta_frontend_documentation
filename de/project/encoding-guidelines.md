@@ -903,7 +903,7 @@ Im Attribut `@key` wird die `person_id` der [PTA-Personen-Liste](https://github.
 Nicht-biblische Personen, die im PTA-Register fehlen, können nach [Rücksprache](mailto:annette.von_stockhausen@bbaw.de ) ergänzt werden.
   
 **Institutionen (wie Synoden oder theologische Gruppierungen), Völker und sonstige Gruppen** werden mit Hilfe des Elementes `<orgName>` ausgezeichnet.
-Im Attribut `@key` wird die `org_id` der [PTA-Oranganisationen-Liste](https://github.com/PatristicTextArchive/pta_metadata/blob/main/pta_orgs.json ) angegeben. Organisationen, die im PTA-Register fehlen, können nach [Rücksprache](mailto:annette.von_stockhausen@bbaw.de ) ergänzt werden.
+Im Attribut `@key` wird die `org_id` der [PTA-Oranganisationen-Liste](https://github.com/PatristicTextArchive/pta_metadata/blob/main/pta_groups.json ) angegeben. Organisationen, die im PTA-Register fehlen, können nach [Rücksprache](mailto:annette.von_stockhausen@bbaw.de ) ergänzt werden.
   
 **Orte** werden mit Hilfe des Elementes `<placeName>` ausgezeichnet, im
 Attribut `@ref` wird auf die ID des [Pleiades-Gazetteers](https://pleiades.stoa.org/ ) (in Form der kompletten URL) verwiesen.
