@@ -1,10 +1,10 @@
 ## Alle Daten
 
-- [Alle Texte als XML-Dateien](https://github.com/PatristicTextArchive/pta_data)
-- [Alle Handschriftenbeschreibungen als XML-Dateien](https://github.com/PatristicTextArchive/pta_manuscripts)
-- [Alle im Frontend verwendeten Metadaten](https://github.com/PatristicTextArchive/pta_metadata)
+- [Alle Texte als XML-Dateien](https://github.com/PatristicTextArchive/pta_data) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4066796.svg)](https://doi.org/10.5281/zenodo.4066796)
+- [Alle Handschriftenbeschreibungen als XML-Dateien](https://github.com/PatristicTextArchive/pta_manuscripts) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7595081.svg)](https://doi.org/10.5281/zenodo.7595081)
+- [Alle im Frontend verwendeten Metadaten](https://github.com/PatristicTextArchive/pta_metadata) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6822080.svg)](https://doi.org/10.5281/zenodo.6822080)
 - [Alle im Frontend verwendeten Lexikon-Daten](https://github.com/PatristicTextArchive/pta_lexika)
-- [Schema für Editionen](https://github.com/PatristicTextArchive/Schema)
+- [Schema für Editionen](https://github.com/PatristicTextArchive/Schema) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3737666.svg)](https://doi.org/10.5281/zenodo.3737666)
 
 
 ## Linked Open Data
