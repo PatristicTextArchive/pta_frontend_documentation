@@ -158,3 +158,7 @@ Der ausgewählte Text wird dann in einem zweiten „Fenster“ rechts neben dem 
 | †Text† | Crux interpretum |
 | <span style="color:gray; font-size: 80%;">[[lacunam (1 line) ind. Autor/Quelle]]</span> | Lacuna ggfs. von geschätzter Länge, ggfs. angezeigt von Autor/Quelle |
 | <span style="color:gray;">[1 (Edition/Handschrift)]</span> | neue Seite mit Nummer 1 (in Edition/Handschrift) |
+| ↧ Sigle | Zeuge beginnt an dieser Stelle |
+| ↥ Sigle | Zeuge endet an dieser Stelle | 
+| ⇣ Sigle | Lücke im Zeugen beginnt an dieser Stelle |
+| ⇡ Sigle | Lücke im Zeugen endet an dieser Stelle |

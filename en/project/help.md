@@ -160,3 +160,7 @@ The selected text is displayed to the right of the current text, it is navigated
 | †text† | crux interpretum |
 | <span style="color:gray; font-size: 80%;">[[lacunam (1 line) ind. editor/source]]</span> | Lacuna, of estimated lenght (if available), by editor/source (if available) |
 | <span style="color:gray;">[1 (edition/manuscript)]</span> | new page with number 1 (in edition/manuscript) |
+| ↧ Sigle | Witness starts here |
+| ↥ Sigle | Witness ends here | 
+| ⇣ Sigle | Lacuna in witness starts here |
+| ⇡ Sigle | Lacuna in witness ends here |
