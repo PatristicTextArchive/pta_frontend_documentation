@@ -1,10 +1,10 @@
-The edition guidelines for the PTA are set out in a *schema* that narrows
+The edition guidelines for the PTA are set out in a [schema](https://doi.org/10.5281/zenodo.3737666 ) that narrows
 down the comprehensive and often redundant regulations of the TEI
 in a TEI-compliant way and that is the basis of the following rules and
 examples.
   
 > These edition guidelines are a slightly abridged version (but *updated*
-> to version 2.0 of the schema) [of Annette v. Stockhausen, Die
+> to version 3.0 of the schema) [of Annette v. Stockhausen, Die
 > Modellierung kritischer Editionen im digitalen Zeitalter, ZAC 24
 > (2020),
 > 123-160](https://nbn-resolving.org/urn:nbn:de:kobv:b4-opus4-35237).
@@ -99,15 +99,21 @@ following metadata in the `<teiHeader>`:
       <refsDecl n="CTS">
         <cRefPattern n="section" matchPattern="(.+)" replacementPattern="#xpath(/tei:TEI/tei:text/tei:body/tei:div[@type='edition']/tei:div[@n='$1'])"/>
       </refsDecl>
+      <schemaRef key="v3" url="https://raw.githubusercontent.com/PatristicTextArchive/Schema/master/tei-pta.rng"/>
     </encodingDesc>
     <profileDesc>
       <creation>
-          <date>Date of creation</date>
-          <placeName>Place or region of creation</placeName>
+          <date><!--Date of creation--></date>
+          <placeName><!--Place or region of creation--></placeName>
       </creation>
       <textClass>
-        Genre of text according to https://www.comphistsem.org/46.html
-      </textClass>
+        <keywords scheme="#comphistsem">
+           <term><!--Genre missing--></term>
+        </keywords>
+        <keywords scheme="#editionstatus">
+           <term><!--Edition status missing--></term>
+        </keywords>
+     </textClass>
     </profileDesc>
     <revisionDesc>
       <change who="#AvS" when="2019-02-05">Transkription des Textes anhand des Mikrofilms im Besitz des CNRS</change>
@@ -126,18 +132,17 @@ significantly.
 The `<encodingDesc>` section provides all the information concerning the
 encoding of the file and in each case contains an element `<refsDecl>`,
 which defines the outline structure of the file according to the
-[“CapiTainS Guidelines”](http://capitains.org/ ).
+[“CapiTainS Guidelines”](http://capitains.org/ ) ([cf. below](#dateistruktur )). The section ends with the element `<schemaRef>` which references the used schema.
   
 Information on the dating (`<date>`) and location (`placeName`) of the
 text is provided in the `<creation>` element and on the genre (using the
-text type classification of <https://www.comphistsem.org/46.html>) in the
-`<textClass>` element within the `<profileDesc>` section.
+text type classification of <https://www.comphistsem.org/46.html>) in the `<textClass>` element within the `<profileDesc>` section.
   
 Since digital editions, unlike printed editions, can be potentially very
 fluid data, it is of great importance that all significant changes to
 the file and its authors are recorded in the `<revisionDesc>` section,
 so that the version history of the individual files can be traced even
-when detached from the [PTA's Git repository](https://github.com/PatristicTextArchive/pta_data/ ).
+when detached from the [PTA’s Git repository](https://github.com/PatristicTextArchive/pta_data/ ).
   
 ##  Transcription of the witnesses
   
@@ -231,7 +236,7 @@ described in the same section in the `<objectDesc>` within the
   
 The entire transcription is in the `<text>` part of the file in a
 `<div>` element. The element has the following attributes:
-- `type="edition"`
+- `@type="edition"`
 - `@xml:lang` indicating the language of the edited
 text using [ISO 639-2](https://www.loc.gov/standards/iso639-2/php/code_list.php ).
 - `@n` indicating the URN of the file, see [below](#dateistruktur ).
@@ -291,6 +296,8 @@ by editions (specified using `@edRef`):
   
 For editions that exist in the PTA, the value of the `@edRef `attribute
 is the URN of the edition (e.g. `urn:cts:pta:pta0001.pta028.pta-grcBibex`).
+  
+The division of the transcripted text is following the division in the manuscript and not the artifical modern divisions introduced by editions.
   
 ####  Punctuation
   
@@ -360,13 +367,15 @@ several lines) or an `ekthesis` (ekthesis).
 ####  Other highlighting
   
   
-Rubricated text is also marked with the element `<hi>`; the attribute
+*Rubricated* text is also marked up with the element `<hi>`; the attribute
 `@rend` receives the value `rubricated`.
   
-Text highlighted with a line above the letter or word is marked with
+Text highlighted with a *line above* the letter or word is marked up with
 `<hi rend="overline">`.
   
-Underlined text is marked with `<hi rend="underline">`.
+*Underlined* text is marked up with `<hi rend="underline">`.
+  
+Text in capitals (for example the lemmata in commentaries) is martked up with `<hi rend="majuscule">`.
   
 ####  Marginalia
   
@@ -393,7 +402,7 @@ Text deleted by the writer or a later corrector is marked with
 Permitted values are `erasure`, `strikethrough`, `overwrite` and
 `expunction`.
   
-If a deletion does not originate from the scribe, this can be indicated by the attribute `@hand`, whereby the correctors should be distinguished (`#m2`, `#m3`, ... - generally `#mr` for *manus recentior*; for the indication of hands in the metadata see [above](#meta_transkription )). If it is not possible to decide by which hand a correction has been made, the attribute is assigned the value `unknown`.
+If a deletion does not originate from the scribe, this can be indicated by the attribute `@hand`, whereby the correctors should be distinguished (`#m2`, `#m3`, … - generally `#mr` for *manus recentior*; for the indication of hands in the metadata see [above](#meta_transkription )). If it is not possible to decide by which hand a correction has been made, the attribute is assigned the value `unknown`.
   
 ```xml
 γηΐ<del rend="erasure" hand="#m2">ω</del>νων
@@ -409,7 +418,7 @@ Corrections (words, but also individual letters) are marked with the
 If a correction does not originate from the scribe, this can be
 indicated by the attribute `@hand`, whereby the correctors should be
 distinguished (`#m2`,
-`#m3`, ... - generally `#mr `for *manus recentior*, for the indication
+`#m3`, … - generally `#mr `for *manus recentior*, for the indication
 of hands in the metadata see [above](#meta_transkription )). If it is not possible to decide by which hand a
 correction has been made, the attribute is assigned the value `unknown`.
   
@@ -431,6 +440,20 @@ specified with the help of the `@place` attribute. Permitted values are
 </subst>
 ```  
   
+If the correction is the addition of diacritics to a letter, the letter without is marked with  `<del>` and the attribute `@rend` with the value `repurposed`, the letter with the added diacritic is marked with `<add>` and the attribute `@rend` with the value `inline`.
+  
+```xml
+<subst>
+    <del rend="repurposed">α</del>
+    <add rend="inline">ά</add>
+</subst>
+```  
+  
+If the correction is an overwriting or retracing of the original text without correction (change in text), it is better to use the element `<retrace>`:
+  
+```xml
+ἴσως ἂν ἐνομίσθη <retrace>παρέλκον. ἀνάγραπτον</retrace> τούτων ποιεῖσθαι
+```  
   
 ####  Added text
   
@@ -442,7 +465,7 @@ Added text that is not accompanied by a correction is marked with the
 If a correction does not originate from the scribe, this can be
 indicated by the attribute `@hand`, whereby the correctors should be
 distinguished (`#m2`,
-`#m3`, ... - generally `#mr `for *manus recentior*; for the indication
+`#m3`, … - generally `#mr `for *manus recentior*; for the indication
 of hands in the metadata see [above](#meta_transkription )). If it is not possible to decide by which hand a
 correction has been made, the attribute is assigned the value `unknown`.
   
@@ -484,7 +507,7 @@ scribe (sc. erasure: `@rend="erasure"`), it is marked with the element
 `<del>`; if necessary, in the case of destruction by another hand, the
 attribute `@hand` is to be indicated, whereby the correctors should be
 distinguished (`#m2`,
-`#m3`, ... - generally `#mr `for *manus recentior*; for the indication
+`#m3`, … - generally `#mr `for *manus recentior*; for the indication
 of hands in the metadata see [above](#meta_transkription )). If it is not possible to decide by which hand a
 correction has been made, the attribute is assigned the value `unknown`.
   
@@ -625,7 +648,7 @@ pages on which the edited text is located are indicated in the element
 attributes `@from` and `@to`).
   
 If a more detailed description of the manuscript is necessary or
-desired, e.g. because an edition of an author's work is being compiled
+desired, e.g. because an edition of an author’s work is being compiled
 and manuscripts are relevant to several texts for this reason, it makes
 sense to outsource this to a separate file, using as fully as possible
 the elements described in the [TEI Guidelines in the chapter “Manuscript
@@ -641,7 +664,7 @@ Manuscript families and hyparchetypes can be combined within the
 section `@listWit` in a separate subsection `<listWit>` with its own
 element `<head>`, which gets its own machine-readable ID for the family
 in the attribute `@xml:id` (and analogously a human-readable siglum in
-the element `<abbr type="siglum">`).
+the element `<abbr type="siglum">`). These could be also used in the attribute  `@wit` of a reading; it is advised, though, to refrain from that, but rather to use the sigla of the respective individual manuscripts to avoid errors. Group sigla could be produced in the course of generating print or web presentations.
   
 Indirect tradition or ancient as well as modern translations should also
 be noted in this way if they are to be referred to in the apparatus
@@ -722,16 +745,32 @@ referenced and how these references can be resolved.
   
 ```xml
 <refsDecl xml:id="biblical">
- <cRefPattern matchPattern="(.+):(.+):([0-9]+):([0-9]+)[\-\.]*[0-9]*" replacementPattern="https://www.bibelwissenschaft.de/bibelstelle/$2$3,$4/$1">
-   <p>Referenzen beziehen sich auf biblisches Buch, Kapitel, Vers, sc. LXX:Gn:1:1; ebenso möglich ist: LXX:Gn:1:1-3 für eine Reihe von Versen oder LXX:Gn:1:1.3 für zwei Verse, die nicht aufeinander folgen.</p>
-   <p>Es werden die folgenden Abkürzungen verwendet: Gn, Ex, Lv, Num, Dt, Jos, Judg, Rt, 1Sa, 2Sa, 1Ko, 2Ko, 1Chr, 2Chr, 3Esr, Esr, Est, Jdt, Tob, 1Mak, 2Mak, 3Mak, 4Mak, Ps, Oden, Prov, Eccl, Song, Job, Wis, Sir, PsSal, Hos, Am, Mi, Joel, Ob, Jon, Nah, Hab, Zeph, Hag, Sach, Mal, Is, Jr, Bar, Lam, EpistJer, Hes, Sus, Dn, Bel; Mt, Mk, Lk, Jn, Act, Rom, 1Cor, 2Cor, Gal, Eph, Phil, Col, 1Th, 2Th, 1Tim, 2Tim, Tt, Phm, Heb, Jak, 1P, 2P, 1Jn, 2Jn, 3Jn, Jud, Rev.</p>
- </cRefPattern>
- <cRefPattern matchPattern="(.+):(.+):([0-9]+)[\-\.]*[0-9]*" replacementPattern="https://www.bibelwissenschaft.de/bibelstelle/$2$3/$1">
-   <p>Referenzen beziehen sich auf biblisches Buch, Kapitel, sc. LXX:Gn:1; ebenso möglich ist: LXX:Gn:1-3 für eine Reihe von Kapiteln oder LXX:Gn:1.3 für zwei Kapitel, die nicht aufeinander folgen.</p>
- </cRefPattern>
- <cRefPattern matchPattern="(.+):(.+)" replacementPattern="https://www.bibelwissenschaft.de/bibelstelle/$2/$1">
-   <p>Referenzen beziehen sich auf biblisches Buch, sc. LXX:Gn.</p>
- </cRefPattern>
+  <cRefPattern matchPattern="(.+):(.+):([0-9]+):([0-9]+)[\-\.]*[0-9]*"
+               replacementPattern="https://www.bibelwissenschaft.de/bibelstelle/$2$3,$4/$1">
+     <p>For references to the Septuagint LXX is used as abbreviation, 
+      for references to the New Testament NA is used as abbreviation 
+      for the version.</p>
+     <p>Noted are references to a biblical book, chapter, verse, sc. LXX:Gn:1:1; 
+      also possible: LXX:Gn:1:1-3 for a sequence of verses or LXX:Gn:1:1.3 
+      for two verses not following each other.</p>
+     <p>The following abbreviations are used: Gn, Ex, Lv, Num, Dt, Jos, Judg, 
+      Rt, 1Sa, 2Sa, 1Ko, 2Ko, 1Chr, 2Chr, 3Esr, Esr, Est, Jdt, Tob, 1Mak, 2Mak, 
+      3Mak, 4Mak, Ps, Oden, Prov, Eccl, Song, Job, Wis, Sir, PsSal, Hos, Am, Mi, 
+      Joel, Ob, Jon, Nah, Hab, Zeph, Hag, Sach, Mal, Is, Jr, Bar, Lam, EpistJer, 
+      Hes, Sus (Sus-LXX), Dn (Dn-LXX), Bel (Bel-LXX); Mt, Mk, Lk, Jn, Act, Rom, 
+      1Cor, 2Cor, Gal, Eph, Phil, Col, 1Th, 2Th, 1Tim, 2Tim, Tt, Phm, Heb, Jak, 
+      1P, 2P, 1Jn, 2Jn, 3Jn, Jud, Rev.</p>
+  </cRefPattern>
+  <cRefPattern matchPattern="(.+):(.+):([0-9]+)[\-\.]*[0-9]*"
+               replacementPattern="https://www.bibelwissenschaft.de/bibelstelle/$2$3/$1">
+     <p>Noted are references to a biblical book and chapter, sc. LXX:Gn:1; also 
+      possible: LXX:Gn:1-3 for a sequence of chapters or LXX:Gn:1.3 for two chapters 
+      not following each other.</p>
+  </cRefPattern>
+  <cRefPattern matchPattern="(.+):(.+)"
+               replacementPattern="https://www.bibelwissenschaft.de/bibelstelle/$2/$1">
+     <p>Noted are references to a biblical book, sc. LXX:Gn.</p>
+  </cRefPattern>
 </refsDecl>
 ```  
   
@@ -746,7 +785,8 @@ Est, Jdt, Tob, 1Mak, 2Mak, 3Mak, 4Mak,
 Ps, Oden, Prov, Eccl, Song, Job, Wis,
 Sir, PsSal, Hos, Am, Mi, Joel, Ob, Jon,
 Nah, Hab, Zeph, Hag, Sach, Mal, Is, Jr,
-Bar, Lam, EpistJer, Hes, Sus (Sus-LXX), Dn (Dn-LXX), Bel (Bel-LXX).
+Bar, Lam, EpistJer, Hes, Sus (Sus-LXX), 
+Dn (Dn-LXX), Bel (Bel-LXX).
   
 ```  
   
@@ -768,28 +808,39 @@ NT):Book:Chapter:Verse (e.g.: 1,1-2,1.4), e.g. `LXX:Gn:1:1-3`.
   
 Also in the `<encodingDesc>` section, the
 `<editorialDecl>` section within the `<interpretation>` subsection
-elaborates on which phenomena have been marked up in the text. This
+elaborates on which phenomena have been marked up in the text and to what extent. This
 allows users of the edition to quickly see what to expect from the
-edition. Adjustments are to be made if necessary.
+edition. Adjustments to `@ana` and to the text are to be made accordingly.
   
 ```xml
 <editorialDecl>
   <interpretation>
-    <p xml:id="biblical-quotations">
-    Bibelzitate sind ausgezeichnet und nach den oben angeführten Grundsätzen nachgewiesen.
-    </p>
-    <p xml:id="places">
-    Orte sind ausgezeichnet und mit den IDs des <ref target="https://pleiades.stoa.org/">Pleiades Gazetteers</ref>
-referenziert.
-    </p>
-    <p xml:id="persons">
-    Personen sind ausgezeichnet. Biblische Personen sind mit den IDs der <ref target="https://github.com/tyndale/STEPBible-Data">TIPNR - Tyndale Individualised Proper Names with all References</ref>-Liste, alle übrigen Personen und Gruppen mit den IDs der
-<ref target="https://lobid.org/gnd">GND</ref> referenziert.
-    </p>
-  </interpretation>
+    <p>This file is encoded according to the guidelines of the Patristic Text Archive (PTA). See https://pta.bbaw.de/project/encoding-guidelines and https://doi.org/10.5281/zenodo.3737666.</p>
+    <p xml:id="biblical-quotations"
+       ana="fully/partially/not-annotated fully/partially/not-identified">Biblical quotations are fully/partially annotated and/but not fully/partially referenced. References follow the scheme declared <ref target="#biblical">above</ref>. 
+             </p>
+    <p xml:id="places"
+       ana="fully/partially/not-annotated fully/partially/not-identified">Places are fully/partially annotated and/but not fully/partially referenced with <ref target="https://pleiades.stoa.org/">Pleiades Gazetteer</ref> IDs.</p>
+    <p xml:id="persons"
+       ana="fully/partially/not-annotated fully/partially/not-identified">Persons are fully/partially annotated and/but not fully/partially referenced with IDs according to the <ref target="https://github.com/PatristicTextArchive/tipnr_data">TIPNR - Tyndale Individualised Proper Names with all References</ref> list for biblical persons and IDs of <ref target="https://github.com/PatristicTextArchive/pta_metadata/blob/main/pta_persons.json">PTA persons index</ref> for all other persons.</p>
+    <p xml:id="groups"
+       ana="fully/partially/not-annotated fully/partially/not-identified">Groups of persons and organisations are fully/partially annotated and/but not fully/partially referenced with IDs according to the IDs of <ref target="https://github.com/PatristicTextArchive/pta_metadata/blob/main/pta_groups.json">PTA groups index</ref> for all other groups.</p>
+ </interpretation>
   ...
 </editorialDecl>
 ```  
+  
+The annotation status is defined as follows:
+  
+- `fully-annotated`: All instances of a phenomenon (e.g. biblical quotations, persons, places) are encoded with the respective element.
+- `partially-annotated`: Some instances of a phenomenon (e.g. biblical quotations, persons, places) are encoded with the respective element.
+- `not-annotated`: No instance of a phenomenon (e.g. biblical quotations, persons, places) is encoded with the respective element.
+  
+The extension to which the annotations are identified with norm data is defined as follows:
+  
+- `fully-identified`: All encoded instances of a phenomenon (e.g. biblical quotations, persons, places) are identified with the respective norm data.
+- `partially-identified`: Some encoded instances of a phenomenon (e.g. biblical quotations, persons, places) are identified with the respective norm data.
+- `not-identified`: No encoded instances of a phenomenon (e.g. biblical quotations, persons, places) are identified with the respective norm data.
   
   
 ####  Normalisation
@@ -798,25 +849,20 @@ referenziert.
 Within the `<editorialDecl>` section, the `<normalisation>` and
 `<punctuation>` subsections describe the extent to which the handwritten
 text has been normalised in the critical edition. Adjustments are to be
-made if necessary.
+made.
   
 ```xml
 <editorialDecl>
   ...
-  <normalization>
-   <p>
-    Angaben zur Handhabung von Großschreibung,
-    ν-ephelkystikon, σ: οὕτως, Iota subscriptum/adscriptum,
-    Trema, Enklitika, Apostroph/Elisionen, Zahlzeichen, Worttrennung,
-    nomina sacra.
-   </p>
-  </normalization>
-  <punctuation>
-   <p>
-    Angaben zur Normalisierung der Interpunktion: Setzung von Punkt,
-    Komma, Semikolon, Fragezeichen, Gedankenstrichen und Klammern
-   </p>
-  </punctuation>
+  <normalization>
+    <p>Usage of capitalisation, ν-ephelkystikon, σ: οὕτως, Iota subscriptum/adscriptum, 
+      Trema, Enclitics, apostroph/elisions, number signs, splitting of words, 
+      nomina sacra, ...</p>
+ </normalization>
+ <punctuation>
+    <p>Usage (and/or normalisation) of full stop, comma, semicolon, question mark, 
+      dash and parenthesis</p>
+ </punctuation>
 </editorialDecl>
 ```  
   
@@ -831,12 +877,10 @@ up of the text-critical variants. The entry *must* read:
 ```  
   
   
-####  Edition status
+####  Type of edition
   
   
-Finally, the element `<revisionDesc>` receives an attribute `@status`,
-in which the status of the edition is specified. The following values
-are possible:
+Within the `<profileDesc>` section, the type of edition is provided in the  `<textClass>` subsection in `<keywords scheme="#editionstatus">`. The element `<term>` has one of the following phrases:
   
 -   `critical-edition` for a critical edition in which the text-critical
     variants have been coded. This should be the normal case for new
@@ -854,9 +898,16 @@ are possible:
 -   `pre-critical-edition` for pre-modern editions (e.g. in the
     Patrologia Graeca or Latina).
   
--   `preliminary-edition` for the provisional publication of critical
-    editions in progress. Substantial changes are to be expected at any
-    time for editions marked in that way!
+A special case is `metacritical-edition-with-app`, which is used for the [SBLGNT edition](https://www.sblgnt.com/ ) of the New Testament.
+####  Status of edition
+  
+  
+Finally, the element `<revisionDesc>` receives an attribute `@status`,
+in which the status of the edition is specified. The following values
+are possible:
+- `draft`: Draft version, work in progress
+- `unfinished`: Work not yet finished, for example annotations need to be done
+- `approved`: Approved (final) version
   
 ###  Edition
   
@@ -889,10 +940,9 @@ transmission as well as earlier editions and translations into modern
 languages should be mentioned and appreciated in their critical value.
   
 In principle, it makes sense to link the information given in the
-`<teiHeader>`.
+`<teiHeader>` by using the element `<ref>` and the attribut `@target`.
   
-Subsections can be set up using `<div type="section" n="1">` (and 
-`<div type="subsection" n="1">` for subdivisions), which can
+Subsections can be set up using `<div type="section" n="1">`, which can
 also contain their own headings in a `<head>` element.
   
 ```xml
@@ -900,14 +950,11 @@ also contain their own headings in a `<head>` element.
     <div type="section" n="1">
         <head>Vorbemerkung</head>
         <p>Text</p>
-        <div type="subsection" n="1">
-            <head>Überschrift</head>
-            <p>Text</p>
-        </div>
     </div>
 </div>
 ```  
   
+For footnotes the element `<note>` is used. Bibliographic data that is not already defined in the `<teiHeader>` can be given at point by using the element `<bibl>`;  the attribut `@xml:id` may be used to reference entries like those. It is also possible to reference the text (or variants), if a `@xml:id` is provided with the respective element (for example `<seg>`, `<app>` or `<rdg>`).
   
 ####  Text
   
@@ -1003,6 +1050,26 @@ For bible quotations, the respective bible passage is given within the
 </p>
 ```  
   
+If non-biblical texts are cited, the passage reference is also indicated by means of the `<ref>` element: If the referenced text is available in the Patristic Text Archive, the PTA-URN is given with reference to the specifications in the `<teiHeader>` (`@decls="#pta"`) in the attribute `@cRef`. If the referenced text is present in the [Perseus Digital Library](https://scaife.perseus.org/ ), the CTS-URN with reference to the specifications in the `<teiHeader>` (`@decls="#perseus"`) is given in the attribute `@cRef`. If the referenced text is not available in either repository, the reference for the referenced text is given in the attribute `@source` in the form "Authorabbrev_Workabbrev_Location"; ancient Greek authors should be referenced according to the lists of [H. G. Liddell/R. Scott/H. S. Jones, A Greek - English Lexicon, Oxford ^9^1968](https://lsj.gr/wiki/Index:AuthorsWorks/All ) and G. W. H. Lampe, A Patristic Greek Lexicon, Oxford ^3^1987, for Latin ones the abbreviations of the Thesaurus Linguae Latinae (cf. [Index librorum scriptorum inscriptionum ex quibus exempla afferuntur](https://thesaurus.badw.de/en/tll-digital/index/ )) should be used, with dots in the abbreviations deleted without replacement.
+  
+```xml
+<p>ἐν δὲ <bibl>τῷ Ποιμένι</bibl> γέγραπται,
+ἐπειδὴ καὶ τοῦτο καίτοι μὴ ὂν ἐκ τοῦ
+κανόνος προφέρουσι· <quote>πρῶτον πάντων
+πίστευσον, ὅτι εἷς ἐστιν ὁ θεός, ὁ τὰ
+πάντα κτίσας καὶ καταρτίσας καὶ
+ποιήσας ἐκ τοῦ μὴ ὄντος εἰς τὸ εἶναι
+τὰ πάντα.
+<ref decls="#pta" cRef="urn:cts:pta:pta0038.pta001.pta-grc1:mandatum.1.1"/>
+</quote></p>
+<p>ἔγραψε τοῖς ἰδίοις διαβεβαιούμενος, ὅτι
+<quote>καὶ τῶν παλαιῶν τινας λογίους καὶ 
+ἐπιφανεῖς ἐπισκόπους καὶ συγγραφέας ἔγνωμεν 
+ἐπὶ τῆς τοῦ πατρὸς καὶ υἱοῦ θεότητος τῷ τοῦ 
+ὁμοουσίου χρησαμένους ὀνόματι.
+<ref source="Eus_epCaes_13"/>
+</quote></p>
+```  
   
 #####  Encoding of similia and sources
   
@@ -1032,6 +1099,12 @@ Direct speech is marked up with the help of the `<said>` element.
 </p>
 ```  
   
+#####  Encoding of dialogue
+  
+  
+Dialogue is marked up with the help of `<sp>` (instead of `<p>`). For the person speaking `<speaker>` is used, the spoken text is marked up with `<p>`.
+  
+@import “examples/ed_speech.xml” {class=“lines-numbers”}
   
 #####  Encoding of people, organisations and places
   
@@ -1064,22 +1137,27 @@ the attribute `@ref` the ID of the [Pleiades Gazetteer](https://pleiades.stoa.or
 #####  Text witnesses
   
   
-The manuscripts witnessing the text is documented in the element
-`<app>` with the attribute `@type="witnesses"`. The element contains
-only one element `<rdg>` with the attribute `@wit`, in which one of the
-self-closing elements `<witStart/>` (= beginning of a witness),
-`<witEnd/>` (= end of a witness), `<lacunaStart/>` (= beginning of a gap)
-or `<lacunaEnd/>` (= end of a gap) is inserted.
+The manuscripts witnessing the text are documented in the element `<app>` with the attribute `@type="witnesses"`. The element receives a unique identifier in the attribute `@xml:id`, in the attribute `@prev` or `@next` reference is made to the corresponding entry (`<witStart/>`/`<lacunaStart/>` -> `<witEnd/>`/`<lacunaEnd/>` and vice versa). If necessary, a reference to a corresponding text-critical variant or reading can be made in the attribute `@corresp`.
+The element contains only the element `<rdg>` with the attribute `@wit`, in which one of the self-closing elements `<witStart/>` (= beginning of a witness), `<witEnd/>` (= end of a witness), `<lacunaStart/>` (= beginning of a gap) or `<lacunaEnd/>` (= end of a gap) is inserted. The element does not contain any text, but is inserted (comparable to a milestone element like `<pb>`) at the appropriate place in the text: In the case of `<witStart>` and `<lacunaEnd>` it comes before the first word present in the witness or after the gap ends, in the case of `<witEnd>` and `<lacunaStart>` it comes after the last word present in the witness or before which the gap begins. 
   
 ```xml
-<app type="witnesses">
-    <rdg wit="#Ecl114"><witStart/>μεμαρτύρητο</rdg>
+<app type="textcritical">
+    <lem wit="#Pt #Pc #Pb #Pd #My #Ma #Ha #Va #Ab">ἀπαστράπτει</lem>
+    <rdg wit="#Pa #Be" xml:id="lac-Pa">ἀ</rdg>
+    <witDetail wit="#Pa" target="#lac-Pa">Blattausfall.</witDetail>
+</app> 
+<app type="witnesses" xml:id="x1" next="#x2" corresp="#lac-Pa">
+    <rdg wit="#Pa #Be"><lacunaStart/></rdg>
+</app> ... καθʼ ἑαυτὴν ἔσωσεν. 
+<app type="witnesses" xml:id="x2" prev="#x1" corresp="#lac-Pa">
+    <rdg wit="#Pa #Be"><lacunaEnd/></rdg>
 </app>
-...
-<app type="witnesses">
- <rdg wit="#Pa #Be">εἰ<lacunaEnd/></rdg>
-</app>
+<app type="witnesses" xml:id="x3" next="#x4">
+    <rdg wit="#Ecl114"><witStart/></rdg>
+</app> μεμαρτύρητο ...
 ```  
+  
+(This somewhat awkward way of notation is necessary because according to the [TEI Guidelines](https://tei-c.org/Vault/P5/2.0.0/doc/tei-p5-doc/en/html/ref-model.rdgPart.html ) the elements `<witStart/>`, `<lacunaStart/>`, `<witEnd/>`, `<lacunaEnd/>` are only allowed to be inside a `<rdg>` or `<lem>` in an `<app>` and the sensible [amendment request to allow these elements also outside in the text was rejected by the TEI Technical Council](https://github.com/TEIC/TEI/issues/301 ).)
   
   
 #####  Encoding the variants
@@ -1092,7 +1170,7 @@ material, but an interpretation of it.
   
 At each point in the text that has survived in different versions, the
 variants are indicated within the `<app>` element, which has an
-`@type` attribute with the value `textcritical`. Within this element
+`@type` attribute with the value `variants`. Within this element
 `<app>`, the reconstructed text is marked with the element `<lem>`, the
 variants judged to be secondary with the element `<rdg>`, whereby this
 element may occur more than once within an `<app>` entry, in contrast to
@@ -1128,7 +1206,7 @@ order (and taking stemmatic relationships into account).
   
 In the case of several variants within an `<app>` element, the various
 `<rdg>` entries should be ranked in such a way that the closer they are
-stemmatically (according to the editor's assessment) to the
+stemmatically (according to the editor’s assessment) to the
 `<lem>` variant, the earlier they are listed.
   
 Variants (`<lem>` and `<rdg>` or several `<rdg>` entries) that are
@@ -1138,54 +1216,55 @@ placed in one element `<rdgGrp>` for clarification.
 The text of the variation shall always be given in its full text and
 shall not be abbreviated under any circumstances.
   
-#####  Typification of variants
+#####  Analysis of the causes for the variation
   
   
-Variants can have an attribute `@type`, with the help of which the
+Variants can have an attribute `@cause`, with the help of which the
 editor provides the recipient of the edition with an analysis of the
-variant and which can thus also be easily filtered for presentation. The
+probable cause for the variant and which can thus also be easily filtered for presentation. The
 following values of this attribute are possible:
   
 -   `orthographic`, when a variant is interpreted by the editor as
     affecting only the spelling, i.e., in the case of Greek manuscripts,
     for example, as most likely being due to itacism.
--   `homoioteleuton` or `homoiarkton` or `saut_du_meme` if, in the opinion of the editor,
-    a variant is due to homoioteleuton or homoiarkton or a saut du même au même.
+-   `homoioteleuton` or `homoiarkton` or `saut_du_meme` if, in the opinion 
+    of the editor, a variant is due to homoioteleuton or homoiarkton or 
+    a saut du même au même.
 -   `dittography`, when a variant is interpreted as a dittography.
   
 ```xml
-<app type="textcritical">
-  <lem source="#Sav" cause="conjecture">νομογράφῳ</lem>
+<app type="variants">
+  <lem source="#Sav" type="conjecture">νομογράφῳ</lem>
   <rdgGrp>
     <rdg wit="#Be #Ab">τῷ νόμῳ γράφει</rdg>
-    <rdg wit="#Pt #Pa #Pb #Pd #Ma #Ha #Va" type="orthographic">τῷ νομῳ γράφει</rdg>
+    <rdg wit="#Pt #Pa #Pb #Pd #Ma #Ha #Va" cause="orthographic">τῷ νομῳ γράφει</rdg>
   </rdgGrp>
   <rdgGrp>
     <rdg wit="#Pc">τὸν νόμον γράφει</rdg>
-    <rdg wit="#My" type="orthographic">τὸν νόμων γράφει</rdg>
+    <rdg wit="#My" cause="orthographic">τὸν νόμων γράφει</rdg>
   </rdgGrp>
 </app>
 ```  
   
   
-#####  Analysis of the causes for the variation
+#####  Typification of variants
   
   
-The results of the analysis of reasons for variants are given in the
-`@cause` attribute.
+The results of the analysis of the type of a variant is given in the
+`@type` attribute.
   
 ######  Additions
   
   
 Additions, including dittographies and other repetitions, are marked in
-the `<rdg>` element as `<@cause="addition">`. The `<lem>` element
+the `<rdg>` element as `<@type="addition">`. The `<lem>` element
 remains without text content (“self-closing”).
   
 ```xml
-<app type="textcritical">
+<app type="variants">
  <lem wit="#Pt #Pc #Pd #Ma #My"/>
- <rdg wit="#Ha #Pa #Be" cause="addition">καὶ περὶ τοῦ ἁγίου πνεύματος</rdg>
- <rdg wit="#Pb #Va" cause="addition">λόγος πάνυ ὠφέλιμος</rdg>
+ <rdg wit="#Ha #Pa #Be" type="addition">καὶ περὶ τοῦ ἁγίου πνεύματος</rdg>
+ <rdg wit="#Pb #Va" type="addition">λόγος πάνυ ὠφέλιμος</rdg>
 </app>
 ```  
   
@@ -1193,13 +1272,13 @@ remains without text content (“self-closing”).
 ######  Omissions
   
   
-Omissions are marked as `<@cause="omission">`. The `<rdg>` element
+Omissions are marked as `<@type="omission">`. The `<rdg>` element
 remains without text content (“self-closing”).
   
 ```xml
-<app type="textcritical">
+<app type="variants">
  <lem wit="#Pa #Be #Pb #Va #Ha">ἀπεικάζεται καὶ</lem>
- <rdg wit="#Pt #Pc #Pd #Ma #My #Ab" cause="omission"/>
+ <rdg wit="#Pt #Pc #Pd #Ma #My #Ab" type="omission"/>
 </app>
 ```  
   
@@ -1207,7 +1286,7 @@ remains without text content (“self-closing”).
 ######  Deletions
   
   
-Deletions are marked as `<@cause="deletion">`, whereby (in contrast to
+Deletions are marked as `<@type="deletion">`, whereby (in contrast to
 the transcription) it is no longer differentiated how the text was
 deleted, since this information can be taken from the transcription file
 at any time.
@@ -1218,9 +1297,9 @@ respective manuscript. The `<rdg>` element is again without textual
 content (“self-closing”).
   
 ```xml
-<app type="textcritical">
+<app type="variants">
  <lem wit="#Pa #Be #Pb #Va #Ha #Pt #Pc #Pd #Ma #My #Ab">καὶ</lem>
- <rdg wit="#Pb" cause="deletion"/>
+ <rdg wit="#Pb" type="deletion"/>
 </app>
 ```  
   
@@ -1228,25 +1307,27 @@ content (“self-closing”).
 ######  Not readable text
   
   
-Unreadable text is marked as `<@cause="illegible">`. The element
+Unreadable text is marked as `<@type="illegible">`. The element
 `<rdg>` is without text content (“self-closing”).
   
-######  Gap in text of a manuscript
-  
-  
-A gap im text of a manuscripts is (following the rules for transcription) marked as `<@cause="damage">` (damage) als `<@cause="fenestra">` (intentional gap) oder als `<@cause="deletion">` (deleted). The element `<rdg>` is without text content (“self-closing”).
+```xml
+<app type="variants">
+ <lem wit="#Pt #Pc #Pa #Be #Pb #Pd #Ma #My #Va #Ab">καὶ</lem>
+ <rdg wit="#Ha" type="illegible"/>
+</app>
+```  
   
 ######  Transpositions
   
   
-Transpositions are marked as `<@cause="transposition">`. In the
+Transpositions are marked as `<@type="transposition">`. In the
 `<rdg>` element, the transposed text is reproduced in its full wording
 (sc. not abbreviated).
   
 ```xml
-<app type="textcritical">
+<app type="variants">
  <lem wit="#Pa #Be #Pb #Va #Ha">τὰ τοῦ θεοῦ</lem>
- <rdg wit="#Pt #Pc #Pd #Ma #My #Ab" cause="transposition">τοῦ
+ <rdg wit="#Pt #Pc #Pd #Ma #My #Ab" type="transposition">τοῦ
    θεοῦ τὰ</rdg>
 </app>
 ```  
@@ -1260,17 +1341,17 @@ the other using the `@prev` and `@next` attributes.
 ```xml
 <div type="textpart" subtype="section" n="1">
     <p>οὐδὲ γἁρ 
-    <app type="textcritical" xml:id="app1-1" next="#app1-2">
+    <app type="variants" xml:id="app1-1" next="#app1-2">
         <lem wit="#Pt #Pb #My #Ha #Va #Ab">καλόν ἐστι</lem>
-        <rdg wit="#Pc #Pd Ma" cause="omission"/>
+        <rdg wit="#Pc #Pd Ma" type="omission"/>
     </app>
     </p>
 </div>
 <div type="textpart" subtype="section" n="2">
     <p>τὸ ἔξω τοῦ οἴκου τοῦ θεοῦ πολιτεύεσθαι
-    <app type="textcritical" xml:id="app1-2" prev="#app1-1">
+    <app type="variants" xml:id="app1-2" prev="#app1-1">
         <lem wit="#Pt #Pb #My #Ha #Va #Ab"/>
-        <rdg wit="#Pc #Pd #Ma" cause="addition">καλόν ἐστι</rdg>
+        <rdg wit="#Pc #Pd #Ma" type="addition">καλόν ἐστι</rdg>
     </app>
       </p>
 </div>
@@ -1292,26 +1373,25 @@ identifier in the `@copyOf` attribute; the `<rdg>` element is empty
 (“self-closing”) in this case.
   
 The element `<rdg>` can additionally contain the attribute `@hand`,
-whereby the scribe (`#m1`) and the correctors (`#m2`, `#m3`, ... -
+whereby the scribe (`#m1`) and the correctors (`#m2`, `#m3`, … -
 generally `#mr `for *manus recentior*) should be distinguished. If it is
 not possible to decide by which hand a correction has been made, the
 attribute is given the value `unknown`.
   
-The location of the correction is specified using the
-`@style` attribute; possible values are `supralinear`, `marginal` and
-`inline`.
+The location of the correction is specified by using the respective elements for
+deletion, addition, etc. together with their attributes, [see above](#transcription-edition ).
   
 ```xml
-<app type="textcritical">
- <lem wit="#Pa #Pb #Ha #Va" xml:id="lem178">ὁ γενναῖος ἐκεῖνος</lem>
- <rdg wit="#Be" varSeq="1" cause="transposition">ἐκεῖνος ὁ γενναῖος</rdg>
- <rdg wit="#Be" varSeq="2" hand="m2" style="supralinear" copyOf="#lem178"/>
+<app type="variants">
+ <rdgGrp><lem wit="#Pa #Pb #Ha #Va">ὁ γενναῖος ἐκεῖνος</lem>
+ <rdg wit="#Be" varSeq="2" hand="m2"><add place="above">ὁ γενναῖος ἐκεῖνος</add></rdg></rdgGrp>
+ <rdg wit="#Be" varSeq="1" type="transposition">ἐκεῖνος ὁ γενναῖος</rdg>
 </app>
 ```  
   
   
 Microscopic text substitutions (such as the substitution of individual
-letters within a word) are better marked up according to the procedure for
+letters within a word) are also marked up according to the procedure for
 manuscript transcription within a `<subst>` element with the element
 `<del>` (substituted text) and the element `<add>` (supplemented text).
 The `<subst>` element in this case receives the `@hand` attribute. If
@@ -1320,7 +1400,7 @@ only text is added or deleted during a correction, only the `<add>` or
 element.
   
 ```xml
-<app type="textcritical">
+<app type="variants">
  <lem wit="#Pa #Be #Pb #Va #Ha #Pt #Pc #Pd #Ma #My #Ab">ἔχωμεν</lem>
  <rdg wit="#Ha">ἔχ<subst hand="#m2">
    <del>ο</del>
@@ -1333,64 +1413,71 @@ element.
 ######  Conjectures by editors
   
   
-Conjectures are marked with `<@cause="conjecture">`: If this is done in
+Conjectures are marked with `<@type="conjecture">`: If this is done in
 the element `<lem>`, it is an emendation of the editor (or an older one
 that the editor joins), if this is done in the element
 `<rdg>`, it is a conjecture of a different origin not adopted by the
 editor.
   
 Corrections of minor errors (or orthographic normalisations) that do not
-reach the level of a conjecture are marked with `<@cause="correction">`.
+reach the level of a conjecture are marked with `<@type="correction">`.
   
 ```xml
-<app type="textcritical">
- <lem resp="#AvS" cause="correction">οὐκ</lem>
+<app type="variants">
+ <lem resp="#AvS" type="correction">οὐκ</lem>
  <rdg wit="#Pa #Be #Pb #Va #Ha #Pt #Pc #Pd #Ma #My #Ab">οὐχ</rdg>
 </app>
 ```  
   
   
 Proposals of conjectures (*proposuit* or *dubitanter*) are marked in the
-`<rdg>` element as `<@cause="proposition">`. If necessary, the degree of
+`<rdg>` element as `<@type="proposition">`. If necessary, the degree of
 probability of the conjecture being true can be recorded in the
 `@cert` attribute; possible values are: `low`, `medium`, `high`.
   
 ```xml
-<app type="textcritical">
+<app type="variants">
  <lem wit="#Pa #Be #Pb #Va #Ha #Pt #Pc #Pd #Ma #My #Ab">ψευδόμενος</lem>
- <rdg resp="#AvS" cause="proposition" cert="low">ἀδικῶν</rdg>
+ <rdg resp="#AvS" type="proposition" cert="low">ἀδικῶν</rdg>
 </app>
 ```  
   
   
-Text deleted by the editor is marked with `<@cause="deletion">` in the
+Text deleted by the editor is marked with `<@type="deletion">` in the
 `<lem>` element. If the deleted text is to be quoted, it is marked with
 the help of the `<surplus>` element; otherwise the element remains
 without text content (“self-closing”). Deletions by other editors are
-also marked as `<@cause="deletion">`.
+also marked as `<@type="deletion">`.
   
 ```xml
-<app type="textcritical">
- <lem resp="#AvS" cause="deletion"/>
+<app type="variants">
+ <lem resp="#AvS" type="deletion"/>
  <rdg wit="#Pa #Be #Pb #Va #Ha #Pt #Pc #Pd #Ma #My #Ab">οὐκ</rdg>
 </app>
-<app type="textcritical">
+<app type="variants">
  <lem wit="#Pa #Be #Pb #Va #Ha #Pt #Pc #Pd #Ma #My #Ab">οὐκ</lem>
- <rdg source="#Sav" cause="deletion"><surplus>οὐκ</surplus></rdg>
+ <rdg source="#Sav" type="deletion"><surplus>οὐκ</surplus></rdg>
 </app>
 ```  
   
   
-Text added by emendation is marked with `<@cause="addition">`. The added
-text is marked up using the `<supplied>` element. The handwritten
-variant is marked in the `<rdg>` element with `@cause="omission"`; the
-`<rdg>` element remains without text content (“self-closing”).
+Text added by emendation is marked with `<@type="addition">`. The handwritten
+variant is marked in the `<rdg>` element with `@type="omission"`; the
+`<rdg>` element remains without text content (“self-closing”). 
+  
+To indicate the extent of the addition, the added text is marked up by using the `<supplied>` element, if transmitted text is supplied. In this case `<@type="conjecture">` is to be used instead of `<@type="addition">`.
   
 ```xml
-<app type="textcritical">
- <lem resp="#AvS" cause="addition"><supplied>οὐκ</supplied></lem>
+<app type="variants">
+<lem resp="#AvS" type="addition">οὐκ</lem>
+<rdg source="#Schwartz" type="addition">μὴ</rdg>
  <rdg wit="#Pa #Be #Pb #Va #Ha #Pt #Pc #Pd #Ma #My #Ab"
-  cause="omission"/>
+  type="omission"/>
+</app>
+  
+<app type="variants">
+    <lem resp="#AvS" type="conjecture">Σευηρι<supplied>αν</supplied>οῦ</lem>
+    <rdg wit="#P">Σευηρίου</rdg>
 </app>
 ```  
   
@@ -1401,10 +1488,10 @@ edition, in the attribute `@source` (in contrast to the attribute
 `@wit` for manuscripts).
   
 ```xml
-<app type="textcritical">
+<app type="variants">
  <lem wit="#Pa #Be #Pb #Va #Ha #Pt #Pc #Pd #Ma #My #Ab">ψευδόμενος</lem>
- <rdg source="#Savile1612" cause="conjecture">ἀδικῶν</rdg>
- <rdg resp="#AC" cause="conjecture">ψευσάμενος</rdg>
+ <rdg source="#Savile1612" type="conjecture">ἀδικῶν</rdg>
+ <rdg resp="#Ac" type="conjecture">ψευσάμενος</rdg>
 </app>
 ```  
   
@@ -1428,13 +1515,13 @@ indicated in the `@source `or `@resp` attribute.
   
 Gaps suspected by other editors but not taken over are marked in an
 apparatus entry as `<rdg>` and receive the attribute
-`@cause="lacunam_indicavit"`. The element is without text content
+`@type="lacunam_indicavit"`. The element is without text content
 (“self-closing”).
   
 ```xml
-<app type="textcritical">
+<app type="variants">
  <lem wit="#Pa #Be #Pb #Va #Ha #Pt #Pc #Pd #Ma #My #Ab"/>
- <rdg wit="#Sav" cause="lacunam_indicavit"/>
+ <rdg wit="#Sav" type="lacunam_indicavit"/>
 </app>
 ```  
   
@@ -1456,18 +1543,20 @@ corruption as a self-closing (“empty”) element.
 ######  Variants within variants
   
   
-Variants can also be nested within each other, i.e. a `<lem>` or a `<rdg>` element can enclose a variant (`<app>`). The `wit` attribute of the outer `<app>` element includes *all* sigla of the inner `<app>` element (both of `<lem>` and of `<rdg>`):
+Variants can also be nested within each other, i.e. a `<lem>` or a `<rdg>` 
+element can enclose a variant (`<app>`). The wit attribute of the outer `<app>` 
+element includes all sigla of the inner `<app>` element (both of `<lem>` and of `<rdg>`):
   
 ```xml
-<app type="textcritical">
- <lem wit="#Pb #Pt #Pc #Pa #Be #Pd #Ma #My #Ha #Va">οὐδεμίαν 
-  <app type="textcritical">
-   <lem wit="#Pt #Pc #Pa #Be #Pd #Ma #My #Ha #Va">εὑρήσεις</lem>
-   <rdg wit="#Pb" type="orthographic">εὑρήσῃς</rdg>
-  </app>
- </lem>
- <rdg wit="#Ab" cause="omission"/>
-</app>
+<app type="variants">
+  <lem wit="#Pb #Pt #Pc #Pa #Be #Pd #Ma #My #Ha #Va">οὐδεμίαν 
+   <app type="variants">
+    <lem wit="#Pt #Pc #Pa #Be #Pd #Ma #My #Ha #Va">εὑρήσεις</lem>
+    <rdg wit="#Pb" cause="orthographic">εὑρήσῃς</rdg>
+   </app>
+  </lem>
+  <rdg wit="#Ab" type="omission"/>
+ </app>
 ```  
   
   
@@ -1479,9 +1568,9 @@ the variant carriers are identical, be combined as far as possible to
 increase readability.
   
 ```xml
-<app type="textcritical">
+<app type="variants">
  <lem wit="#Pt #Pc #Pa #Be #Pb #Pd #Ma #My #Va #Ab">καὶ νῦν</lem>
- <rdg wit="#Ha" cause="omission"/>
+ <rdg wit="#Ha" type="omission"/>
 </app>
 ```  
   
@@ -1489,13 +1578,13 @@ increase readability.
 and not:
   
 ```xml
-<app type="textcritical">
+<app type="variants">
  <lem wit="#Pt #Pc #Pa #Be #Pb #Pd #Ma #My #Va #Ab">καὶ</lem>
- <rdg wit="#Ha" cause="omission"/>
+ <rdg wit="#Ha" type="omission"/>
 </app>
-<app type="textcritical">
+<app type="variants">
  <lem wit="#Pt #Pc #Pa #Be #Pb #Pd #Ma #My #Va #Ab">νῦν</lem>
- <rdg wit="#Ha" cause="omission"/>
+ <rdg wit="#Ha" type="omission"/>
 </app>
 ```  
   
@@ -1519,11 +1608,11 @@ belong together are linked with the help of the attributes `@prev` and
 ```xml
 <p>Διὰ τί ἐσαλεύθησαν θεμέλιοι τῆς δημιουργίας; 
 <quote xml:id="qu1-1" next="#qu1-2">Τί σοι ἐστί,</quote>
-<app type="textcritical">
+<app type="variants">
   <lem wit="#Pc #Pt #My">
     <quote xml:id="qu1-2" prev="#qu1-1">θάλασσα, ὅτι ἔφυγες;<ref decls="#biblical" cRef="LXX:Ps:113:3"/></quote> τί ἔλυσας τὸν ὅρον τοῦ νομοθέτου, τοῦ κελεύσαντός σοι <quote xml:id="qu2-1" next="#qu2-2">Μέχρι τούτου ἐλεύσῃ</quote>
   </lem>
-  <rdg wit="#Pd" cause="omission"/>
+  <rdg wit="#Pd" type="omission"/>
 </app>
 <quote xml:id="qu2-2" prev="#qu2-1">καὶ οὐχ ὑπερβήσῃ<ref decls="#biblical" cRef="LXX:Job:38:11"/></quote>;</p>
 ```  
@@ -1536,7 +1625,7 @@ as above.
 ```xml
 <div type="textpart" subtype="section" n="1">
     <p>...
-    <app type="textcritical" xml:id="app1-1" next="#app1-2">
+    <app type="variants" xml:id="app1-1" next="#app1-2">
         <lem wit="#Pt #Pb #My #Ha #Va #Ab">οὐδὲ γάρ ἐστι καλὸν τὸ ἔξω τοῦ οἴκου τοῦ θεοῦ πολιτεύεσθαι.</lem>
         <rdg wit="#Pc #Pd #Ma">οὐδὲν</rdg>
     </app>
@@ -1544,9 +1633,9 @@ as above.
 </div>
 <div type="textpart" subtype="section" n="2">
     <p>
-    <app type="textcritical" xml:id="app1-2" prev="#app1-1">
+    <app type="variants" xml:id="app1-2" prev="#app1-1">
         <lem wit="#Pt #Pb #My #Ha #Va #Ab">εὑρήσεις</lem>
-        <rdg wit="#Pc #Pd #Ma" type="orthographic">εὑρήσης</rdg>
+        <rdg wit="#Pc #Pd #Ma" cause="orthographic">εὑρήσης</rdg>
     </app>
     ...
     </p>
@@ -1558,8 +1647,8 @@ as above.
   
   
 If it seems necessary or feasible to expand on text-critical considerations that go
-beyond typification (with the help of the `@type` attribute) or the
-indication of causes (with the help of the `@cause` attribute), an
+beyond the indication of causes (with the help of the `@cause` attribute) or 
+typification (with the help of the `@type` attribute), an
 element `<note>` for remarks that concern the entire `<app>` element or
 an element `<witDetail>` for remarks that refer to a specific manuscript
 can be added within the `<app>` element. In this case, the
@@ -1568,11 +1657,10 @@ can be added within the `<app>` element. In this case, the
 `<witDetail>` element in an attribute `@target`.
   
 ```xml
-<app type="textcritical" xml:id="var1">
+<app type="variants">
   <lem wit="#Pt #Pc #Pb #Pd #My #Ma #Ha #Va #Ab">ἀπαστράπτει</lem>
   <rdg wit="#Pa #Be" xml:id="lac-Pa">ἀ</rdg>
   <witDetail wit="#Pa" target="#lac-Pa">Blattausfall.</witDetail>
-  <note target="#var1">Sich auf die gesamte Variante beziehende Anmerkung</note>
 </app>
 ```  
   
@@ -1582,7 +1670,7 @@ can be added within the `<app>` element. In this case, the
   
 Finally, in order to make reuse as easy as possible, it also makes sense
 to have uniform naming of the individual files and a structured file
-repository. The Patristic Text Archive follows the [CapiTainS Guidelines](http://capitains.org ) and uses [CTS URNs](http://www.homermultitext.org/hmt-docs/cite/cts-urn-overview.html ) (cf. [Christopher W. Blackwell und Neel Smith, “The CITE Architecture: a Conceptual and Practical Overview”, in Monica Berti, ed., Digital Classical Philology. Ancient Greek and Latin in the Digital Revolution (Age of Access? Grundfragen der Informationsgesellschaft 10; Berlin, 2019), 73–93](https://doi.org/10.1515/9783110599572-006 ).
+repository. The Patristic Text Archive follows the [CapiTainS Guidelines](http://capitains.org ) (cf. [Thibault Clérice, Matthew Munson, & Bridget Almas. (2017, May 2). Capitains/Capitains.github.io: 2.0.0 (Version 2.0.0). Zenodo.](http://doi.org/10.5281/zenodo.570516 )) and uses [CTS URNs](http://www.homermultitext.org/hmt-docs/cite/cts-urn-overview.html ) (cf. [Christopher W. Blackwell und Neel Smith, “The CITE Architecture: a Conceptual and Practical Overview”, in Monica Berti, ed., Digital Classical Philology. Ancient Greek and Latin in the Digital Revolution (Age of Access? Grundfragen der Informationsgesellschaft 10; Berlin, 2019), 73–93](https://doi.org/10.1515/9783110599572-006 )).
   
 Within a folder `data`, each author (or textgroup) is in a
 folder named according to the ID for the author or textgroup. Within this
