@@ -721,6 +721,10 @@ Subsections can be set up using `<div type="section" n="1">`, which can also con
     <div type="section" n="1">
         <head>Vorbemerkung</head>
         <p>Text</p>
+        <div type="subsection" n="1">
+            <head>Überschrift</head>
+            <p>Text</p>
+        </div>
     </div>
 </div>
 ```  
@@ -1008,6 +1012,11 @@ Unreadable text is marked as `<@type="illegible">`. The element `<rdg>` is witho
 </app>
 ```  
   
+######  Gap in text of a manuscript
+  
+  
+A gap im text of a manuscripts is (following the rules for transcription) marked as `<@type="damage">` (damage) als `<@type="fenestra">` (intentional gap) oder als `<@type="deletion">` (deleted). The element `<rdg>` is without text content (“self-closing”).
+  
 ######  Transpositions
   
   
@@ -1279,10 +1288,11 @@ If a variant exceeds a division level, it must be given priority and the `<app>`
 If it seems necessary or feasible to expand on text-critical considerations that go beyond the indication of causes (with the help of the `@cause` attribute) or  typification (with the help of the `@type` attribute), an element `<note>` for remarks that concern the entire `<app>` element or an element `<witDetail>` for remarks that refer to a specific manuscript can be added within the `<app>` element. In this case, the `<app>`, `<lem>` or `<rdg>` element receives an attribute `@xml:id`, which is referred to in the `<note>` or `<witDetail>` element in an attribute `@target`.
   
 ```xml
-<app type="variants">
+<app type="variants" xml:id="var1">
   <lem wit="#Pt #Pc #Pb #Pd #My #Ma #Ha #Va #Ab">ἀπαστράπτει</lem>
   <rdg wit="#Pa #Be" xml:id="lac-Pa">ἀ</rdg>
   <witDetail wit="#Pa" target="#lac-Pa">Blattausfall.</witDetail>
+  <note target="#var1">Sich auf die gesamte Variante beziehende Anmerkung</note>
 </app>
 ```  
   

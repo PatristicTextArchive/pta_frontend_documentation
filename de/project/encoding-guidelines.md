@@ -724,13 +724,19 @@ Die Praefatio bietet in einem Fließtext alles, was zum Verständnis des folgend
   
 Grundsätzlich ist es dabei sinnvoll, die Angaben, die im `<teiHeader>` gemacht wurden, mit Hilfe von Verweisen (mit dem Element `<ref>` und dem Attribut `@target`) zu verlinken.
   
-Unterabschnitte können mit Hilfe von `<div type="section" n="1">` eingerichtet werden, die im Element `<head>` auch eigene Überschriften enthalten können.
+Unterabschnitte können mit Hilfe von `<div type="section" n="1">` (und 
+diesem untergeordnet `<div type="subsection" n="1">`) eingerichtet werden, 
+die im Element `<head>` auch eigene Überschriften enthalten können.
   
 ```xml
 <div type="praefatio" xml:lang="deu">
     <div type="section" n="1">
         <head>Vorbemerkung</head>
         <p>Text</p>
+        <div type="subsection" n="1">
+            <head>Überschrift</head>
+            <p>Text</p>
+        </div>
     </div>
 </div>
 ```  
@@ -1045,6 +1051,11 @@ Nicht lesbarer Text wird als `<@type="illegible">` ausgezeichnet. Das Element `<
 </app>
 ```  
   
+######  Lücke im Text einer Handschrift
+  
+  
+Eine Lücke im Text einer Handschrift wird entsprechend den Transkriptionsregeln als `<@type="damage">` (Beschädigung) als `<@type="fenestra">` (freigelassen) oder als `<@type="deletion">` (Tilgung) ausgezeichnet. Das Element `<rdg>` ist ohne Textinhalt („self-closing“).
+  
 ######  Umstellungen
   
   
@@ -1304,10 +1315,11 @@ aufgeteilt und untereinander verlinkt werden.
 Erscheint es nötig oder sinnvoll, textkritische Überlegungen, die über die Typisierung (mit Hilfe des Attributes `@type`) oder die Angabe von Ursachen (mit Hilfe des Attributes `@cause`) hinausgehen, auszuführen, so kann dafür an Ort und Stelle innerhalb des Elementes `<app>` ein Element `<note>` für Bemerkungen, die das gesamte `<app>`-Element betreffen, oder ein Element `<witDetail>` für Bemerkungen, die sich auf eine spezielle Handschrift bezieht, angefügt werden. Das Element `<app>`, `<lem>` oder `<rdg>` erhält in diesem Fall ein Attribut `@xml:id`, auf das im Element `<note>` oder `<witDetail>` in einem Attribut `@target` verwiesen wird. Im Falle von `<witDetail>` wird außerdem in einem Attribut `@wit` auf die ID der Handschrift verwiesen. 
   
 ```xml
-<app type="variants">
+<app type="variants" xml:id="var1">
   <lem wit="#Pt #Pc #Pb #Pd #My #Ma #Ha #Va #Ab">ἀπαστράπτει</lem>
   <rdg wit="#Pa #Be" xml:id="lac-Pa">ἀ</rdg>
   <witDetail wit="#Pa" target="#lac-Pa">Blattausfall.</witDetail>
+  <note target="#var1">Sich auf die gesamte Variante beziehende Anmerkung</note>
 </app>
 ```  
   
@@ -1331,7 +1343,7 @@ Innerhalb eines Ordners `data` erhält jeder Autor (oder jede Werkgruppe) einen 
           |- pta0013.pta003.pta-MsPs.xml
           |- pta0013.pta003.pta-MsVi.xml
   
-Die Dateinamen folgen den CTS URNs und sind folgendermaßen aufgebaut: Das Kürzel „pta0013“ steht dabei für den Autor Amphilochius und „pta003“ für das Werk „Epistula synodalis“. Der letzte Teil der URN identifiziert die spezifische „Edition” eines Werkes: Im Beispiel sind das die
+Die Dateinamen folgen den CTS URNs und sind folgendermaßen aufgebaut: Das Kürzel „pta0013“ steht dabei für den Autor Amphilochius und „pta003“ für das Werk „Epistula synodalis“. Der letzte Teil der URN identifiziert die spezifische „Edition“ eines Werkes: Im Beispiel sind das die
 kritische Edition des griechischen Textes (pta-grc1), die deutsche Übersetzung (pta-deu1) und die Transkriptionen der vier Handschriften (pta-MsLa, pta-MsPg, pta-MsPs, pta-MsVi).
   
 Die Zuteilung neuer IDs für bisher nicht vorhandene Autoren und/oder Werke erfolgt nach [Rücksprache](mailto:annette.von_stockhausen@bbaw.de ).
