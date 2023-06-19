@@ -9,7 +9,7 @@
 - Markierungen für Annotationen (Orte, Personen, Gruppen, Bibelstellen) im Text anzeigen/verbergen 
 - Ausgabeformate (Druck bzw. Download): Annotierter Text, Klartext; XML; Link zu Text in Voyant-Tools
 - Versionsgeschichte (mit der Möglichkeit frühere Versionen anzuzeigen)
-- Manuskript-Digitalisate anzeigen (nur bei Handschriftentranskriptionen)
+- Manuskript-Digitalisate anzeigen (nur bei Handschriftentranskriptionen; Zoom und Lupe sind im Digitalisat per Rechtsklick ein- und ausschaltbar)
 
 ### Dokument
 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-info" viewBox="0 0 16 16">
@@ -41,7 +41,7 @@
 - alle vorhandenen Editionen des Werkes
 - alle vorhandenen Handschriftentranskriptionen des Werkes
 - alle Übersetzungen des Werkes
-- Möglichkeit, einen 2. Text als zusätzliche Spalte (ohne eigene Funktionen) oder als zusätzliches rechtes „Fenster“ (mit allen Funktionen) zu öffnen oder gegenwärtigen Text durch einen anderen auszutauschen. S. [Parallele Anzeige eines zweiten Textes im Reader](#parallele-anzeige-eines-zweiten-textes-im-reader). Wo vorhanden können auch Handschriftendigitalisate als zusätzliche Spalte angezeigt werden (Zoom und Lupe sind per Rechtsklick ein- und ausschaltbar).
+- Möglichkeit, einen 2. Text als zusätzliche Spalte (ohne eigene Funktionen) oder als zusätzliches rechtes „Fenster“ (mit allen Funktionen) zu öffnen oder gegenwärtigen Text durch einen anderen auszutauschen. S. [Parallele Anzeige eines zweiten Textes im Reader](#parallele-anzeige-eines-zweiten-textes-im-reader).
 
 ### Gliederung
 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-list-ol" viewBox="0 0 16 16">
