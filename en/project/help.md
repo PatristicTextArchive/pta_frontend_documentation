@@ -41,7 +41,7 @@
 - all available editions of a work
 - all available manuscript trascriptions of a work
 - all available translations of a work
-- Option to show a second text in an additional column (without its own functions) or in an additional window (with all functions on its own) or to replace the current text by an other. S. [Parallel display of a second text in the reader](#parallel-display-of-a-second-text-in-the-reader). If available, also manuscript images can be displayed in an additional column.
+- Option to show a second text in an additional column (without its own functions) or in an additional window (with all functions on its own) or to replace the current text by an other. S. [Parallel display of a second text in the reader](#parallel-display-of-a-second-text-in-the-reader). If available, also manuscript images can be displayed in an additional column (zoom and magnifier are accessible via right-click).
 
 ### TOC
 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-list-ol" viewBox="0 0 16 16">
