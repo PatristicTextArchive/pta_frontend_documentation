@@ -15,7 +15,7 @@ Each edition of a text is accessible through a **permalink** (using the CTS-URN)
 
 At the moment, the database of manuscripts contains only rudimentary data on manuscripts which are edited in the PTA. That data is widely based on the data provided by [Pinakes](https://pinakes.irht.cnrs.fr/) (= “draft” status) and amended with observations by the respective editor of the description.
 
-The entry in the [Pinakes database](https://pinakes.irht.cnrs.fr/) is linked as well as digitized versions and IIIF manifests (where available). For the texts transmitted in the manuscript, the edition in the PTA, the entry in the [Clavis Clavium database](https://clavis.brepols.net/clacla/Default.aspx) or in the [Database of Byzantine Book Epigrams](https://www.dbbe.ugent.be) is linked.
+The entry in the [Pinakes database](https://pinakes.irht.cnrs.fr/) is linked as well as digitized versions and IIIF manifests (where available). For the texts transmitted in the manuscript, the edition in the PTA, the entry in the [Clavis Clavium database](https://clavis.brepols.net/clacla/Default.aspx) or in the [Database of Byzantine Book Epigrams](https://www.dbbe.ugent.be) is linked. If digitized images of the manuscripts are available (via IIIF), they are accessible in the inline viewer.
 
 The data is available on [Github](https://github.com/PatristicTextArchive/pta_manuscripts).
 

@@ -17,7 +17,7 @@ Jede Edition ist über einen **Permalink** (unter Verwendung der CTS-URN) erreic
 Die Handschriftendatenbank umfasst momentan nur rudimentäre Daten zu den Handschriften, die im PTA edierte Werke überliefern.
 Die Daten basieren auf den Angaben der [Pinakes-Datenbank](https://pinakes.irht.cnrs.fr/) (= »Entwurf«-Status), die von den jeweiligen Bearbeitern durch Autopsie ergänzt wurden.
 
-Verlinkt sind neben dem jeweiligen Eintrag in der [Pinakes-Datenbank](https://pinakes.irht.cnrs.fr/) (soweit vorhanden) Digitalisate und IIIF-Manifeste sowie für die in der Handschrift überlieferten Texte die Editionen im PTA bzw. der entsprechende Eintrag in der [Clavis Clavium-Datenbank](https://clavis.brepols.net/clacla/Default.aspx) oder der [Database of Byzantine Book Epigrams](https://www.dbbe.ugent.be).
+Verlinkt sind neben dem jeweiligen Eintrag in der [Pinakes-Datenbank](https://pinakes.irht.cnrs.fr/) (soweit vorhanden) Digitalisate und IIIF-Manifeste sowie für die in der Handschrift überlieferten Texte die Editionen im PTA bzw. der entsprechende Eintrag in der [Clavis Clavium-Datenbank](https://clavis.brepols.net/clacla/Default.aspx) oder der [Database of Byzantine Book Epigrams](https://www.dbbe.ugent.be). Stehen Digitalisate (per IIIF) zur Verfügung kann auf sie im Viewer direkt zugegriffen werden.
 
 Die zugrundliegenden Daten sind auf [Github](https://github.com/PatristicTextArchive/pta_manuscripts) erhältlich.
 
