@@ -5,6 +5,10 @@
 ### 5. Juli 2022
 - Personen, Gruppen, Orte, Bibelreferenzen, Handschriften, Text-Metdaten für LOD aufbereitet 
 ## Benutzerschnittstelle
+### 19. Juni 2023
+- Fehlerbereinigungen und Verbesserungen (Suche, Variantendarstellung, Gliederung, Praefatio, Handschriftendatenbank)
+- Neu: Faksimile-Anzeige bei Handschriftentranskriptionen und in der Handschriftendatenbank
+
 ### 5. Juli 2022
 - Neu: Distanzsuche (lemmatisiert)
 - Neu: Versionierte Permalinks

@@ -6,6 +6,11 @@
 - Personens, groups, places, biblical references, manuscripts, texte metadata formatted as LOD 
 
 ## Frontend
+
+### 19 June 2023
+- Fehlerbereinigungen und Verbesserungen (Suche, Variantendarstellung, Gliederung, Praefatio, Handschriftendatenbank)
+- Neu: Faksimile-Anzeige bei Handschriftentranskriptionen und in der Handschriftendatenbank
+
 ### 5 Jul 2022
 - New: Distance search (lemmatised)
 - New: Versioned Permalinks
