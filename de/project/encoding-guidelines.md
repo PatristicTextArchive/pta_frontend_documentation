@@ -85,7 +85,7 @@ Der Abschnitt `<fileDesc>` enthält die bibliographischen Angaben zur Datei, ins
   
 In diesem Abschnitt unterscheiden sich die Angaben in den drei Arten von Dateien (Transkription, kritische Edition, Übersetzung) signifikant. 
   
-Der Abschnitt `<encodingDesc>` bietet alle Angaben, die die Kodierung der Datei betreffen, und enthält in jedem Fall ein Element `<refsDecl>`, das die Gliederungsstruktur der Datei entsprechend den [„CapiTainS Guidelines“](http://capitains.org/ ) ([s. unten](#dateistruktur )) definiert. Dieser Abschnitt endet mit dem Element `<schemaRef>`, das auf die verwendete Version des PTA-Schemas verweist.
+Der Abschnitt `<encodingDesc>` bietet alle Angaben, die die Kodierung der Datei betreffen, und enthält in jedem Fall ein Element `<refsDecl>`, das die Gliederungsstruktur der Datei entsprechend den [„CapiTainS Guidelines“](http://capitains.org/ ) ([s. unten](#dateien-struktur-jeder-edition )) definiert. Dieser Abschnitt endet mit dem Element `<schemaRef>`, das auf die verwendete Version des PTA-Schemas verweist.
   
 Informationen zur Datierung (`<date>`) und Verortung (`placeName`) des Textes werden im Element `<creation>` und zur Gattung (unter Verwendung der Texttypenklassifikation von <https://www.comphistsem.org/46.html>) im Element `<textClass>` innerhalb des Abschnittes `<profileDesc>` geboten. 
   
@@ -149,14 +149,14 @@ innerhalb des Elements `<layoutDesc>` beschrieben werden.
 </sourceDesc>
 ```  
   
-###  Edition
+###  Edition der Transkription
   
   
 Die gesamte Transkription steht im `<text>`-Teil der Datei in einem
 Abschnitt `<div>`. Das Element hat die folgenden Attrribute: 
 - `@type="edition"`
 - `@xml:lang` mit der Angabe der Sprache des edierten Textes unter Verwendung von [ISO 639-2](https://www.loc.gov/standards/iso639-2/php/code_list.php ).
-- `@n` mit der URN der Datei, s. [unten](#dateistruktur ).
+- `@n` mit der URN der Datei, s. [unten](#dateien-struktur-jeder-edition ).
   
 ####  Auszeichnung der Textstruktur
   
@@ -294,7 +294,7 @@ Marginalien werden in der Transkription als `<note>` ausgezeichnet, wobei das El
   
 Die Position der Marginalie wird im Attribut `@place` angegeben. Erlaubte Werte sind `top` (ggfs. näher spezifiert: `top_inner`, `top_center`, `top_outer`), `bottom` (`bottom_inner`, `bottom_center`, `bottom_outer`), `margin_inner`, `margin_outer` und `intercolumn`.
   
-Stammt eine Marginalie nicht vom Schreiber, kann dies durch das Attribut `@hand` angegeben werden, wobei die Korrektoren (`#m2`, `#m3`, … – allgemein `#mr` für *manus recentior*; zur Angabe der Hände in den Metadaten s. [oben](#meta_transkription )) unterschieden werden sollten. Ist nicht zu entscheiden, von welcher Hand eine Marginalie geschrieben worden ist, wird dem Attribut der Wert `unknown` zugewiesen.
+Stammt eine Marginalie nicht vom Schreiber, kann dies durch das Attribut `@hand` angegeben werden, wobei die Korrektoren (`#m2`, `#m3`, … – allgemein `#mr` für *manus recentior*; zur Angabe der Hände in den Metadaten s. [oben](#metadaten-der-transkription )) unterschieden werden sollten. Ist nicht zu entscheiden, von welcher Hand eine Marginalie geschrieben worden ist, wird dem Attribut der Wert `unknown` zugewiesen.
   
 ```xml
 <note place="margin_outer">ΓΡ ἐδέχθησαν:-</note>
@@ -313,7 +313,7 @@ Stammt eine Marginalie nicht vom Schreiber, kann dies durch das Attribut `@hand`
   
 Vom Schreiber oder einem späteren Korrektor getilgter Text wird mit `<del>` ausgezeichnet. Die Art der Tilgung wird im Attribut `@rend` angegeben. Erlaubte Werte sind `erasure` (ausradiert), `strikethrough` (durchgestrichen), `overwrite` (durch Überschreiben) und `expunction` (durch Auspunktieren).
   
-Stammt eine Tilgung nicht vom Schreiber, kann dies durch das Attribut `@hand` angegeben werden, wobei die Korrektoren (`#m2`, `#m3`, … – allgemein `#mr` für *manus recentior*; zur Angabe der Hände in den Metadaten s. [oben](#meta_transkription )) unterschieden werden sollten. Ist nicht zu entscheiden, von welcher Hand eine Korrektur vorgenommen worden ist, wird dem Attribut der Wert `unknown` zugewiesen.
+Stammt eine Tilgung nicht vom Schreiber, kann dies durch das Attribut `@hand` angegeben werden, wobei die Korrektoren (`#m2`, `#m3`, … – allgemein `#mr` für *manus recentior*; zur Angabe der Hände in den Metadaten s. [oben](#metadaten-der-transkription )) unterschieden werden sollten. Ist nicht zu entscheiden, von welcher Hand eine Korrektur vorgenommen worden ist, wird dem Attribut der Wert `unknown` zugewiesen.
   
 ```xml
 γηΐ<del rend="erasure" hand="#m2">ω</del>νων
@@ -324,13 +324,13 @@ Stammt eine Tilgung nicht vom Schreiber, kann dies durch das Attribut `@hand` an
   
 Korrekturen (von Worten, aber auch einzelnen Buchstaben) werden mit dem Element `<subst>` gekennzeichnet.
   
-Stammt eine Korrektur nicht vom Schreiber, kann dies durch das Attribut `@hand` angegeben werden, wobei die Korrektoren (`#m2`, `#m3`, … – allgemein `#mr` für *manus recentior*, zur Angabe der Hände in den Metadaten s. [oben](#meta_transkription )) unterschieden werden sollten. Ist nicht zu entscheiden, von welcher Hand eine Korrektur vorgenommen worden ist, wird dem Attribut der Wert `unknown` zugewiesen.
+Stammt eine Korrektur nicht vom Schreiber, kann dies durch das Attribut `@hand` angegeben werden, wobei die Korrektoren (`#m2`, `#m3`, … – allgemein `#mr` für *manus recentior*, zur Angabe der Hände in den Metadaten s. [oben](#metadaten-der-transkription )) unterschieden werden sollten. Ist nicht zu entscheiden, von welcher Hand eine Korrektur vorgenommen worden ist, wird dem Attribut der Wert `unknown` zugewiesen.
   
 Innerhalb dieses Elementes wird der *getilgte Text* mit `<del>`
 ausgezeichnet. Die Art der Tilgung wird im Attribut `@rend` angegeben.
 Erlaubte Werte sind `unmarked` (der zu ersetzende Text ist überhaupt nicht explizit markiert), `marker` (der zu ersetzende Text ist mit einem Zeichen, z.B. einem Obelus o.ä., markiert), `erasure` (ausradiert), `strikethrough` (durchgestrichen), `overwrite` (durch Überschreiben) und `expunction` (durch Auspunktieren).
   
-Der *hinzugefügte Text* wird mit `<add>` ausgezeichnet. Der Ort der Hinzufügung wird mit Hilfe des Attributes `@place` angegeben. Erlaubte Werte sind `above` (darüber), `inline` (in der Zeile) und `margin` (am Rand).
+Der *hinzugefügte Text* wird mit `<add>` ausgezeichnet. Der Ort der Hinzufügung wird mit Hilfe des Attributes `@place` angegeben. Erlaubte Werte sind `above` (darüber), `below` (darunter), `inline` (in der Zeile) und `margin` (am Rand).
   
 ```xml
 <subst hand="#m2">
@@ -357,9 +357,9 @@ Handelt es sich bei der Korrektur um ein Überschreiben bzw. Nachzeichnen des ur
 ####  Hinzugefügter Text
   
   
-Hinzugefügter Text, der nicht mit einer Korrektur einhergeht, wird mit dem Element `<add>` ausgezeichnet. Der Ort der Hinzufügung wird im Attribut `@place` angegeben. Erlaubte Werte sind `above` (darüber), `inline` (in der Zeile) und `margin` (am Rand).
+Hinzugefügter Text, der nicht mit einer Korrektur einhergeht, wird mit dem Element `<add>` ausgezeichnet. Der Ort der Hinzufügung wird im Attribut `@place` angegeben. Erlaubte Werte sind `above` (darüber), `below` (darunter), `inline` (in der Zeile) und `margin` (am Rand).
   
-Stammt eine Korrektur nicht vom Schreiber, kann dies durch das Attribut `@hand` angegeben werden, wobei die Korrektoren (`#m2`, `#m3`, … – allgemein `#mr` für *manus recentior*; zur Angabe der Hände in den Metadaten s. [oben](#meta_transkription )) unterschieden werden sollten. Ist nicht zu entscheiden, von welcher Hand eine Korrektur vorgenommen worden ist, wird dem Attribut der Wert `unknown` zugewiesen.
+Stammt eine Korrektur nicht vom Schreiber, kann dies durch das Attribut `@hand` angegeben werden, wobei die Korrektoren (`#m2`, `#m3`, … – allgemein `#mr` für *manus recentior*; zur Angabe der Hände in den Metadaten s. [oben](#metadaten-der-transkription )) unterschieden werden sollten. Ist nicht zu entscheiden, von welcher Hand eine Korrektur vorgenommen worden ist, wird dem Attribut der Wert `unknown` zugewiesen.
   
 ```xml
 <add place="above" hand="#m2">hinzugefügter Text</add>
@@ -368,7 +368,7 @@ Stammt eine Korrektur nicht vom Schreiber, kann dies durch das Attribut `@hand` 
 ####  Nicht lesbarer Text
   
   
-Nicht lesbarer Text wird mit dem selbstschließenden Element `<gap>` angegeben (für andere Anwendungsfälle dieses Elementes vgl. [den nächsten Eintrag](#transcr_gap )). Dem Attribut `@reason` wird der Wert `illegible` (nicht lesbar) zugewiesen. Der (geschätzte) Umfang (`@quantity`) wird in Buchstaben (`@unit="character"`), ggfs. Zeilen (`@unit="line"`) angegeben.
+Nicht lesbarer Text wird mit dem selbstschließenden Element `<gap>` angegeben (für andere Anwendungsfälle dieses Elementes vgl. [den nächsten Eintrag](#lücke-im-text )). Dem Attribut `@reason` wird der Wert `illegible` (nicht lesbar) zugewiesen. Der (geschätzte) Umfang (`@quantity`) wird in Buchstaben (`@unit="character"`), ggfs. Zeilen (`@unit="line"`) angegeben.
   
 ```xml
 <gap reason="illegible" quantity="10" unit="character"/>
@@ -377,13 +377,13 @@ Nicht lesbarer Text wird mit dem selbstschließenden Element `<gap>` angegeben (
 ####  Lücke im Text
   
   
-Eine Lücke im Text wird ebenfalls mit dem Element `<gap>` angebeben. Dem Attribut `@reason` wird in diesem Fall der Wert `damage` (physische Beschädigung) oder `fenestra` (vom Schreiber freigelassen) zugewiesen. Der (geschätzte) Umfang (`@quantity`) wird in Buchstaben, Zeilen oder Seiten (`@unit` mit Wert `character`, `line` oder `page`) angegeben.
+Eine Lücke im Text wird ebenfalls mit dem Element `<gap>` angebeben. Dem Attribut `@reason` wird in diesem Fall der Wert `damage` (physische Beschädigung) oder `fenestra` (vom Schreiber freigelassen) zugewiesen. Der (geschätzte) Umfang (`@quantity`) wird in Buchstaben, Zeilen oder Seiten (`@unit` mit Wert `character`, `word`, `line` oder `page`) angegeben.
   
 ```xml
 <gap reason="fenestra" quantity="10" unit="character"/>
 ```  
   
-Ist eine Lücke jedoch durch die Zerstörung von Text durch den Schreiber (sc. Rasur: `@rend="erasure"`) entstanden, so wird diese mit dem Element `<del>` ausgezeichnet; ggfs. ist im Falle der Zerstörung durch eine andere Hand das Attribut `@hand` anzugeben, wobei die Korrektoren (`#m2`, `#m3`, … – allgemein `#mr` für *manus recentior*; zur Angabe der Hände in den Metadaten s. [oben](#meta_transkription )) unterschieden werden sollten. Ist nicht zu entscheiden, von welcher Hand eine Korrektur vorgenommen worden ist, wird dem Attribut der Wert `unknown` zugewiesen.
+Ist eine Lücke jedoch durch die Zerstörung von Text durch den Schreiber (sc. Rasur: `@rend="erasure"`) entstanden, so wird diese mit dem Element `<del>` ausgezeichnet; ggfs. ist im Falle der Zerstörung durch eine andere Hand das Attribut `@hand` anzugeben, wobei die Korrektoren (`#m2`, `#m3`, … – allgemein `#mr` für *manus recentior*; zur Angabe der Hände in den Metadaten s. [oben](#metadaten-der-transkription )) unterschieden werden sollten. Ist nicht zu entscheiden, von welcher Hand eine Korrektur vorgenommen worden ist, wird dem Attribut der Wert `unknown` zugewiesen.
   
 ```xml
 <del rend="erasure" hand="#m2">
@@ -395,16 +395,16 @@ Ist eine Lücke jedoch durch die Zerstörung von Text durch den Schreiber (sc. R
   
   
 Ist ein Text nicht sicher zu entziffern, wird er mit dem Element
-`<unclear>` markiert.
+`<unclear>` markiert. Das Attribut `@reason` gibt den Grund für die unsichere Lesung durch die Werte `damage` (physische Beschädigung), `illegible` (nicht lesbar) oder `retraced` (Text nachgezeichnet) an. Wie sicher die Lesung ist, wird mit Hilfe des Attributs `@cert` angegeben, das die Werte `low` und `high` annehmen kann.
   
 ```xml
-<unclear>ἄνθρωπον</unclear>
+<unclear reason="illegible" cert="high">ἄνθρωπον</unclear>
 ```  
   
 ####  Wechsel des Schreibers
   
   
-Wechselt der Schreiber im Text, so wird an der Position des Wechsels das Element `<handShift/>` eingefügt. Die Schrift kann mit Hilfe der Attribute `@medium` (Charakteristik der Tinte oder des Schreibmaterials), `@scribeRef` oder `@scriptRef`, wobei bei den letzteren Attributen auf die entsprechenden `@xml:id` im `<teiHeader>` (`<handDesc>`, s. [oben](#meta_transkription )) zu verweisen ist.
+Wechselt der Schreiber im Text, so wird an der Position des Wechsels das Element `<handShift/>` eingefügt. Die Schrift kann mit Hilfe der Attribute `@medium` (Charakteristik der Tinte oder des Schreibmaterials), `@scribeRef` oder `@scriptRef`, wobei bei den letzteren Attributen auf die entsprechenden `@xml:id` im `<teiHeader>` (`<handDesc>`, s. [oben](#metadaten-der-transkription )) zu verweisen ist.
   
 ```xml
 <pb n="228r"/>
@@ -473,7 +473,7 @@ In der Handschrift mit einem Paragraphos am Rand markierte Zeilen werden mit Hil
 ####  Handschriftliche Zeugen und frühere Editionen
   
   
-Der Header der Editionsdatei enthält zusätzlich zu den [oben genannten Metadaten](#aufbau ) innerhalb des Abschnittes `<sourceDesc>` in einem Unterabschnitt `<listWit>` eine Auflistung der verwendeten Handschriften. Die Informationen zu den einzelnen Handschriften werden mit Hilfe des Elementes `<witness>` zur Verfügung gestellt. Dabei sollte die Transkription der Handschrift (in Form ihrer URN, s. [unten](#dateistruktur )) im Attribut `@corresp` verlinkt werden.
+Der Header der Editionsdatei enthält zusätzlich zu den [oben genannten Metadaten](#aufbau-einer-digitalen-edition-nach-tei ) innerhalb des Abschnittes `<sourceDesc>` in einem Unterabschnitt `<listWit>` eine Auflistung der verwendeten Handschriften. Die Informationen zu den einzelnen Handschriften werden mit Hilfe des Elementes `<witness>` zur Verfügung gestellt. Dabei sollte die Transkription der Handschrift (in Form ihrer URN, s. [unten](#dateien-struktur-jeder-edition )) im Attribut `@corresp` verlinkt werden.
   
 Alle Einträge erhalten eine maschinenlesbare ID im Attribut `@xml-id`, der im `<witness>` untergeordneten Element `<abbr type="siglum">` eine menschlesbare Sigle, die auch weitere Formatierungen (wie z.B. hochgestellte Ziffern) enthalten kann, korrespondiert.
   
@@ -707,7 +707,7 @@ Schließlich erhält das Element `<revisionDesc>` ein Attribut `@status`, in dem
 Die gesamte kritische Edition steht im `<text>`-Teil der Datei. Sie besteht mindestens aus einem Element `<div>`, das den edierten Text enthält. Das Element hat die folgenden Attrribute: 
 - `type="edition"`
 - `@xml:lang` mit der Angabe der Sprache des edierten Textes unter Verwendung von [ISO 639-2](https://www.loc.gov/standards/iso639-2/php/code_list.php ).
-- `@n` mit der URN der Datei, s. [unten](#dateistruktur ).
+- `@n` mit der URN der Datei, s. [unten](#dateien-struktur-jeder-edition ).
   
 ```xml
 <div type="edition" xml:lang="grc" n="urn:cts:pta:pta0007.pta010.pta-grcBibex">
@@ -788,7 +788,7 @@ Innerhalb des Elements `<div type="edition">` wird die vom Editor rekonstruierte
 -   Kommentierter Text: `<div type="textpart" subtype="commented" n="Gen_1_1">` 
   
 -   Kommentierung:
-    `<div type="textpart" subtype="commentary" n="Gen_1_1">` (vgl. auch die Ausführungen [oben](#markup-transcription ))
+    `<div type="textpart" subtype="commentary" n="Gen_1_1">` (vgl. auch die Ausführungen [oben](#auszeichnung-der-textstruktur ))
   
 Das Attribute `@n` enthält die Stellenreferenz, normalerweise eine Zahl, sie kann aber auch Text wie “pr”, “hypopsalmos”, “hypothesis”, “perioche” usw. enthalten. Sie darf aber kein Leerzeichen enthalten, sondern nur Buchstaben, Zahlen, Symbole und Interpunktionszeichen. 
   
@@ -956,7 +956,7 @@ Alle im folgenden beschriebenen Arten von varianter Überlieferung setzen eine E
   
 Bei einer gedruckten Edition würde man also von einem positiven Apparat sprechen, mit der Besonderheit, dass im Fall der digitalen kritischen Edition auch die Lesarten von codices descripti angegeben werden. Der Schritt der Elimination bzw. die Reduktion des positiven Apparates auf einen negativen Apparat kann, muss aber nicht, bei der Aufbereitung der Daten für die Präsentation (im Druck oder online) durchgeführt werden. In dieser Unterscheidung von vollständiger Datenaufnahme, die die Nachvollziehbarkeit und die Überprüfbarkeit der editorischen Entscheidungen in viel höherem Maße als bisher ermöglicht, und ggfs. selektiver Präsentation besteht der kategoriale Unterschied zwischen der überkommenen kritischen Edition im Druck und der kritischen digitalen Edition.
   
-Die Werte der Elemente `@wit`, `@source` und `@resp` verweisen dabei auf die im Element `<sourceDesc>` (im `<teiHeader>`, [s.o.](#sourceDesc )) jeweils angegebenen Werte des Attributs `@xml:id` des Elementes `<witness>`, `<bibl>` oder `<person>`.
+Die Werte der Elemente `@wit`, `@source` und `@resp` verweisen dabei auf die im Element `<sourceDesc>` (im `<teiHeader>`, [s.o.](#handschriftliche-zeugen-und-frühere-editionen )) jeweils angegebenen Werte des Attributs `@xml:id` des Elementes `<witness>`, `<bibl>` oder `<person>`.
   
 Zur Erhöhung der Lesbarkeit für menschliche Rezipienten der Edition sollten alle Variantenträger innerhalb des Attributes `@wit` in einer einheitlichen Reihenfolge (und ggfs. unter Berücksichtigung stemmatischer Zusammenhänge) präsentiert werden.
   
@@ -1100,7 +1100,7 @@ im Attribut `@xml:id` gegeben werden und die korrigierende Variante im Attribut 
   
 Das Element `<rdg>` kann zusätzlich das Attribut `@hand` enthalten, wobei der Schreiber (`#m1`) und die Korrektoren (`#m2`, `#m3`, … – allgemein `#mr` für *manus recentior*) unterschieden werden sollten. Ist nicht zu entscheiden, von welcher Hand eine Korrektur vorgenommen worden ist, erhält das Attribut den Wert `unknown`.
   
-Der Ort der Korrektur wird mit Hilfe der entsprechenden Elemente für Löschung, Hinzufügung, etc. mit ihren jeweiligen Attributen wiedergegeben, [siehe oben in den Transkriptionsregeln](#transcription-edition ).
+Der Ort der Korrektur wird mit Hilfe der entsprechenden Elemente für Löschung, Hinzufügung, etc. mit ihren jeweiligen Attributen wiedergegeben, [siehe oben in den Transkriptionsregeln](#edition-der-transkription ).
   
   
 ```xml
