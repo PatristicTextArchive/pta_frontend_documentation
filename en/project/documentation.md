@@ -70,7 +70,7 @@ There are several types of endpoints (more information on endpoints and paramete
 
 - via `/api` you get the manifest file (`appconf.xml`), which has the definition of endpoints.
 - The endpoints for object types (`/api/<object-type>`) and endpoints for objects (`/api/<object-type>/<object-id>`) provide access to the following object types:
-  - `cts` provides a [CTS compatible API](https://github.com/cite-architecture/cts_spec/blob/master/md/specification.md) (only GetPassage is implemented)
+  - `cts` provides a [CTS compatible API](https://github.com/cite-architecture/cts_spec/blob/master/md/specification.md) (only GetPassage is currently implemented)
     - Example for getting a passage via the CTS API: <http://pta.bbaw.de/api/cts?request=GetPassage&urn=urn:cts:pta:pta0036.pta001.pta-grc1:2.1.4>.
   - `pta` provides the editions
   - `pta-textgroup` provides metadata to the textgroups (authors)
@@ -78,13 +78,9 @@ There are several types of endpoints (more information on endpoints and paramete
   - `pta-version` provides metadata to editions of the works (editions, translations)
   - `msdesc` provides manuscript transcriptions
   - `msitem` provides information on the works in the manuscripts transcriptions
-  - `author` provides an index of authors
   - `persons` provides an index of persons
   - `places` provides an index of places 
-  - `pta-other-work` provides metadata of works not yet available in the PTA
-  - `bible-quotation` provides biblical quotes
-  - `pta-lexicon-grc` provides dictionary entries to lemmata exstant in texts in the PTA
-  - `wordlemma-grc` provides lemmatisation data to word forms extant in texts in the PTA
+  - `bible-references` provides biblical quotes
 - endpoints for relations between objects
 - endpoints for search; `/api/search/<search-id>` has the following searches:
   - `fulltext` search in full text without variants and notes

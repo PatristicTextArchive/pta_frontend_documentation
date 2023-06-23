@@ -71,7 +71,7 @@ Es gibt verschiedene Typen von Endpoints (detailliertere Informationen der Endpo
 
 - Unter `/api` erhält man die Manifestdatei (`appconf.xml`), welche die vollständige Definition der Endpoints enthält.
 - Die Endpoints für Objektsammlungen `/api/<object-type>` und Endpoints für einzelne Objekte `/api/<object-type>/<object-id>` erlauben den Zugriff auf folgende Objekttypen:
-  - `cts` stellt eine [CTS-kompatible Schnittstelle](https://github.com/cite-architecture/cts_spec/blob/master/md/specification.md) zur Verfügung (nur GetPassage ist implementiert)
+  - `cts` stellt eine [CTS-kompatible Schnittstelle](https://github.com/cite-architecture/cts_spec/blob/master/md/specification.md) zur Verfügung (nur GetPassage ist bisher implementiert)
     - Beispiel für Abruf einer Passage über die CTS-API: <http://pta.bbaw.de/api/cts?request=GetPassage&urn=urn:cts:pta:pta0036.pta001.pta-grc1:2.1.4>.
   - `pta` umfasst die Editionstexte
   - `pta-textgroup` umfasst Metadaten zu den Textgruppen (nach Autoren)
@@ -79,13 +79,9 @@ Es gibt verschiedene Typen von Endpoints (detailliertere Informationen der Endpo
   - `pta-version` umfasst Metadaten zu Ausgaben der Werke (Editionen, Übersetzungen)
   - `msdesc` umfasst Handschriftenbeschreibungen
   - `msitem` umfasst Informationen zu den in den Handschriftenbeschreibungen enthaltenen Werken
-  - `author` umfasst das Autorenregister
   - `persons` umfasst Personen
   - `places` umfasst Orte
-  - `pta-other-work` umfasst Metadaten zu nicht edierten Werken
-  - `bible-quotation` umfasst Bibelzitate
-  - `pta-lexicon-grc` umfasst Lexikoneinträge zu Lemmata, die in den Texten des PTA vorkommen
-  - `wordlemma-grc` umfasst Lemmatisierungen zu den Worten, die in den Texten des PTA vorkommen
+  - `bible-references` umfasst Bibelzitate
 - Endpoints für Beziehungen zwischen Objekten
 - Endpoints für Suchen; `/api/search/<search-id>` enthält folgende Suchmöglichkeiten:
   - `fulltext` Suche im Volltext ohne Varianten und ohne Anmerkungen
