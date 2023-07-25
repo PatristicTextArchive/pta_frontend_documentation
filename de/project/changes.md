@@ -5,6 +5,16 @@
 ### 5. Juli 2022
 - Personen, Gruppen, Orte, Bibelreferenzen, Handschriften, Text-Metdaten für LOD aufbereitet 
 ## Benutzerschnittstelle
+### 21. Juli 2023
+- Neu: Lemmatisierte Volltextsuche
+- Neu: Zeitleiste und Kartendarstellung für Handschriftendatenbank
+- Neu: Anzeige nicht-biblischer Referenzen, Index nicht-biblischer Referenzen
+- Leistungsfähigkeit der Suche verbessert 
+- „Praefatio und Zeugen“-Widget: Darstellungsfehler bereinigt; neu: schematische Darstellung („Stemma“)
+- „Optionen“-Widget und Anzeige der textkritischen Varianten: Abschriften und orthographische Varianten standardmäßig ausgeblendet (Einblenden optional)
+- Verbesserte Darstellung auf kleinen Bildschirmen
+- Druckfunktion verbessert (Plaintext und Text mit Annotationen)
+
 ### 19. Juni 2023
 - Fehlerbereinigungen und Verbesserungen (Suche, Variantendarstellung, Gliederung, Praefatio, Handschriftendatenbank)
 - Neu: Faksimile-Anzeige bei Handschriftentranskriptionen und in der Handschriftendatenbank

@@ -6,6 +6,15 @@
 - Personens, groups, places, biblical references, manuscripts, texte metadata formatted as LOD 
 
 ## Frontend
+### 21 July 2023
+- New: Lemmatised full text search
+- New: Timeline and map visualisation for manuscript database
+- New: Display of non-biblical references, index of non-biblical references
+- Improved search performance 
+- “Praefatio and Witnesses” widget: display errors corrected; new: schematic display (“Stemma”)
+- “Options” widget and display of text-critical variants: Transcriptions and orthographic errors hidden by default (fade-in optional).
+- Improved display on small screens
+- Print function improved (plain text and text with annotations)
 
 ### 19 June 2023
 - Fehlerbereinigungen und Verbesserungen (Suche, Variantendarstellung, Gliederung, Praefatio, Handschriftendatenbank)
