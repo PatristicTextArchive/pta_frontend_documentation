@@ -6,7 +6,7 @@
   <path d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5L9.5 0zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z"/>
 </svg> 
 
-- Show/hide markers for annotations (of places, persons, groups, biblical references) in text 
+- Show/hide markers for annotations (of places, persons, groups, biblical references; variants; witnesses; pagebreaks) in text 
 - Output formats (print or download): annotated text, plaintext; XML; link to analysis of text by [Voyant-Tools](https://voyant-tools.org)
 - Version history (it's possible to display earlier versions in the reader)
 - Show/hide manuscript scans (in case of manuscript transcriptions only; zoom and magnifier are accessible via right-click in the image viewer)
@@ -16,7 +16,7 @@
   <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
 </svg>
 
-- Bibliographical Data: Source and Status of edition
+- Bibliographical Data: Source, type and status of edition
 - Identifier: PTA, TLG, CPG/CPL/BHG/BHL, Pinakes-Oeuvre
 - Reuse: Permalink (with option for copy to clipboard), License, How to cite (with option for copy to clipboard)
 
@@ -30,7 +30,8 @@
 
 - Praefatio
 - used earlier editions
-- manuscript witnesses
+- manuscript witnesses (also in schematic representation)
+- conjectors
 
 ### Texts
 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-bookmarks" viewBox="0 0 16 16">
@@ -57,7 +58,7 @@
   <path d="M0 2a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v3h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H2zm7.138 9.995c.193.301.402.583.63.846-.748.575-1.673 1.001-2.768 1.292.178.217.451.635.555.867 1.125-.359 2.08-.844 2.886-1.494.777.665 1.739 1.165 2.93 1.472.133-.254.414-.673.629-.89-1.125-.253-2.057-.694-2.82-1.284.681-.747 1.222-1.651 1.621-2.757H14V8h-3v1.047h.765c-.318.844-.74 1.546-1.272 2.13a6.066 6.066 0 0 1-.415-.492 1.988 1.988 0 0 1-.94.31z"/>
 </svg>
 
-- At the moment only implemented for Greek texts; not for all texts the needed lemmatization is already available.
+- At the moment only implemented for Greek texts.
 - Please note that the lemmatisation was done automatically and is prone to errors!
 
 ### Biblical Quotations
@@ -66,6 +67,14 @@
 </svg>
 
 - Biblical quotations referenced in the text
+- Status of annotation is provided: not / partially / fully annotated and not / partially / fully identified
+
+### Other quotations
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"  viewBox="0 0 16 16">
+<path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/></svg>
+
+- Non-biblical quotations referenced in the text
+- Status of annotation is provided: not / partially / fully annotated and not / partially / fully identified
 
 ### Places
 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
@@ -74,7 +83,7 @@
 </svg>
 
 - Places referenced in the text
-- Please note: If the name of the place is in the language of the text, then the place is not yet identified by a Pleiades-ID.
+- Status of annotation is provided: not / partially / fully annotated and not / partially / fully identified
 
 ### Persons
 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
@@ -82,7 +91,7 @@
 </svg>
 
 - Persons referenced in the text
-- Please note: If the name of the person is in the language of the text, then the person is not yet identified by a TIPNR- or PTA-ID.
+- Status of annotation is provided: not / partially / fully annotated and not / partially / fully identified
 
 ### Groups
 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-people" viewBox="0 0 16 16">
@@ -90,7 +99,7 @@
 </svg>
 
 - Groups and organisations referenced in the text
-- Please note: If the name of the group is in the language of the text, then the group is not yet identified by a PTA-ID.
+- Status of annotation is provided: not / partially / fully annotated and not / partially / fully identified
 
 ## Parallel display of a second text in the reader
 
