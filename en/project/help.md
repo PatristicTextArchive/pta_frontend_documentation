@@ -18,7 +18,7 @@
 
 - Bibliographical Data: Source, type and status of edition
 - Identifier: PTA, TLG, CPG/CPL/BHG/BHL, Pinakes-Oeuvre
-- Reuse: Permalink (with option for copy to clipboard), License, How to cite (with option for copy to clipboard)
+- Reuse: Permalink (with option for copy to clipboard), Canonical Text Services URN (CTS URN) link for citation of text passages (currently experimental and for one word only), License, How to cite (with option for copy to clipboard)
 
 ### Praefatio, Witnesses
 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-card-text" viewBox="0 0 16 16">

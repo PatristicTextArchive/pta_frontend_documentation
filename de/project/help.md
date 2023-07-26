@@ -18,7 +18,7 @@
 
 - Bibliographische Daten: Quellenangabe, Art und Status der Edition
 - Identifikatoren: PTA, TLG, CPG/CPL/BHG/BHL, Pinakes-Oeuvre
-- Nachnutzung: Permalink (mit Möglichkeit, diesen in die Zwischenablage zu kopieren), Lizenz, Zitiervorschlag (mit Möglichkeit, diesen in die Zwischenablage zu kopieren)
+- Nachnutzung: Permalink (mit Möglichkeit, diesen in die Zwischenablage zu kopieren), Canonical Text Services URN (CTS URN) Link zur Zitation von Textpassagen (momentan experimentell; funktioniert bisher nur mit einzelnen Worten), Lizenz, Zitiervorschlag (mit Möglichkeit, diesen in die Zwischenablage zu kopieren)
 
 ### Praefatio und Zeugen
 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-card-text" viewBox="0 0 16 16">
