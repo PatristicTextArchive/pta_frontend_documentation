@@ -28,13 +28,13 @@ In den Editionen vorkommende Personen werden nach Möglichkeit ausgezeichnet und
 
 Für biblische Personen wird dabei auf die [TIPNR - Translators Individualised Proper Names with all References](https://github.com/tyndale/STEPBible-Data) zurückgegriffen, für alle übrigen Personen wird ein eigenes Register geführt, in dem – soweit vorhanden – die IDs der GND bzw. von [Wikidata](https://www.wikidata.org) referenziert werden, wobei für GND-IDs auf den Service [lobid-gnd | ein LOD-Dienst des hbz — Hochschulbibliothekszentrum des Landes NRW](https://lobid.org/gnd) zurückgegriffen wird.
 
-Es wird ein [Register](https://pta.bbaw.de/indices/persons) aller annotierten Personen bereitgestellt. Die Quelle, auf der die Beschreibung der Person basiert, ist jeweils abgekürzt angegeben: TIPNR = Translators Individualised Proper Names with all References (s.o.), AW_III_5 = Athanasius Werke III 5, Verzeichnis der Personen (Berlin/Boston 2020), AvS = Annette von Stockhausen.
+Es wird ein [Register](https://pta.bbaw.de/indices/persons) aller annotierten Personen bereitgestellt. Die Quelle, auf der die Beschreibung der Person basiert, ist jeweils abgekürzt angegeben: TIPNR = Translators Individualised Proper Names with all References (s.o.), AW_III_5 = Athanasius Werke III 5, Verzeichnis der Personen (Berlin/Boston 2020), AvS = Annette von Stockhausen. ACHTUNG: Nicht alle Texte sind (vollständig) annotiert.
 
 ### Orte
 
 In den Editionen vorkommende Orte werden nach Möglichkeit ebenfalls ausgezeichnet und mit weiteren Informationen aus dem [Pleiades-Gazetteer](https://pleiades.stoa.org/) bzw. der [Translators Individualized Proper Names with all References](https://github.com/tyndale/STEPBible-Data)-Liste angereichert.
 
-Es wird ein [Register](https://pta.bbaw.de/indices/places) aller annotierten Orte bereitgestellt. Alle im Register befindlichen Orte und der im Register jeweils ausgewählte Ort werden auf einer Karte dargestellt; dafür wird auf den [Digital Atlas of the Roman Empire (DARE)](https://dh.gu.se/dare/) zurückgegriffen.
+Es wird ein [Register](https://pta.bbaw.de/indices/places) aller annotierten Orte bereitgestellt. Alle im Register befindlichen Orte und der im Register jeweils ausgewählte Ort werden auf einer Karte dargestellt; dafür wird auf den [Digital Atlas of the Roman Empire (DARE)](https://dh.gu.se/dare/) zurückgegriffen. ACHTUNG: Nicht alle Texte sind (vollständig) annotiert.
 
 ### Bibelstellen
 
@@ -44,7 +44,7 @@ Die ausgezeichneten Stellen werden in einem Apparat nachgewiesen und zitieren di
 
 Bei Stellen aus der Hexapla wird die entsprechende Seite von *Frederick Field (ed.): Origenis hexaplorum quae supersunt: sive veterum interpretum Graecorum in totum vetus testamentum fragmenta. Post Flaminium nobilium, Drusium, et Montefalconium, adhibita etiam versione Syro-Hexaplari. 2 vols. Oxford: Clarendon Press, 1875 ([vol. 1: Genesis – Esther](https://archive.org/details/origenhexapla01unknuoft); [vol. 2: Hiob – Maleachi](https://archive.org/details/origenhexapla02unknuoft)* verlinkt, bei Stellen aus der Vulgata auf die online Version von *[Robert Weber/Roger Gryson (edd.), Biblia Sacra iuxta Vulgatam versionem. Editio quinta. Stuttgart: Deutsche Bibelgesellschaft, 2007](https://www.bibelwissenschaft.de/online-bibeln/biblia-sacra-vulgata/lesen-im-bibeltext/)*.
 
-Es wird ein [Register](https://pta.bbaw.de/indices/biblical-references) aller annotierten Bibelstellen bereitgestellt.
+Es wird ein [Register](https://pta.bbaw.de/indices/biblical-references) aller annotierten Bibelstellen bereitgestellt. ACHTUNG: Nicht alle Texte sind (vollständig) annotiert.
 
 ### Lexikon
 Die Lexikon-Funktion befindet sich noch in Entwicklung. Momentan steht sie nur für griechische Texte (und wegen der vielen orthographischen Abweichungen nicht für Handschriftentranskriptionen) zur Verfügung.

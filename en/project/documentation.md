@@ -25,13 +25,13 @@ People mentioned in the editions are encoded and enriched by other sources as fa
 
 For Biblical persons the [TIPNR - Translators Individualised Proper Names with all References](https://github.com/tyndale/STEPBible-Data) are used, all other persons are referenced via the project's person index, which references GND IDs and [Wikidata](https://www.wikidata.org) IDs where available. For GND Ids the service [lobid-gnd | ein LOD-Dienst des hbz — Hochschulbibliothekszentrum des Landes NRW](https://lobid.org/gnd) is used.
 
-An [Index](https://pta.bbaw.de/indices/persons) of all annotated persons is provided. The description given is based on the following sources: TIPNR = Translators Individualised Proper Names with all References (see above), AW_III_5 = Athanasius Werke III 5, Verzeichnis der Personen (Berlin/Boston 2020), AvS = Annette von Stockhausen.
+An [Index](https://pta.bbaw.de/indices/persons) of all annotated persons is provided. The description given is based on the following sources: TIPNR = Translators Individualised Proper Names with all References (see above), AW_III_5 = Athanasius Werke III 5, Verzeichnis der Personen (Berlin/Boston 2020), AvS = Annette von Stockhausen. CAVEAT: Not all text are (fully) annotated.
 
 ### Places
 
 As far as possible, places mentioned in the editions are encoded and enriched by data from the [Pleiades-Gazetteer](https://pleiades.stoa.org/) and the [Translators Individualized Proper Names with all References](https://github.com/tyndale/STEPBible-Data) list.
 
-An [Index](https://pta.bbaw.de/indices/places) of all annotated places is provided. All places as well as the  place selected are shown on a map; for this we make use of the [Digital Atlas of the Roman Empire (DARE)](https://dh.gu.se/dare/).
+An [Index](https://pta.bbaw.de/indices/places) of all annotated places is provided. All places as well as the  place selected are shown on a map; for this we make use of the [Digital Atlas of the Roman Empire (DARE)](https://dh.gu.se/dare/). CAVEAT: Not all text are (fully) annotated.
 
 ### Biblical quotes
 
@@ -42,7 +42,7 @@ The references for the encoded quotes are  (not for Eusebius' Commentary on the 
 For references to the Hexapla links to *Frederick Field (ed.): Origenis hexaplorum quae supersunt: sive veterum interpretum Graecorum in totum vetus testamentum fragmenta. Post Flaminium nobilium, Drusium, et Montefalconium, adhibita etiam versione Syro-Hexaplari. 2 vols. Oxford: Clarendon Press, 1875 ([vol. 1: Genesis – Esther](https://archive.org/details/origenhexapla01unknuoft); [vol. 2: Hiob – Maleachi](https://archive.org/details/origenhexapla02unknuoft)* and for references to the Vulgata links to the online version of *[Robert Weber/Roger Gryson (edd.), Biblia Sacra iuxta Vulgatam versionem. Editio quinta. Stuttgart: Deutsche Bibelgesellschaft, 2007](https://www.bibelwissenschaft.de/online-bibeln/biblia-sacra-vulgata/lesen-im-bibeltext/)* are provided.
 
 
-An [Index](https://pta.bbaw.de/indices/biblical-references) of all annotated biblical references is provided.
+An [Index](https://pta.bbaw.de/indices/biblical-references) of all annotated biblical references is provided. CAVEAT: Not all text are (fully) annotated.
 ### Dictionary
 The dictionary function is still in development. At the moment, it is also only provided for Greek texts (but not for transcriptions due to the high variability in spelling).
 
