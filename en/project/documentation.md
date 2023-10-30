@@ -11,6 +11,8 @@ The data is available on [Github](https://github.com/PatristicTextArchive/pta_da
 
 Each edition of a text is accessible through a **permalink** (using the CTS-URN): for example <https://pta.bbaw.de/text/urn:cts:pta:pta0013.pta003.pta-grc1>; the **versioned permalink** reflects a specific  state of publication, for example <https://pta.bbaw.de/text/9970133a/urn:cts:pta:pta0013.pta003.pta-grc1>. The respective permalink is to found in the reader under `Reuse`. Permalinks are also available for authors/textgroups: <https://pta.bbaw.de/text/urn:cts:pta:pta0013>, as well as for works: <https://pta.bbaw.de/text/urn:cts:pta:pta0013.pta003>.
 
+For all features look [here](../project/help).
+
 ### Manuscripts
 
 At the moment, the database of manuscripts contains only rudimentary data on manuscripts which are edited in the PTA. That data is widely based on the data provided by [Pinakes](https://pinakes.irht.cnrs.fr/) (= “draft” status) and amended with observations by the respective editor of the description.

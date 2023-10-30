@@ -11,6 +11,8 @@ Die zugrundliegenden Daten sind auf [Github](https://github.com/PatristicTextArc
 
 Jede Edition ist über einen **Permalink** (unter Verwendung der CTS-URN) erreichbar: z.B. <https://pta.bbaw.de/text/urn:cts:pta:pta0013.pta003.pta-grc1>; seine **versionierte** Fassung, die einen spezifischen Veröffentlichungsstand widerspiegelt, lautet z.B. <https://pta.bbaw.de/text/9970133a/urn:cts:pta:pta0013.pta003.pta-grc1>. Der jeweilige Permalink ist in der Leseoberfläche unter der Rubrik `Nachnutzung` angeführt. Permalinks existieren auch für Autoren/Textgruppen: <https://pta.bbaw.de/text/urn:cts:pta:pta0013> sowie für Werke: <https://pta.bbaw.de/text/urn:cts:pta:pta0013.pta003>.
 
+Eine Übersicht der textbezogenen Funktionalitäten findet sich [hier](../project/help).
+
 
 ### Handschriftendatenbank
 
