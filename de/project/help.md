@@ -8,7 +8,7 @@
 
 - Markierungen für Annotationen (Orte, Personen, Gruppen, Bibelstellen; Varianten; Bezeugung; Seitenumbrüche) im Text anzeigen/verbergen 
 - Ausgabeformate (Druck bzw. Download): Annotierter Text, Klartext; XML; Link zu Text in Voyant-Tools
-- Versionsgeschichte (mit der Möglichkeit frühere Versionen anzuzeigen)
+- Versionsgeschichte (mit der Möglichkeit frühere Versionen und die Unterschiede zwischen Versionen anzuzeigen)
 - Manuskript-Digitalisate anzeigen (nur bei Handschriftentranskriptionen; Zoom und Lupe sind im Digitalisat per Rechtsklick ein- und ausschaltbar)
 
 ### Dokument

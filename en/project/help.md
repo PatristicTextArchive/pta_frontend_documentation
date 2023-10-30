@@ -8,7 +8,7 @@
 
 - Show/hide markers for annotations (of places, persons, groups, biblical references; variants; witnesses; pagebreaks) in text 
 - Output formats (print or download): annotated text, plaintext; XML; link to analysis of text by [Voyant-Tools](https://voyant-tools.org)
-- Version history (it's possible to display earlier versions in the reader)
+- Version history (it's possible to display earlier versions in the reader and to see the differences between versions)
 - Show/hide manuscript scans (in case of manuscript transcriptions only; zoom and magnifier are accessible via right-click in the image viewer)
 
 ### Document
