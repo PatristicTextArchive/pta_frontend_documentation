@@ -14,8 +14,7 @@ Festzuhalten sind auf jeden Fall die Vorteile einer kritischen digitalen Edition
   
 4.  Durch die strikte Trennung von Daten (mit dem Fokus auf Vollständigkeit) und Präsentation der Daten (in einer für das jeweilige Medium und den jeweiligen Zweck bzw. die jeweilige Fragestellung getroffenen Auswahl an präsentierten Phänomenen) können auf Basis eines Datensatzes ganz unterschiedliche Darstellungsweisen gewählt werden, die zusätzlich durch weitere Daten anderer Herkunft noch angereichert werden können.
   
-##  Aufbau einer digitalen Edition nach TEI
-  
+## Aufbau einer digitalen Edition nach TEI
   
 > In diesen Richtlinien werden folgende Schreibkonventionen verwendet: Mit `<element>` sind XML-Elemente gemeint, mit `@attribut` XML-Attribute und mit `Wert` die den Attributen zugeschriebenen Werte; `#` in einem Wert bedeutet, dass es sich um einen an anderer Stelle in der TEI-Datei, normalerweise dem `<teiHeader>`, definierten Identifikator handelt, auf den an dieser Stelle verwiesen wird.
   
@@ -91,8 +90,7 @@ Informationen zur Datierung (`<date>`) und Verortung (`placeName`) des Textes we
   
 Da es sich bei digitalen Editionen im Gegensatz zu gedruckten Editionen um potentiell sehr fluide Daten handeln kann, ist es von großer Bedeutsamkeit, dass im Abschnitt `<revisionDesc>` alle signifikanten Änderungen an der Datei und ihre Urheber festgehalten werden, und so die Versionsgeschichte der einzelnen Dateien auch losgelöst vom [Git-Repositorium des PTA](https://github.com/PatristicTextArchive/pta_data/ ) nachvollziehbar bleibt. 
   
-##  Transkription der Überlieferungsträger
-  
+## Transkription der Überlieferungsträger
   
 Handschriften sind Zeugen eines spezifischen Überlieferungsstadiums eines Textes. Im Gegensatz zum klassischen „Lachmannschen“ Ansatz, bei dem in der Praxis nur die Varianten zu einem Vorlagentext notiert werden, ist es für digitale Editionen – durchaus auch unter Aufnahme des Grundgedankens der „New Philology” einer Wertschätzung jedes einzelnen Überlieferungsträgers – angebracht und zudem auch arbeitsökonomisch durchaus sinnvoll, jeweils den gesamten Text zu transkribieren und dann in einem zweiten Schritt die Kollation der Zeugen mit Hilfe des Computers durchzuführen. 
   
@@ -102,8 +100,7 @@ Auch die Transkriptionen sind somit Editionen und das Ergebnis von Interpretatio
   
 Ggfs. können in den Metadaten der Transkriptionen (im Element `<editorialDecl>` im Abschnitt `<encodingDesc>`) nähere Angaben gemacht werden, inwieweit Phänomene aufgenommen werden oder nicht. 
   
-###  Metadaten der Transkription
-  
+### Metadaten der Transkription
   
 Der Header der Transkriptionsdatei enthält zusätzlich zu den oben
 genannten Metadaten innerhalb des Abschnittes `<sourceDesc>` im Element
@@ -149,8 +146,7 @@ innerhalb des Elements `<layoutDesc>` beschrieben werden.
 </sourceDesc>
 ```  
   
-###  Edition der Transkription
-  
+### Edition der Transkription
   
 Die gesamte Transkription steht im `<text>`-Teil der Datei in einem
 Abschnitt `<div>`. Das Element hat die folgenden Attrribute: 
@@ -158,8 +154,7 @@ Abschnitt `<div>`. Das Element hat die folgenden Attrribute:
 - `@xml:lang` mit der Angabe der Sprache des edierten Textes unter Verwendung von [ISO 639-2](https://www.loc.gov/standards/iso639-2/php/code_list.php ).
 - `@n` mit der URN der Datei, s. [unten](#dateien-struktur-jeder-edition ).
   
-####  Auszeichnung der Textstruktur
-  
+#### Auszeichnung der Textstruktur
   
 Innerhalb dieses Abschnittes ist zumindest ein Unterabschnitt `<div>`
 vom `@type="textpart"` zu verwenden, wobei das Attribut `@subtype`
@@ -213,14 +208,12 @@ Bei Editionen, die im PTA vorhanden sind, ist der Wert des Attributes `@edRef` d
   
 Die Gliederung des Textes in der Transkription folgt aber in jedem Fall den Gliederungselementen der Handschrift und nicht denen moderner Editionen.
   
-####  Zeichensetzung
-  
+#### Zeichensetzung
   
 Die Interpunktion wird – ohne explizite Auszeichnung – der Handschrift
 entsprechend transkribiert.
   
-####  Titel und titelähnliche Elemente
-  
+#### Titel und titelähnliche Elemente
   
 Titel werden mit dem Element `<title>` innerhalb des Elementes
 `<head>` ausgezeichnet:
@@ -231,8 +224,7 @@ Titel werden mit dem Element `<title>` innerhalb des Elementes
 </head>
 ```  
   
-####  Zeilen-, Spalten-, Seiten-, Bogenanfänge
-  
+#### Zeilen-, Spalten-, Seiten-, Bogenanfänge
   
 Zeilenanfänge werden mit `<lb/>`, Spaltenanfänge mit `<cb/>`, 
 Seitenanfänge mit `<pb/>` und Bogenanfänge mit `<gb/>` ausgezeichnet.
@@ -257,18 +249,15 @@ Wo möglich sollte wie im Beispiel auf eine per [IIIF](https://iiif.io/ ) zur Ve
   
 Stellt die besitzende Bibliothek Digitalisate nur in einem eigenen Reader zur Verfügung (wie z.B. die BML Firenze oder die British Library London), so ist, soweit vorhanden, die entsprechende URL des Faksimiles einer Seite zu verlinken.
   
-####  Absätze
-  
+#### Absätze
   
 Absätze werden – soweit sie in der Handschrift (z.B. durch eine Lücke) markiert sind – mit dem Element `<p>` ausgezeichnet. Jede Transkription besteht aus mindestens einem Absatz.
   
-####  Listen
-  
+#### Listen
   
 Listen (z.B. von Namen oder Inhaltsverzeichnisse) werden, wenn sie in der Handschrift als solche dargestellt sind, mit dem Element `<list>`, die einzelnen Listeneinträge mit dem Element `<item>` ausgezeichnet. Hat eine Liste eine hervorgehobene Überschrift, so wird diese mit Hilfe des Elementes `<head>` ausgezeichnet. 
   
-####  Initialen und Ektheseis
-  
+#### Initialen und Ektheseis
   
 Initialen und Ektheseis werden mit dem Element `<hi>` ausgezeichnet. Im Attribut `@rend` wird angegeben, ob es sich um eine (mehrere Zeilen übergreifende) Initiale (`initial`) oder um eine Ekthesis (`ekthesis`) handelt.
   
@@ -276,8 +265,7 @@ Initialen und Ektheseis werden mit dem Element `<hi>` ausgezeichnet. Im Attribut
 <hi rend="ekthesis">θ</hi>ησαυροὶ, ψυχὰς εὐφραίνοντες·
 ```  
   
-####  Andere Hervorhebungen
-  
+#### Andere Hervorhebungen
   
 *Rubrizierter* Text wird ebenfalls mit dem Element `<hi>` ausgezeichnet; das Attribut `@rend` erhält den Wert `rubricated`.
   
@@ -287,8 +275,7 @@ Mit einer *Linie über* dem Buchstaben oder Wort hervorgehobener Text wird mit `
   
 Durch Verwendung von *Großbuchstaben* hervorgehobener Text (z.B. Lemmata in Kommentaren) wird mit `<hi rend="majuscule">` markiert.
   
-####  Marginalien
-  
+#### Marginalien
   
 Marginalien werden in der Transkription als `<note>` ausgezeichnet, wobei das Element im Text möglichst nahe zu der Stelle eingeführt wird, an der sich die Marginalie befindet.
   
@@ -308,8 +295,7 @@ Stammt eine Marginalie nicht vom Schreiber, kann dies durch das Attribut `@hand`
 <note place="margin_outer"><num>ΚΓ</num></note>
 ```  
   
-####  Getilgter Text
-  
+#### Getilgter Text
   
 Vom Schreiber oder einem späteren Korrektor getilgter Text wird mit `<del>` ausgezeichnet. Die Art der Tilgung wird im Attribut `@rend` angegeben. Erlaubte Werte sind `erasure` (ausradiert), `strikethrough` (durchgestrichen), `overwrite` (durch Überschreiben) und `expunction` (durch Auspunktieren).
   
@@ -319,8 +305,7 @@ Stammt eine Tilgung nicht vom Schreiber, kann dies durch das Attribut `@hand` an
 γηΐ<del rend="erasure" hand="#m2">ω</del>νων
 ```  
   
-####  Korrekturen
-  
+#### Korrekturen
   
 Korrekturen (von Worten, aber auch einzelnen Buchstaben) werden mit dem Element `<subst>` gekennzeichnet.
   
@@ -354,8 +339,7 @@ Handelt es sich bei der Korrektur um ein Überschreiben bzw. Nachzeichnen des ur
 ἴσως ἂν ἐνομίσθη <retrace>παρέλκον. ἀνάγραπτον</retrace> τούτων ποιεῖσθαι
 ```  
   
-####  Hinzugefügter Text
-  
+#### Hinzugefügter Text
   
 Hinzugefügter Text, der nicht mit einer Korrektur einhergeht, wird mit dem Element `<add>` ausgezeichnet. Der Ort der Hinzufügung wird im Attribut `@place` angegeben. Erlaubte Werte sind `above` (darüber), `below` (darunter), `inline` (in der Zeile) und `margin` (am Rand).
   
@@ -365,8 +349,7 @@ Stammt eine Korrektur nicht vom Schreiber, kann dies durch das Attribut `@hand` 
 <add place="above" hand="#m2">hinzugefügter Text</add>
 ```  
   
-####  Nicht lesbarer Text
-  
+#### Nicht lesbarer Text
   
 Nicht lesbarer Text wird mit dem selbstschließenden Element `<gap>` angegeben (für andere Anwendungsfälle dieses Elementes vgl. [den nächsten Eintrag](#lücke-im-text )). Dem Attribut `@reason` wird der Wert `illegible` (nicht lesbar) zugewiesen. Der (geschätzte) Umfang (`@quantity`) wird in Buchstaben (`@unit="character"`), ggfs. Zeilen (`@unit="line"`) angegeben.
   
@@ -374,8 +357,7 @@ Nicht lesbarer Text wird mit dem selbstschließenden Element `<gap>` angegeben (
 <gap reason="illegible" quantity="10" unit="character"/>
 ```  
   
-####  Lücke im Text
-  
+#### Lücke im Text
   
 Eine Lücke im Text wird ebenfalls mit dem Element `<gap>` angebeben. Dem Attribut `@reason` wird in diesem Fall der Wert `damage` (physische Beschädigung) oder `fenestra` (vom Schreiber freigelassen) zugewiesen. Der (geschätzte) Umfang (`@quantity`) wird in Buchstaben, Zeilen oder Seiten (`@unit` mit Wert `character`, `word`, `line` oder `page`) angegeben.
   
@@ -391,8 +373,7 @@ Ist eine Lücke jedoch durch die Zerstörung von Text durch den Schreiber (sc. R
 </del>
 ```  
   
-####  Unsichere Lesung
-  
+#### Unsichere Lesung
   
 Ist ein Text nicht sicher zu entziffern, wird er mit dem Element
 `<unclear>` markiert. Das Attribut `@reason` gibt den Grund für die unsichere Lesung durch die Werte `damage` (physische Beschädigung), `illegible` (nicht lesbar) oder `retraced` (Text nachgezeichnet) an. Wie sicher die Lesung ist, wird mit Hilfe des Attributs `@cert` angegeben, das die Werte `low` und `high` annehmen kann.
@@ -401,8 +382,7 @@ Ist ein Text nicht sicher zu entziffern, wird er mit dem Element
 <unclear reason="illegible" cert="high">ἄνθρωπον</unclear>
 ```  
   
-####  Wechsel des Schreibers
-  
+#### Wechsel des Schreibers
   
 Wechselt der Schreiber im Text, so wird an der Position des Wechsels das Element `<handShift/>` eingefügt. Die Schrift kann mit Hilfe der Attribute `@medium` (Charakteristik der Tinte oder des Schreibmaterials), `@scribeRef` oder `@scriptRef`, wobei bei den letzteren Attributen auf die entsprechenden `@xml:id` im `<teiHeader>` (`<handDesc>`, s. [oben](#metadaten-der-transkription )) zu verweisen ist.
   
@@ -411,8 +391,7 @@ Wechselt der Schreiber im Text, so wird an der Position des Wechsels das Element
 <handShift scribeRef="#m2"/>ὃς φησὶ πρὸς αὐτόν· κορ<lb break="no"/>νήλιε·
 ```  
   
-####  Nomina sacra
-  
+#### Nomina sacra
   
 Nomina sacra *können* ausgezeichnet werden. Dafür wird innerhalb eines `<choice>`-Elementes das Kürzel mit `<abbr>` mit dem Attribut `@type` vom Wert `nomSac` aufgenommen und die aufgelöste Form im Element `<expan>` notiert.
   
@@ -425,8 +404,7 @@ Nomina sacra *können* ausgezeichnet werden. Dafür wird innerhalb eines `<choic
 </choice>
 ```  
   
-####  Andere Abkürzungen
-  
+#### Andere Abkürzungen
   
  Andere Abkürzungen werden analog zu den Nomina sacra notiert. Dafür wird innerhalb eines `<choice>`-Elementes das Kürzel mit `<abbr>` mit dem Attribut `@type` vom Wert `suspension` aufgenommen und die aufgelöste Form im Element `<expan>` notiert.
   
@@ -443,8 +421,7 @@ Nomina sacra *können* ausgezeichnet werden. Dafür wird innerhalb eines `<choic
 </choice>
 ```  
   
-####  Zahlen
-  
+#### Zahlen
   
 Zahlen werden mit dem Element `<num>` ausgezeichnet.
   
@@ -452,8 +429,7 @@ Zahlen werden mit dem Element `<num>` ausgezeichnet.
 <num>ΛΓ</num>
 ```  
   
-####  Diple und Paragraphos
-  
+#### Diple und Paragraphos
   
 Zitate werden in Handschriften oft mit einer Diple (einfach oder
 doppelt) am Rand markiert. Sie werden in der Transkription mit Hilfe von `<g type="diple"/>` bzw. `<g type="doubled_diple"/>` vermerkt. (Das Element `<quote>` findet in der Transkription *keine* Verwendung!)
@@ -466,14 +442,11 @@ doppelt) am Rand markiert. Sie werden in der Transkription mit Hilfe von `<g typ
   
 In der Handschrift mit einem Paragraphos am Rand markierte Zeilen werden mit Hilfe von `<g type="paragraphos"/>` vermerkt.
   
-##  Kritische Edition
+## Kritische Edition
   
+### Metadaten der kritischen Edition
   
-###  Metadaten der kritischen Edition
-  
-  
-####  Handschriftliche Zeugen und frühere Editionen
-  
+#### Handschriftliche Zeugen und frühere Editionen
   
 Der Header der Editionsdatei enthält zusätzlich zu den [oben genannten Metadaten](#aufbau-einer-digitalen-edition-nach-tei ) innerhalb des Abschnittes `<sourceDesc>` in einem Unterabschnitt `<listWit>` eine Auflistung der verwendeten Handschriften. Die Informationen zu den einzelnen Handschriften werden mit Hilfe des Elementes `<witness>` zur Verfügung gestellt. Dabei sollte die Transkription der Handschrift (in Form ihrer URN, s. [unten](#dateien-struktur-jeder-edition )) im Attribut `@corresp` verlinkt werden.
   
@@ -549,8 +522,7 @@ Konjektoren, die nicht im obigen Sinne bibliographiert werden können, weil z.B.
 </listPerson>
 ```  
   
-####  Kodierung von Bibelstellenangaben
-  
+#### Kodierung von Bibelstellenangaben
   
 Im Abschnitt `<encodingDesc>` wird in einem weiteren Element
 `<refsDecl>` mit dem Attribut `@xml:id` vom Wert `biblical` maschinen- und menschenlesbar angegeben, nach welchem System Bibelstellen referenziert werden und wie diese Referenzen aufgelöst werden können.
@@ -612,8 +584,7 @@ Gal, Eph, Phil, Col, 1Th, 2Th, 1Tim,
 Die Stellenangaben werden folgendermaßen gebildet:
 Bibl. Korpus (LXX, Hexapla, Vg = Vulgate oder NA = New Testament [Nestle-Aland]):Buch:Kapitel:Vers (z.B.: 1,1-2,1.4), z.B. `LXX:Gn:1:1-3`.
   
-####  Angabe der ausgezeichneten Phänomene
-  
+#### Angabe der ausgezeichneten Phänomene
   
 Ebenfalls noch im Abschnitt `<encodingDesc>` wird anschließend im
 Abschnitt `<editorialDecl>` innerhalb des Unterabschnittes
@@ -627,6 +598,8 @@ wurden und in welchem Ausmaß. Dadurch können Nutzer der Edition schnell erkenn
     <p xml:id="biblical-quotations"
        ana="fully/partially/not-annotated fully/partially/not-identified">Biblical quotations are fully/partially annotated and/but not fully/partially referenced. References follow the scheme declared <ref target="#biblical">above</ref>. 
              </p>
+    <p xml:id="other-quotations"
+      ana="not-annotated not-identified">Other quotations are not annotated and not referenced. References follow the scheme declared as <ref target="#pta">pta</ref> or as <ref target="#perseus">perseus</ref> above.</p>
     <p xml:id="places"
        ana="fully/partially/not-annotated fully/partially/not-identified">Places are fully/partially annotated and/but not fully/partially referenced with <ref target="https://pleiades.stoa.org/">Pleiades Gazetteer</ref> IDs.</p>
     <p xml:id="persons"
@@ -650,8 +623,7 @@ Der Umfang der Identifikation mit Normdaten ist folgendermaßen definiert:
 - `partially-identified`: Einige markierte Fälle eines Phänomens (z.B. biblische Zitate, Personen, Orte) werden mit den entsprechenden Normdaten identifiziert.
 - `not-identified`: Keine markierten Fälle eines Phänomens (z.B. Bibelzitate, Personen, Orte) werden mit den entsprechenden Normdaten identifiziert.
   
-####  Normalisierung
-  
+#### Normalisierung
   
 Innerhalb des Abschnittes `<editorialDecl>` wird in den Unterabschnitten `<normalization>` und `<punctuation>` beschrieben, inwieweit der handschriftlich überlieferte Text in der kritischen Edition normalisiert worden ist. Anpassungen sind vorzunehmen.
   
@@ -670,8 +642,7 @@ Innerhalb des Abschnittes `<editorialDecl>` wird in den Unterabschnitten `<norma
 </editorialDecl>
 ```  
   
-####  Art der Auszeichnung der Varianten
-  
+#### Art der Auszeichnung der Varianten
   
 Als letztes Element im Abschnitt `<encodingDesc>` wird die Art der Auszeichnung der textkritischen Varianten angegeben. Der Eintrag *muss* lauten:
   
@@ -679,8 +650,7 @@ Als letztes Element im Abschnitt `<encodingDesc>` wird die Art der Auszeichnung 
 <variantEncoding method="parallel-segmentation" location="internal"/>
 ```  
   
-####  Art der Edition
-  
+#### Art der Edition
   
 Die Art der Edition wird innerhalb des Abschnittes `<profileDesc>` im Unterabschnitt `<textClass>` unter `<keywords scheme="#editionstatus">` angegeben. Das Element `<term>` kann folgende Inhalte annehmen:
   
@@ -695,16 +665,14 @@ Die Art der Edition wird innerhalb des Abschnittes `<profileDesc>` im Unterabsch
   
 Ein Sonderfall ist `metacritical-edition-with-app`, das für die [SBLGNT-Edition](https://www.sblgnt.com/ ) des neuen Testamentes Verwendung findet.
   
-####  Status der Edition
-  
+#### Status der Edition
   
 Schließlich erhält das Element `<revisionDesc>` ein Attribut `@status`, in dem der Status der Edition angegeben wird. Möglich sind dabei folgende Werte:
   
 - `draft`: Entwurf, Edition in Arbeit
 - `unfinished`: Noch in Bearbeitung, zum Beispiel fehlen noch Annotationen
 - `approved`: Freigegebene, finale Version
-###  Edition
-  
+### Edition
   
 Die gesamte kritische Edition steht im `<text>`-Teil der Datei. Sie besteht mindestens aus einem Element `<div>`, das den edierten Text enthält. Das Element hat die folgenden Attribute: 
 - `type="edition"`
@@ -719,8 +687,7 @@ Die gesamte kritische Edition steht im `<text>`-Teil der Datei. Sie besteht mind
   
 Bei Neueditionen sollte der Edition ein Abschnitt `<div type="praefatio">` mit der Praefatio vorangehen.
   
-####  Praefatio
-  
+#### Praefatio
   
 Die Praefatio bietet in einem Fließtext alles, was zum Verständnis des folgenden Textes und seiner Überlieferung notwendig ist. Vor allem sollte der kritische Wert der Handschriften und ihr gegenseitigen Verhältnis zueinander dargelegt, antike Übersetzungen und die sonstige indirekte Überlieferung sowie früheren Ausgaben und Übersetzungen in moderne Sprachen genannt und in ihrem kritischen Wert gewürdigt werden.
   
@@ -760,11 +727,9 @@ ihnen jeweils edierten Texte aufzeigen.</note>
 </p>
 ```  
   
-####  Text
+#### Text
   
-  
-#####  Auszeichnung der Textstruktur
-  
+##### Auszeichnung der Textstruktur
   
 Innerhalb des Elements `<div type="edition">` wird die vom Editor rekonstruierte Textstruktur (entsprechend den Angaben in der `<refsDecl n="CTS">` im `<teiHeader>`) mit Hilfe von (auch ineinander geschachtelten) Unterabschnitten `<div>` vom `@type="textpart"` ausgezeichnet, wobei folgende Werte für das Attribut `@subtype` möglich sind:
   
@@ -800,8 +765,7 @@ Das Attribute `@n` enthält die Stellenreferenz, normalerweise eine Zahl, sie ka
 Absätze innerhalb dieser Unterabschnitte werden mit Hilfe des Elements `<p>` ausgezeichnet. Jedes Element `<div>` enthält mindestens ein Element `<p>`. Listen sind ebenfalls erlaubt: Sie werden (anstelle von `<p>`) mit dem Element `<list>`, die einzelnen Listeneinträge mit dem Element `<item>` ausgezeichnet. Hat eine Liste eine Überschrift, so wird diese mit Hilfe des Elementes `<head>` ausgezeichnet. 
   
   
-#####  Auszeichnung weiterer struktureller Elemente
-  
+##### Auszeichnung weiterer struktureller Elemente
   
 Die Seitenumbrüche in den Handschriften und früheren Editionen werden nach Bedarf mit Hilfe des Elementes `<pb>` angegeben; die Seitenangabe steht im Attribut `@n` und auf die Handschrift bzw. die Edition wird im Attribut `@edRef` verwiesen:
   
@@ -809,8 +773,7 @@ Die Seitenumbrüche in den Handschriften und früheren Editionen werden nach Bed
 <pb n="126r" edRef="#La"/>
 ```  
   
-#####  Auszeichnung von Bibel- und anderen Zitaten (und Anspielungen)
-  
+##### Auszeichnung von Bibel- und anderen Zitaten (und Anspielungen)
   
 Zitate werden mit Hilfe des Elementes `<quote>` ausgezeichnet und können ein Attribut `@type` erhalten, so dass zwischen markierten (`marked`) und nicht-markierten (`unmarked`) Zitaten unterschieden werden kann; für paraphrasierende Zitate – soweit sie überhaupt als Zitat markiert werden – kann der Wert `paraphrase` verwendet werden. Bei Editionen biblischer Kommentare erhalten Lemma-Zitate den Wert `lemma`, um sie von anderen Zitaten zu differenzieren.
   
@@ -861,8 +824,7 @@ Werden nicht-biblische Texte zitiert, so wird die Stellenreferenz ebenfalls mit 
 </quote></p>
 ```  
   
-#####  Auszeichnung von Similia und Quellen
-  
+##### Auszeichnung von Similia und Quellen
   
 Similia werden mit Hilfe von `<seg type="similar">`, Quellen (soweit kein Zitat vorliegt) mit Hilfe von `<seg type="source>` ausgezeichnet. Die Fundstelle wird innerhalb des `<seg>`-Elementes in einem `<ref>`-Element angegeben. Bei den Stellenangaben wird wie bei den Zitaten vorgegangen.
   
@@ -873,8 +835,7 @@ Similia werden mit Hilfe von `<seg type="similar">`, Quellen (soweit kein Zitat 
 </seg>
 ```  
   
-#####  Auszeichung direkter Rede
-  
+##### Auszeichung direkter Rede
   
 Direkte Rede wird mit Hilfe des Elementes `<said>` ausgezeichnet.
   
@@ -885,8 +846,7 @@ Direkte Rede wird mit Hilfe des Elementes `<said>` ausgezeichnet.
 </p>
 ```  
   
-#####  Auszeichnung von Dialogen
-  
+##### Auszeichnung von Dialogen
   
 Dialoge werden mit Hilfe des Elementes `<sp>` (anstelle von `<p>`) ausgezeichnet. Die jeweils sprechenden Personen werden mit Hilfe des Elementes `<speaker>` ausgezeichnet, das Gesprochene mit Hilfe von `<p>`.
   
@@ -901,8 +861,7 @@ Dialoge werden mit Hilfe des Elementes `<sp>` (anstelle von `<p>`) ausgezeichnet
 </sp>
 ```  
   
-#####  Auszeichnung von Personen, Organisationen und Orten
-  
+##### Auszeichnung von Personen, Organisationen und Orten
   
 **Personen** werden mit Hilfe des Elementes `<persName>` ausgezeichnet. Im Fall von biblischen Personen wird das Attribut `@type` mit dem Wert `biblical` verwendet, alle anderen Personen erhalten kein Attribut `@type`. 
 Im Attribut `@key` wird die `person_id` der [PTA-Personen-Liste](https://github.com/PatristicTextArchive/pta_metadata/blob/main/pta_persons.json ) angegeben, die ihrerseits auf die  Liste [„Translators Individualised Proper Names with all References”](https://github.com/tyndale/STEPBible-Data ) sowie ein eigenes Register der nicht-biblischen Personen zurückgreift. 
@@ -924,8 +883,7 @@ Im Attribut `@key` wird die `org_id` der [PTA-Oranganisationen-Liste](https://gi
 ```  
   
   
-#####  Bezeugung des Textes
-  
+##### Bezeugung des Textes
   
 Die handschriftliche Bezeugung des Textes wird im Element `<app>`, das ein Attribut `@type` mit dem Wert `witnesses` erhält, dokumentiert. Das Element erhält im Attribut `@xml:id` einen eindeutigen Identifikator, im Attribut `@prev` bzw. `@next` wird auf den korrespondierenden Eintrag (`<witStart/>`/`<lacunaStart/>` -> `<witEnd/>`/`<lacunaEnd/>` und umgekehrt) verwiesen. Gegegebenenfalls kann im Attribut `@corresp` auf eine entsprechende textkritische Variante oder Lesart verwiesen werden, die dann ebenfalls einen eindeutigen Identifikator benötigt.
 Das Element enthält nur das Element `<rdg>` mit dem Attribut `@wit`, in dem eines der selbst-schließenden Elemente `<witStart/>` (= Beginn eines Zeugen), `<witEnd/>` (= Ende eines Zeugen), `<lacunaStart/>` (= Beginn einer Lücke) oder `<lacunaEnd/>` (= Ende einer Lücke) eingefügt wird. Das Element enthält keinen Text, sondern wird (vergleichbar mit einem Milestone-Element wie `<pb>`) an der passenden Stelle im Text eingefügt: In Fall von `<witStart>` und `<lacunaEnd>` steht es vor dem ersten Wort, das im Zeugen vorhanden ist bzw. nachdem die Lücke zu Ende ist, im Fall von `<witEnd>` und `<lacunaStart>` steht es nach dem letzten Wort, das im Zeugen vorhanden ist bzw. vor dem die Lücke beginnt. 
@@ -949,8 +907,7 @@ Das Element enthält nur das Element `<rdg>` mit dem Attribut `@wit`, in dem ein
   
 (Diese etwas umständliche Art der Notation ist nötig, weil nach den [TEI-Richtlinien](https://tei-c.org/Vault/P5/2.0.0/doc/tei-p5-doc/en/html/ref-model.rdgPart.html ) die Elemente `<witStart/>`, `<lacunaStart/>`, `<witEnd/>`, `<lacunaEnd/>` nur innerhalb eines `<rdg>` oder `<lem>` in einem `<app>` stehen dürfen und der sinvolle [Änderungswunsch, diese Elemente auch außerhalb im Text zuzulassen, vom TEI Technical Council zurückgewiesen wurde](https://github.com/TEIC/TEI/issues/301 ).)
   
-#####  Auszeichnung der Varianten
-  
+##### Auszeichnung der Varianten
   
 Die Auszeichnung der Varianten spiegelt die im Editionsprozess erfolgten editorischen Entscheidungen, insbesondere die Beurteilung der Varianten und der stemmatischen Zusammenhänge, wieder und ist *keine* neutrale Beschreibung des Überlieferungsbestandes, sondern eine Interpretation desselben.
   
@@ -972,8 +929,7 @@ In ihrer Genese oder auch sonst als zusammengehörig eingeschätzte Varianten (`
 Der Text der Variante ist immer in seinem vollen Wortlaut anzugeben und unter keinen Umständen abzukürzen.
   
   
-#####  Analyse der Gründe für die Variation
-  
+##### Analyse der Gründe für die Variation
   
 Varianten können ein Attribut `@cause` erhalten, mit dessen Hilfe die Editorin dem Rezipienten der Edition eine Erklärung für die Entstehung der Variante zur Verfügung stellt. Dadurch sind solche Varianten für die Präsentation auch leicht zu filtern. Folgende Werte dieses Attributes sind möglich:
   
@@ -995,14 +951,12 @@ Varianten können ein Attribut `@cause` erhalten, mit dessen Hilfe die Editorin 
 </app>
 ```  
   
-#####  Typisierung von Varianten
-  
+##### Typisierung von Varianten
   
 Die Ergebnisse der Analyse von Gründen für Varianten werden im Attribut
 `@type` angegeben.
   
-######  Hinzufügungen
-  
+###### Hinzufügungen
   
 Hinzufügungen, auch Dittographien und andere Wiederholungen, werden im
 Element `<rdg>` als `<@type="addition">` ausgezeichnet. Das Element
@@ -1016,8 +970,7 @@ Element `<rdg>` als `<@type="addition">` ausgezeichnet. Das Element
 </app>
 ```  
   
-######  Auslassungen
-  
+###### Auslassungen
   
 Auslassungen werden als `<@type="omission">` ausgezeichnet. Das Element
 `<rdg>` bleibt ohne Textinhalt („self-closing“).
@@ -1029,8 +982,7 @@ Auslassungen werden als `<@type="omission">` ausgezeichnet. Das Element
 </app>
 ```  
   
-######  Löschungen
-  
+###### Löschungen
   
 Löschungen werden als `<@type="deletion">` ausgezeichnet, wobei (im Gegensatz zur Transkription) nicht mehr differenziert wird, wie der Text gelöscht worden ist, da diese Information jederzeit der Transkriptions-Datei zu entnehmen ist.
   
@@ -1044,8 +996,7 @@ Das Element `<rdg>` ist wiederum ohne Textinhalt („self-closing“).
 </app>
 ```  
   
-######  Nicht lesbarer Text
-  
+###### Nicht lesbarer Text
   
 Nicht lesbarer Text wird als `<@type="illegible">` ausgezeichnet. Das Element `<rdg>` ist ohne Textinhalt („self-closing“).
   
@@ -1056,13 +1007,11 @@ Nicht lesbarer Text wird als `<@type="illegible">` ausgezeichnet. Das Element `<
 </app>
 ```  
   
-######  Lücke im Text einer Handschrift
-  
+###### Lücke im Text einer Handschrift
   
 Eine Lücke im Text einer Handschrift wird entsprechend den Transkriptionsregeln als `<@type="damage">` (Beschädigung) als `<@type="fenestra">` (freigelassen) oder als `<@type="deletion">` (Tilgung) ausgezeichnet. Das Element `<rdg>` ist ohne Textinhalt („self-closing“).
   
-######  Umstellungen
-  
+###### Umstellungen
   
 Umstellungen werden als `<@type="transposition">` ausgezeichnet. Im Element `<rdg>` wird der umgestellte Text in seinem vollen Wortlaut (sc. nicht abgekürzt) wiedergegeben.
   
@@ -1095,8 +1044,7 @@ Umstellungen, die längere Textpassagen betreffen, werden – besonders wenn sie
 </div>
 ```  
   
-######  Korrekturen durch Schreiber
-  
+###### Korrekturen durch Schreiber
   
 Korrekturen des Textes durch den Schreiber oder einen späteren Korrektor werden so ausgezeichnet, dass im Element `<rdg>` mit Hilfe des Attributes `@varSeq` die Reihenfolge der verschiedenen Stadien der Überlieferung angegeben wird.
   
@@ -1129,8 +1077,7 @@ Wird bei einer Korrektur nur Text hinzugefügt oder getilgt, so wird nur das Ele
 </app>
 ```  
   
-######  Konjekturen durch Editoren
-  
+###### Konjekturen durch Editoren
   
 Konjekturen werden mit `<@type="conjecture">` ausgezeichnet: Erfolgt dies im Element `<lem>`, so handelt es sich um eine Emendation des Editors (oder um eine ältere Emendation, der sich der Editor anschließt), erfolgt dies im Element `<rdg>`, so handelt es sich um eine vom Editor nicht übernommene Konjektur anderen Ursprunges.
   
@@ -1193,8 +1140,7 @@ Auf den Autor einer Konjektur, Emendatio oder Korrektur wird im Attribut `@resp`
 </app>
 ```  
   
-######  Lücken im Text
-  
+###### Lücken im Text
   
 Von der Editorin vermutete Lücken im überlieferten Textbestand werden mit `<gap reason="missing"/>` ausgezeichnet. Die vermutete Ausdehnung (`@quantity`) der Lücke wird, wo es sinnvoll und möglich erscheint (!), in Buchstaben, Worten, Zeilen oder Seiten (`@unit` mit Wert `character`, `word`, `line` oder `page`) angegeben.
   
@@ -1213,8 +1159,7 @@ Von anderen Editoren vermutete, aber nicht übernommene Lücken werden in einem 
 </app>
 ```  
   
-######  Crux
-  
+###### Crux
   
 Vom Editor nicht zu emendierender, aber sicher verderbter Text („Crux“) wird mit Hilfe des Elementes `<sic>` ausgezeichnet. Das Element kann dabei sowohl den verderbten Text umschließen oder als selbst-schließendes („leeres“) Element die Stelle der Verderbnis markieren.
   
@@ -1223,8 +1168,7 @@ Vom Editor nicht zu emendierender, aber sicher verderbter Text („Crux“) wird
 ὅσα προφῆται <sic/> θεσπίζουσιν 
 ```  
   
-######  Varianten innerhalb von Varianten
-  
+###### Varianten innerhalb von Varianten
   
 Varianten können auch ineinander geschachtelt werden, d.h. ein `<lem>`- oder ein `<rdg>`-Element kann seinerseits eine Variante (`<app>`) enthalten. Das `wit`-Attribut des übergeordneten `<app>`-Elementes enthält dabei *alle* Siglen des untergeordeneten `<app>`-Elementes, also sowohl des `<lem>`- als auch des `<rdg>`-Elementes:
   
@@ -1240,8 +1184,7 @@ Varianten können auch ineinander geschachtelt werden, d.h. ein `<lem>`- oder ei
  </app>
 ```  
   
-#####  Ökonomische Schreibweise
-  
+##### Ökonomische Schreibweise
   
 In ihrer Genese zusammengehörige Variantenteile sollten, solange die Variantenträger identisch sind, zur Erhöhung der Lesbarkeit möglichst zusammengefasst werden.
   
@@ -1265,8 +1208,7 @@ und nicht:
 </app>
 ```  
   
-#####  Überlappungen
-  
+##### Überlappungen
   
 Ein aus der Struktur der Auszeichnungssprache XML resultierendes Problem bilden Überlappungen von Elementen untereinander; vgl. dazu auch das Kapitel [„Non-hierarchical Structures“ in den TEI-Richtlinien](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/NH.html ). 
   
@@ -1314,8 +1256,7 @@ aufgeteilt und untereinander verlinkt werden.
 </div>
 ```  
   
-#####  Kommentierung textkritischer Entscheidungen
-  
+##### Kommentierung textkritischer Entscheidungen
   
 Erscheint es nötig oder sinnvoll, textkritische Überlegungen, die über die Typisierung (mit Hilfe des Attributes `@type`) oder die Angabe von Ursachen (mit Hilfe des Attributes `@cause`) hinausgehen, auszuführen, so kann dafür an Ort und Stelle innerhalb des Elementes `<app>` ein Element `<note>` für Bemerkungen, die das gesamte `<app>`-Element betreffen, oder ein Element `<witDetail>` für Bemerkungen, die sich auf eine spezielle Handschrift bezieht, angefügt werden. Das Element `<app>`, `<lem>` oder `<rdg>` erhält in diesem Fall ein Attribut `@xml:id`, auf das im Element `<note>` oder `<witDetail>` in einem Attribut `@target` verwiesen wird. Im Falle von `<witDetail>` wird außerdem in einem Attribut `@wit` auf die ID der Handschrift verwiesen. 
   
@@ -1329,8 +1270,7 @@ Erscheint es nötig oder sinnvoll, textkritische Überlegungen, die über die Ty
 ```  
   
   
-##  Dateien-Struktur jeder Edition
-  
+## Dateien-Struktur jeder Edition
   
 Für eine möglichst einfache Wiederbenutzbarkeit sind schließlich auch eine einheitliche Benennung der einzelnen Dateien und eine strukturierte Dateiablage sinnvoll. Das „Patristic Text Archive“ folgt hier den [„Capitains Guidelines“](http://capitains.org ) (cf. [Thibault Clérice, Matthew Munson, & Bridget Almas. (2017, May 2). Capitains/Capitains.github.io: 2.0.0 (Version 2.0.0). Zenodo.](http://doi.org/10.5281/zenodo.570516 )) und verwendet [CTS URNs](http://www.homermultitext.org/hmt-docs/cite/cts-urn-overview.html ) (vgl. auch [Christopher W. Blackwell und Neel Smith, „The CITE Architecture: a Conceptual and Practical Overview“, in Monica Berti, Hg., Digital Classical Philology. Ancient Greek and Latin in the Digital Revolution (Age of Access? Grundfragen der Informationsgesellschaft 10; Berlin, 2019), 73–93](https://doi.org/10.1515/9783110599572-006 )). 
   
@@ -1351,6 +1291,7 @@ Innerhalb eines Ordners `data` erhält jeder Autor (oder jede Werkgruppe) einen 
 Die Dateinamen folgen den CTS URNs und sind folgendermaßen aufgebaut: Das Kürzel „pta0013“ steht dabei für den Autor Amphilochius und „pta003“ für das Werk „Epistula synodalis“. Der letzte Teil der URN identifiziert die spezifische „Edition“ eines Werkes: Im Beispiel sind das die
 kritische Edition des griechischen Textes (pta-grc1), die deutsche Übersetzung (pta-deu1) und die Transkriptionen der vier Handschriften (pta-MsLa, pta-MsPg, pta-MsPs, pta-MsVi).
   
-Die Zuteilung neuer IDs für bisher nicht vorhandene Autoren und/oder Werke erfolgt nach [Rücksprache](mailto:annette.von_stockhausen@bbaw.de).
-
-Autor: [Annette von Stockhausen](mailto:annette.von_stockhausen@bbaw.de)
+Die Zuteilung neuer IDs für bisher nicht vorhandene Autoren und/oder Werke erfolgt nach [Rücksprache](mailto:annette.von_stockhausen@bbaw.de ).
+  
+Autor: [Annette von Stockhausen](mailto:annette.von_stockhausen@bbaw.de )
+  

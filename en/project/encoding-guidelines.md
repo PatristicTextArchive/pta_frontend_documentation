@@ -13,8 +13,7 @@ In any case, the advantages of a critical digital edition, as defined and exempl
   
 4.  Due to the strict separation of data (with a focus on completeness) and presentation of the data (in a selection of presented phenomena made for the respective medium and the respective purpose or question), quite different modes of presentation can be chosen on the basis of a data set, which can additionally be enriched by further data from other sources.
   
-##  Building a digital edition according to TEI
-  
+## Building a digital edition according to TEI
   
 > The following writing conventions are used in these guidelines: `<element>` means XML elements, `@attribute` means XML attributes, and `value` means the values attributed to the attributes; `#` in a value means that it is an identifier defined elsewhere in the TEI file, usually the `<teiHeader>`, which is referenced at this point.
   
@@ -91,8 +90,7 @@ Information on the dating (`<date>`) and location (`placeName`) of the text is p
   
 Since digital editions, unlike printed editions, can be potentially very fluid data, it is of great importance that all significant changes to the file and its authors are recorded in the `<revisionDesc>` section, so that the version history of the individual files can be traced even when detached from the [PTA’s Git repository](https://github.com/PatristicTextArchive/pta_data/ ).
   
-##  Transcription of the witnesses
-  
+## Transcription of the witnesses
   
 Manuscripts are witnesses to a specific stage in the transmission of a text. In contrast to the classical “Lachmannian” approach, in which in practice only the variants of the master copy of the text (the archetype) are noted, it is appropriate for digital editions - also taking into account the basic idea of the “New Philology” of valuing each individual transmission medium - and also makes sense in terms of labour economy to transcribe the entire text and then, in a second step, to carry out the collation of the witnesses with the help of the computer.
   
@@ -102,8 +100,7 @@ The transcriptions are thus also editions and the result of interpretation. Howe
   
 If necessary, the metadata of the transcriptions can provide more detailed information on the extent to which phenomena are included or not.
   
-###  Transcription metadata
-  
+### Transcription metadata
   
 In addition to the metadata mentioned above, the header of the transcription file contains short information about the manuscript in the `<msDesc>` element within the `<sourceDesc>` section, which includes at least the `<msIdentifier>` element. The element receives its own `@xml:id`, which is read e.g. for the identification of the manuscript during collation. If several scribes can be identified in a manuscript, it is also useful to briefly describe these scribes in the `<handNote>` element within a `<handDesc>` subsection in another section `<physDesc>`, which serves to describe the physical nature of the manuscript. The attribute `@xml:id` is referenced in the edition as an identifier and must be set in any case; in addition, other attributes are available, e.g. the attribute `@scribe` can be used if the scribe is known by name.
   
@@ -138,16 +135,14 @@ For example, if the handwriting is a marginal catena, the layout can be describe
 </sourceDesc>
 ```  
   
-###  Edition of the transcription
-  
+### Edition of the transcription
   
 The entire transcription is in the `<text>` part of the file in a `<div>` element. The element has the following attributes:
 - `@type="edition"`
 - `@xml:lang` indicating the language of the edited text using [ISO 639-2](https://www.loc.gov/standards/iso639-2/php/code_list.php ).
 - `@n` indicating the URN of the file, see [below](#file-structure-of-each-edition ).
   
-####  Mark-up of the structure of the text
-  
+#### Mark-up of the structure of the text
   
 Within this section, at least one subsection `<div>` with the attribute `@type="textpart"` is to be used, whereby the attribute `@subtype` may take the following values: `section` for continuous texts, `fragment` for fragmentary transmission, `commented` and `commentary` for commentaries or comparable texts where a distinction is made between a commented and a commentary text.
   
@@ -196,13 +191,11 @@ For editions that exist in the PTA, the value of the `@edRef `attribute is the U
   
 The division of the transcripted text is following the division in the manuscript and not the artifical modern divisions introduced by editions.
   
-####  Punctuation
-  
+#### Punctuation
   
 The punctuation is transcribed - without explicit marking - according to the manuscript.
   
-####  Title and title-like elements
-  
+#### Title and title-like elements
   
 Titles are marked with the element `<title>` within the element
 `<head>`:
@@ -214,8 +207,7 @@ Titles are marked with the element `<title>` within the element
 ```  
   
   
-####  Line, column, page, gathering beginnings
-  
+#### Line, column, page, gathering beginnings
   
 Line beginnings are marked with `<lb/>`, column beginnings with `<cb/>`, page beginnings with `<pb/>` and gatherings beginnings with `<gb/>.`
   
@@ -239,18 +231,15 @@ Where possible, a full-resolution URL of the image provided through [IIIF](https
   
 If the owning library makes digitised material available only in its own reader (such as the BML Firenze or the British Library London for example), the corresponding URL of the facsimile of a page should be linked, if available.
   
-####  Paragraphs
-  
+#### Paragraphs
   
 Paragraphs - as far as they are marked in the manuscript (e.g. by a gap) – are marked with the element `<p>`. Each transcription consists of at least one paragraph.
   
-####  Lists
-  
+#### Lists
   
 Lists (e.g. of names or tables of contents), if they are represented as such in the manuscript, are marked with the element `<list>`, the individual list entries with the element `<item>`. If a list has a highlighted heading, it is marked with the help of the element `<head>`.
   
-####  Initials and Ektheseis
-  
+#### Initials and Ektheseis
   
 Initials and ektheseis are marked with the element `<hi>`. In the attribute `@rend` it is indicated whether it is an `initial` (spanning several lines) or an `ekthesis` (ekthesis).
   
@@ -259,8 +248,7 @@ Initials and ektheseis are marked with the element `<hi>`. In the attribute `@re
 ```  
   
   
-####  Other highlighting
-  
+#### Other highlighting
   
 *Rubricated* text is also marked up with the element `<hi>`; the attribute `@rend` receives the value `rubricated`.
   
@@ -270,8 +258,7 @@ Text highlighted with a *line above* the letter or word is marked up with `<hi r
   
 Text in capitals (for example the lemmata in commentaries) is martked up with `<hi rend="majuscule">`.
   
-####  Marginalia
-  
+#### Marginalia
   
 Marginalia are marked in the transcription as `<note>`, the element being introduced in the text as close as possible to the place where the marginalia is found.
   
@@ -292,8 +279,7 @@ If a note does not originate from the scribe, this can be indicated by the attri
 ```  
   
   
-####  Deleted text
-  
+#### Deleted text
   
 Text deleted by the writer or a later corrector is marked with `<del>`. The type of deletion is specified in the `@rend` attribute. Permitted values are `erasure`, `strikethrough`, `overwrite` and `expunction`.
   
@@ -304,8 +290,7 @@ If a deletion does not originate from the scribe, this can be indicated by the a
 ```  
   
   
-####  Corrections
-  
+#### Corrections
   
 Corrections (words, but also individual letters) are marked with the `<subst>` element.
   
@@ -337,8 +322,7 @@ If the correction is an overwriting or retracing of the original text without co
 ἴσως ἂν ἐνομίσθη <retrace>παρέλκον. ἀνάγραπτον</retrace> τούτων ποιεῖσθαι
 ```  
   
-####  Added text
-  
+#### Added text
   
 Added text that is not accompanied by a correction is marked with the `<add>` element. The location of the addition is specified in the `@place` attribute. Permitted values are `above`, `below`, `inline` and `margin`.
   
@@ -349,8 +333,7 @@ If a correction does not originate from the scribe, this can be indicated by the
 ```  
   
   
-####  Unreadable text
-  
+#### Unreadable text
   
 Unreadable text is specified with the self-closing element `<gap>` (for other uses of this element, see [the next entry](#gap-in-the-text )). The attribute `@reason` is assigned the value `illegible`. The (estimated) size (`@quantity`) is given in letters (`@unit="character"`), if necessary lines (`@unit="line"`).  
   
@@ -359,8 +342,7 @@ Unreadable text is specified with the self-closing element `<gap>` (for other us
 ```  
   
   
-####  Gap in the text
-  
+#### Gap in the text
   
 A gap in the text is also indicated with the `<gap>` element. The attribute `@reason` is in this case assigned the value `damage` (physical damage) or `fenestra` (left blank by the writer). The (estimated) amount (`@quantity`) is indicated in letters, lines or pages (`@unit` with value `character`, `word`, `line` or `page`). 
   
@@ -378,8 +360,7 @@ If, however, a gap has been created by the destruction of text by the scribe (sc
 ```  
   
   
-####  Unclear reading
-  
+#### Unclear reading
   
 If a text cannot be deciphered with certainty, it is marked with the `<unclear>` element. The attribute `@reason` indicates the reason for the uncertain reading by the values `damage` (physical damage), `illegible` (not readable) or `retraced` (text traced). How secure the reading is is indicated by means of the attribute `@cert`, which can take the values `low` and `high`.
   
@@ -388,8 +369,7 @@ If a text cannot be deciphered with certainty, it is marked with the `<unclear>`
 ```  
   
   
-####  Change of scribe
-  
+#### Change of scribe
   
 If the writer changes in the text, the `<handShift/>` element is inserted at the position of the change. The scribe can be identified by the attributes `@medium` (characteristic of the ink or the writing material used), `@scribeRef` or `@scriptRef`, whereby for the latter attributes reference should be made to the corresponding `@xml:id` in the `<teiHeader>` (`<handDesc>`, see [above](#transcription-metadata )).
   
@@ -399,8 +379,7 @@ If the writer changes in the text, the `<handShift/>` element is inserted at the
 ```  
   
   
-####  Nomina sacra
-  
+#### Nomina sacra
   
 Nomina sacra *can be* marked-up. For this purpose, within a `<choice>` element, the abbreviation is included in the element `<abbr>` with the attribute `@type` of the value `nomSac` and the expanded form is noted in the `<expan>` element.
   
@@ -414,8 +393,7 @@ Nomina sacra *can be* marked-up. For this purpose, within a `<choice>` element, 
 ```  
   
   
-####  Other abbreviations
-  
+#### Other abbreviations
   
 Other abbreviations are encoded similar to the nomina sacra. For this purpose, within a `<choice>` element, the abbreviation is included in the element `<abbr>` with the attribute `@type` of the value `suspension` and the expanded form is noted in the `<expan>` element.
   
@@ -433,8 +411,7 @@ Other abbreviations are encoded similar to the nomina sacra. For this purpose, w
 ```  
   
   
-####  Numbers
-  
+#### Numbers
   
 Numbers are marked with the element `<num>`.
   
@@ -443,8 +420,7 @@ Numbers are marked with the element `<num>`.
 ```  
   
   
-####  Diple and Paragraphos
-  
+#### Diple and Paragraphos
   
 Quotations in manuscripts are often marked with a diple (single or double) in the margin. They are noted in the transcription with the help of `<g type="diple"/>` or `<g type="doubled_diple"/>.` (The `<quote>` element is *not* used in the transcription!)
   
@@ -457,14 +433,11 @@ Quotations in manuscripts are often marked with a diple (single or double) in th
   
 Lines marked in the manuscript with a paragraphos in the margin are noted using `<g type="paragraphos"/>`.
   
-##  Critical Edition
+## Critical Edition
   
+### Metadata of the critical edition
   
-###  Metadata of the critical edition
-  
-  
-####  Handwritten witnesses and earlier editions
-  
+#### Handwritten witnesses and earlier editions
   
 In addition to the [metadata mentioned above](#building-a-digital-edition-according-to-tei ), the header of the file for the edition contains a list of the manuscripts used within the section `<sourceDesc>` in a subsection `<listWit>`. The information on the individual manuscripts is provided with the help of the element `<witness>`. The transcription of the manuscript should be linked in the attribute `@corresp` (in the form of its URN, see [below](#file-structure-of-each-edition )).
   
@@ -542,8 +515,7 @@ Authors of conjectures that cannot be bibliographed in the above sense because, 
 ```  
   
   
-####  Encoding of biblical references
-  
+#### Encoding of biblical references
   
 In the `<encodingDesc>` section, a further element `<refsDecl>` with the attribute `@xml:id` of the value `biblical` specifies in machine- and human-readable form the system according to which biblical passages are referenced and how these references can be resolved. 
   
@@ -604,8 +576,7 @@ Gal, Eph, Phil, Col, 1Th, 2Th, 1Tim,
   
 The passages are formed as follows: Biblical corpus (LXX, Hexapla, Vg [= Vulgata] or NA [= Nestle-Aland]):Book:Chapter:Verse (e.g.: 1,1-2,1.4), e.g. `LXX:Gn:1:1-3`.
   
-####  Indication of the encoded phenomena
-  
+#### Indication of the encoded phenomena
   
 Also in the `<encodingDesc>` section, the `<editorialDecl>` section within the `<interpretation>` subsection elaborates on which phenomena have been marked up in the text and to what extent. This allows users of the edition to quickly see what to expect from the edition. Adjustments to `@ana` and to the text are to be made accordingly.
   
@@ -616,6 +587,8 @@ Also in the `<encodingDesc>` section, the `<editorialDecl>` section within the `
     <p xml:id="biblical-quotations"
        ana="fully/partially/not-annotated fully/partially/not-identified">Biblical quotations are fully/partially annotated and/but not fully/partially referenced. References follow the scheme declared <ref target="#biblical">above</ref>. 
              </p>
+    <p xml:id="other-quotations"
+      ana="not-annotated not-identified">Other quotations are not annotated and not referenced. References follow the scheme declared as <ref target="#pta">pta</ref> or as <ref target="#perseus">perseus</ref> above.</p>
     <p xml:id="places"
        ana="fully/partially/not-annotated fully/partially/not-identified">Places are fully/partially annotated and/but not fully/partially referenced with <ref target="https://pleiades.stoa.org/">Pleiades Gazetteer</ref> IDs.</p>
     <p xml:id="persons"
@@ -640,8 +613,7 @@ The extension to which the annotations are identified with norm data is defined 
 - `not-identified`: No encoded instances of a phenomenon (e.g. biblical quotations, persons, places) are identified with the respective norm data.
   
   
-####  Normalisation
-  
+#### Normalisation
   
 Within the `<editorialDecl>` section, the `<normalisation>` and `<punctuation>` subsections describe the extent to which the handwritten text has been normalised in the critical edition. Adjustments are to be made.
   
@@ -660,8 +632,7 @@ Within the `<editorialDecl>` section, the `<normalisation>` and `<punctuation>` 
 </editorialDecl>
 ```  
   
-####  Type of encoding of the variants
-  
+#### Type of encoding of the variants
   
 The last element in the `<encodingDesc>` section is the type of marking up of the text-critical variants. The entry *must* read:
   
@@ -670,8 +641,7 @@ The last element in the `<encodingDesc>` section is the type of marking up of th
 ```  
   
   
-####  Type of edition
-  
+#### Type of edition
   
 Within the `<profileDesc>` section, the type of edition is provided in the  `<textClass>` subsection in `<keywords scheme="#editionstatus">`. The element `<term>` has one of the following phrases:
   
@@ -684,16 +654,14 @@ Within the `<profileDesc>` section, the type of edition is provided in the  `<te
 -   `pre-critical-edition` for pre-modern editions (e.g. in the Patrologia Graeca or Latina).
   
 A special case is `metacritical-edition-with-app`, which is used for the [SBLGNT edition](https://www.sblgnt.com/ ) of the New Testament.
-####  Status of edition
-  
+#### Status of edition
   
 Finally, the element `<revisionDesc>` receives an attribute `@status`, in which the status of the edition is specified. The following values are possible:
 - `draft`: Draft version, work in progress
 - `unfinished`: Work not yet finished, for example annotations need to be done
 - `approved`: Approved (final) version
   
-###  Edition
-  
+### Edition
   
 The entire critical edition is in the `<text>` part of the file. It consists of at least one element `<div>`, which contains the edited text. The element has the following attributes:
 - `type="edition"`
@@ -709,8 +677,7 @@ The entire critical edition is in the `<text>` part of the file. It consists of 
   
 In new editions, the edition should be preceded by a section `<div type="praefatio">` with the praefatio.
   
-####  Praefatio
-  
+#### Praefatio
   
 The Praefatio offers in a continuous text everything that is necessary for understanding the following text and its tradition. Above all, the critical value of the manuscripts and their mutual relationship to each other should be explained, ancient translations and other indirect transmission as well as earlier editions and translations into modern languages should be mentioned and appreciated in their critical value.
   
@@ -733,11 +700,9 @@ Subsections can be set up using `<div type="section" n="1">`, which can also con
   
 For footnotes the element `<note>` is used. Bibliographic data that is not already defined in the `<teiHeader>` can be given at point by using the element `<bibl>`;  the attribut `@xml:id` may be used to reference entries like those. It is also possible to reference the text (or variants), if a `@xml:id` is provided with the respective element (for example `<seg>`, `<app>` or `<rdg>`). Lists may also be used.
   
-####  Text
+#### Text
   
-  
-#####  Encoding of the structure of the text
-  
+##### Encoding of the structure of the text
   
 Within the element `<div type="edition">` the text structure reconstructed by the editor (according to the specifications in the `<refsDecl n="CTS">` in the `<teiHeader>`) is distinguished with the help of (also nested) subsections `<div>` of `@type="textpart"`, whereby the following values are possible for the attribute `@subtype`:
   
@@ -773,8 +738,7 @@ The `@n` attribute receives the reference indicator (which is used for citing th
   
 Paragraphs within these subsections are marked with the help of the `<p>` element. Each `<div>` element contains at least one `<p>` element. Lists are also allowed: They are marked (instead of `<p>`) with the element `<list>`,  the individual list entries with the element `<item>`. If a list has a heading,  it is marked with the help of the element `<head>`.
   
-#####  Marking up further structural elements
-  
+##### Marking up further structural elements
   
 The page breaks in the manuscripts and earlier editions are indicated as required by means of the `<pb>` element; the page reference is in the `@n` attribute and the manuscript or edition is referred to in the `@edRef` attribute:
   
@@ -783,8 +747,7 @@ The page breaks in the manuscripts and earlier editions are indicated as require
 ```  
   
   
-#####  Encoding of biblical and other quotations (and allusions)
-  
+##### Encoding of biblical and other quotations (and allusions)
   
 Quotations are marked with the help of the `<quote>` element and can be given a `@type` attribute so that a distinction can be made between `marked` and `unmarked` quotations; for paraphrased quotations - insofar as they are marked as quotations at all - the value `paraphrase` can be used. In editions of biblical commentaries, lemma quotations are given the value `lemma` to differentiate them from other quotations.
   
@@ -835,8 +798,7 @@ If non-biblical texts are cited, the passage reference is also indicated by mean
 </quote></p>
 ```  
   
-#####  Encoding of similia and sources
-  
+##### Encoding of similia and sources
   
 Similia are marked up with the help of `<seg type="similar">`, sources (as far as it is not a citation) with the help of `<seg type="source>`. The source is indicated within the `<seg>` element in a `<ref>` element.
   
@@ -848,8 +810,7 @@ Similia are marked up with the help of `<seg type="similar">`, sources (as far a
 ```  
   
   
-#####  Encoding of direct speech
-  
+##### Encoding of direct speech
   
 Direct speech is marked up with the help of the `<said>` element.
   
@@ -860,15 +821,13 @@ Direct speech is marked up with the help of the `<said>` element.
 </p>
 ```  
   
-#####  Encoding of dialogue
-  
+##### Encoding of dialogue
   
 Dialogue is marked up with the help of `<sp>` (instead of `<p>`). For the person speaking `<speaker>` is used, the spoken text is marked up with `<p>`.
   
 @import “examples/ed_speech.xml” {class=“lines-numbers”}
   
-#####  Encoding of people, organisations and places
-  
+##### Encoding of people, organisations and places
   
 **Persons** are marked up with the help of the element `<persName>`. In the case of biblical persons, the attribute `@type` with the value `biblical` is used, all other persons do not receive an attribute `@type`. In the attribute `@key`, the `person_id` in the [PTA person list](https://github.com/PatristicTextArchive/pta_metadata/blob/main/pta_persons.json ) is specified, which in turn draws on the list [“Translators Individualised Proper Names with all References”](https://github.com/tyndale/STEPBible-Data ) as well as its own register of non-biblical persons. Non-biblical persons who are missing from the PTA register can be added after [consultation](mailto:annette.von_stockhausen@bbaw.de ).
   
@@ -887,8 +846,7 @@ Dialogue is marked up with the help of `<sp>` (instead of `<p>`). For the person
 ```  
   
   
-#####  Text witnesses
-  
+##### Text witnesses
   
 The manuscripts witnessing the text are documented in the element `<app>` with the attribute `@type="witnesses"`. The element receives a unique identifier in the attribute `@xml:id`, in the attribute `@prev` or `@next` reference is made to the corresponding entry (`<witStart/>`/`<lacunaStart/>` -> `<witEnd/>`/`<lacunaEnd/>` and vice versa). If necessary, a reference to a corresponding text-critical variant or reading can be made in the attribute `@corresp`.
 The element contains only the element `<rdg>` with the attribute `@wit`, in which one of the self-closing elements `<witStart/>` (= beginning of a witness), `<witEnd/>` (= end of a witness), `<lacunaStart/>` (= beginning of a gap) or `<lacunaEnd/>` (= end of a gap) is inserted. The element does not contain any text, but is inserted (comparable to a milestone element like `<pb>`) at the appropriate place in the text: In the case of `<witStart>` and `<lacunaEnd>` it comes before the first word present in the witness or after the gap ends, in the case of `<witEnd>` and `<lacunaStart>` it comes after the last word present in the witness or before which the gap begins. 
@@ -913,8 +871,7 @@ The element contains only the element `<rdg>` with the attribute `@wit`, in whic
 (This somewhat awkward way of notation is necessary because according to the [TEI Guidelines](https://tei-c.org/Vault/P5/2.0.0/doc/tei-p5-doc/en/html/ref-model.rdgPart.html ) the elements `<witStart/>`, `<lacunaStart/>`, `<witEnd/>`, `<lacunaEnd/>` are only allowed to be inside a `<rdg>` or `<lem>` in an `<app>` and the sensible [amendment request to allow these elements also outside in the text was rejected by the TEI Technical Council](https://github.com/TEIC/TEI/issues/301 ).)
   
   
-#####  Encoding the variants
-  
+##### Encoding the variants
   
 The encoding of the variants reflects the editorial decisions made in the editing process, especially the assessment of the variants and the stemmatic contexts, and is *not a* neutral description of the surviving material, but an interpretation of it.
   
@@ -934,8 +891,7 @@ Variants (`<lem>` and `<rdg>` or several `<rdg>` entries) that are considered to
   
 The text of the variation shall always be given in its full text and shall not be abbreviated under any circumstances.
   
-#####  Analysis of the causes for the variation
-  
+##### Analysis of the causes for the variation
   
 Variants can have an attribute `@cause`, with the help of which the editor provides the recipient of the edition with an analysis of the probable cause for the variant and which can thus also be easily filtered for presentation. The following values of this attribute are possible:
   
@@ -958,13 +914,11 @@ Variants can have an attribute `@cause`, with the help of which the editor provi
 ```  
   
   
-#####  Typification of variants
-  
+##### Typification of variants
   
 The results of the analysis of the type of a variant is given in the `@type` attribute.
   
-######  Additions
-  
+###### Additions
   
 Additions, including dittographies and other repetitions, are marked in the `<rdg>` element as `<@type="addition">`. The `<lem>` element remains without text content (“self-closing”).
   
@@ -977,8 +931,7 @@ Additions, including dittographies and other repetitions, are marked in the `<rd
 ```  
   
   
-######  Omissions
-  
+###### Omissions
   
 Omissions are marked as `<@type="omission">`. The `<rdg>` element remains without text content (“self-closing”).
   
@@ -990,8 +943,7 @@ Omissions are marked as `<@type="omission">`. The `<rdg>` element remains withou
 ```  
   
   
-######  Deletions
-  
+###### Deletions
   
 Deletions are marked as `<@type="deletion">`, whereby (in contrast to the transcription) it is no longer differentiated how the text was deleted, since this information can be taken from the transcription file at any time.
   
@@ -1005,8 +957,7 @@ Deletions are analytically distinguished from omissions by the fact that they ar
 ```  
   
   
-######  Not readable text
-  
+###### Not readable text
   
 Unreadable text is marked as `<@type="illegible">`. The element `<rdg>` is without text content (“self-closing”).
   
@@ -1017,13 +968,11 @@ Unreadable text is marked as `<@type="illegible">`. The element `<rdg>` is witho
 </app>
 ```  
   
-######  Gap in text of a manuscript
-  
+###### Gap in text of a manuscript
   
 A gap im text of a manuscripts is (following the rules for transcription) marked as `<@type="damage">` (damage) als `<@type="fenestra">` (intentional gap) oder als `<@type="deletion">` (deleted). The element `<rdg>` is without text content (“self-closing”).
   
-######  Transpositions
-  
+###### Transpositions
   
 Transpositions are marked as `<@type="transposition">`. In the `<rdg>` element, the transposed text is reproduced in its full wording (sc. not abbreviated).
   
@@ -1058,8 +1007,7 @@ Rearrangements that affect longer passages of text - especially if they span str
 ```  
   
   
-######  Corrections by scribe
-  
+###### Corrections by scribe
   
 Corrections of the text by the scribe or a later corrector are distinguished in such a way that the order of the different stages of transmission is indicated in the `<rdg>` element with the help of the `@varSeq` attribute.
   
@@ -1091,8 +1039,7 @@ Microscopic text substitutions (such as the substitution of individual letters w
 ```  
   
   
-######  Conjectures by editors
-  
+###### Conjectures by editors
   
 Conjectures are marked with `<@type="conjecture">`: If this is done in the element `<lem>`, it is an emendation of the editor (or an older one that the editor joins), if this is done in the element `<rdg>`, it is a conjecture of a different origin not adopted by the editor.
   
@@ -1160,8 +1107,7 @@ The author of a conjecture, emendatio or correction is referred to in the attrib
 ```  
   
   
-######  Gaps in the text
-  
+###### Gaps in the text
   
 Gaps in the surviving text (as suspected by the editor) are marked with `<gap reason="missing">`. The presumed extent (`@quantity`) of the gap is indicated in letters, words, lines or pages (`@unit` with value `character`, `word`, `line` or `page`) where it seems reasonable and possible (!).
   
@@ -1182,8 +1128,7 @@ Gaps suspected by other editors but not taken over are marked in an apparatus en
 ```  
   
   
-######  Crux
-  
+###### Crux
   
 Text that cannot be emended by the editor but is certainly corrupted (“crux”) is marked up with the help of the `<sic>` element. The element can either enclose the corrupted text or mark the place of the corruption as a self-closing (“empty”) element.
   
@@ -1193,8 +1138,7 @@ Text that cannot be emended by the editor but is certainly corrupted (“crux”
 ```  
   
   
-######  Variants within variants
-  
+###### Variants within variants
   
 Variants can also be nested within each other, i.e. a `<lem>` or a `<rdg>`  element can enclose a variant (`<app>`). The wit attribute of the outer `<app>`  element includes all sigla of the inner `<app>` element (both of `<lem>` and of `<rdg>`): 
   
@@ -1211,8 +1155,7 @@ Variants can also be nested within each other, i.e. a `<lem>` or a `<rdg>`  elem
 ```  
   
   
-#####  Economic notation
-  
+##### Economic notation
   
 Variants that belong together in their genesis should, as long as the variant carriers are identical, be combined as far as possible to increase readability.
   
@@ -1238,8 +1181,7 @@ and not:
 ```  
   
   
-#####  Overlaps
-  
+##### Overlaps
   
 One problem resulting from the structure of the XML markup language is the overlapping of elements; cf. also the chapter [“Non-hierarchical Structures” in the TEI Guidelines.](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/NH.html )
   
@@ -1287,8 +1229,7 @@ If a variant exceeds a division level, it must be given priority and the `<app>`
 ```  
   
   
-#####  Commenting on text-critical decisions
-  
+##### Commenting on text-critical decisions
   
 If it seems necessary or feasible to expand on text-critical considerations that go beyond the indication of causes (with the help of the `@cause` attribute) or  typification (with the help of the `@type` attribute), an element `<note>` for remarks that concern the entire `<app>` element or an element `<witDetail>` for remarks that refer to a specific manuscript can be added within the `<app>` element. In this case, the `<app>`, `<lem>` or `<rdg>` element receives an attribute `@xml:id`, which is referred to in the `<note>` or `<witDetail>` element in an attribute `@target`.
   
@@ -1302,8 +1243,7 @@ If it seems necessary or feasible to expand on text-critical considerations that
 ```  
   
   
-##  File structure of each edition
-  
+## File structure of each edition
   
 Finally, in order to make reuse as easy as possible, it also makes sense to have uniform naming of the individual files and a structured file repository. The Patristic Text Archive follows the [CapiTainS Guidelines](http://capitains.org ) (cf. [Thibault Clérice, Matthew Munson, & Bridget Almas. (2017, May 2). Capitains/Capitains.github.io: 2.0.0 (Version 2.0.0). Zenodo.](http://doi.org/10.5281/zenodo.570516 )) and uses [CTS URNs](http://www.homermultitext.org/hmt-docs/cite/cts-urn-overview.html ) (cf. [Christopher W. Blackwell und Neel Smith, “The CITE Architecture: a Conceptual and Practical Overview”, in Monica Berti, ed., Digital Classical Philology. Ancient Greek and Latin in the Digital Revolution (Age of Access? Grundfragen der Informationsgesellschaft 10; Berlin, 2019), 73–93](https://doi.org/10.1515/9783110599572-006 )).
   
@@ -1323,6 +1263,7 @@ Within a folder `data`, each author (or textgroup) is in a folder named accordin
   
 The file names follow the CTS URNs and are structured as follows: The abbreviation “pta0013” stands for the author Amphilochius and “pta003” for the work “Epistula synodalis”. The last part of the URN identifies the specific “edition” of a work: in the example, these are the critical edition of the Greek text (pta-grc1), the German translation (pta-deu1) and the transcriptions of the four manuscripts (pta-MsLa, pta-MsPg, pta-MsPs, pta-MsVi).
   
-If you need new PTA-IDs for yet not existant authors/textgroups and/or works, please get into [contact](mailto:annette.von_stockhausen@bbaw.de) with us.
-
-Author: [Annette von Stockhausen](mailto:annette.von_stockhausen@bbaw.de)
+If you need new PTA-IDs for yet not existant authors/textgroups and/or works, please get into [contact](mailto:annette.von_stockhausen@bbaw.de ) with us.
+  
+Author: [Annette von Stockhausen](mailto:annette.von_stockhausen@bbaw.de )
+  
