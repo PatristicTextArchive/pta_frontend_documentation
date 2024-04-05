@@ -472,13 +472,13 @@ Auch die indirekte Überlieferung oder alte wie moderne Übersetzungen sollten a
   </head>
   <witness xml:id="La" corresp="pta0013.pta003.pta-MsLa.xml">
     <abbr type="siglum">La</abbr>
-    <name corresp="388.1418.0412.xml">Laurentianus Plut. IV 12</name>
+    <name key="PTAMS00566">Laurentianus Plut. IV 12</name>
     <origDate notBefore="1401" notAfter="1500">s. XV</origDate>
     <locus>f. 131v–133v</locus>
   </witness>
   <witness xml:id="Vi" source="#La" corresp="pta0013.pta003.pta-MsVi.xml">
     <abbr type="siglum">Vi</abbr>
-    <name corresp="1297.1341.0190.xml">Vindobonensis theol. gr. 190</name>
+    <name key="PTAMS00569">Vindobonensis theol. gr. 190</name>
     <origDate notBefore="1451" notAfter="1500">s. XV (2. H.)</origDate>
     <locus>f. 113r–115r</locus>
   </witness>
@@ -522,6 +522,8 @@ Konjektoren, die nicht im obigen Sinne bibliographiert werden können, weil z.B.
 </listPerson>
 ```  
   
+Die Person sollte durch Angabe eines Normdatenlinks ([GND](https://explore.gnd.network/ ), [ORCID](https://orcid.org/ ), [LCCN](https://lccn.loc.gov/ ), o.ä.) im Attribut `@ref` des `<persName>`-Elementes eindeutig identifiziert werden.
+  
 #### Kodierung von Bibelstellenangaben
   
 Im Abschnitt `<encodingDesc>` wird in einem weiteren Element
@@ -558,7 +560,7 @@ Im Abschnitt `<encodingDesc>` wird in einem weiteren Element
 </refsDecl>
 ```  
   
-Die im PTA verwendeten Abkürzungen für die Bücher des Alten Testamentes (LXX) sind:
+Die im PTA verwendeten Abkürzungen für die Bücher des Alten Testamentes sind:
   
 ```txt
 Gn, Ex, Lv, Num, Dt, Jos, Judg, Rt, 1Sa,
@@ -572,6 +574,8 @@ Dn (Dn-LXX), Bel (Bel-LXX).
   
 ```  
   
+Bei der Septuaginta (LLX) wird bei Sus, Dn, Bel zwischen der Septuaginta-Version (mit »-LXX«) und der Theodotion-Version unterschieden.
+  
 Die im PTA verwendeten Abkürzungen für die Bücher des Neuen Testamentes sind:
   
 ```txt
@@ -582,7 +586,7 @@ Gal, Eph, Phil, Col, 1Th, 2Th, 1Tim,
 ```  
   
 Die Stellenangaben werden folgendermaßen gebildet:
-Bibl. Korpus (LXX, Hexapla, Vg = Vulgate oder NA = New Testament [Nestle-Aland]):Buch:Kapitel:Vers (z.B.: 1,1-2,1.4), z.B. `LXX:Gn:1:1-3`.
+Bibl. Korpus (LXX, PES [= Peshitta], Hexapla, Vg [= Vulgata] oder NA [= Neues Testament = Nestle-Aland]):Buch:Kapitel:Vers (z.B.: 1,1-2,1.4), z.B. `LXX:Gn:1:1-3`.
   
 #### Angabe der ausgezeichneten Phänomene
   
@@ -775,7 +779,7 @@ Die Seitenumbrüche in den Handschriften und früheren Editionen werden nach Bed
   
 ##### Auszeichnung von Bibel- und anderen Zitaten (und Anspielungen)
   
-Zitate werden mit Hilfe des Elementes `<quote>` ausgezeichnet und können ein Attribut `@type` erhalten, so dass zwischen markierten (`marked`) und nicht-markierten (`unmarked`) Zitaten unterschieden werden kann; für paraphrasierende Zitate – soweit sie überhaupt als Zitat markiert werden – kann der Wert `paraphrase` verwendet werden. Bei Editionen biblischer Kommentare erhalten Lemma-Zitate den Wert `lemma`, um sie von anderen Zitaten zu differenzieren.
+Zitate werden mit Hilfe des Elementes `<quote>` ausgezeichnet und können ein Attribut `@type` erhalten, so dass zwischen markierten (`marked`) und nicht-markierten (`unmarked`) Zitaten unterschieden werden kann; für paraphrasierende Zitate – soweit sie überhaupt als Zitat markiert werden – kann der Wert `paraphrasis` verwendet werden. Bei Editionen biblischer Kommentare erhalten Lemma-Zitate den Wert `lemma`, um sie von anderen Zitaten zu differenzieren.
   
 Explizite Zitate unter Anführung des Autors des Zitates werden mit dem Element `<cit>` ausgezeichnet und die das Zitat anführende Phrase darin mit dem Element `<ref>`. Einschübe im Zitat (wie z.B. „sagte“) werden mit Hilfe von `<seg type="insertion">` innerhalb des Zitates ausgezeichnet.
   
@@ -1070,10 +1074,11 @@ Wird bei einer Korrektur nur Text hinzugefügt oder getilgt, so wird nur das Ele
 ```xml
 <app type="variants">
  <lem wit="#Pa #Be #Pb #Va #Ha #Pt #Pc #Pd #Ma #My #Ab">ἔχωμεν</lem>
- <rdg wit="#Ha">ἔχ<subst hand="#m2">
+ <rdg wit="#Ha" varSeq="2">ἔχ<subst hand="#m2">
    <del>ο</del>
    <add place="above">ω</add>
   </subst>μεν</rdg>
+ <rdg wit="#Ha" varSeq="1">ἔχομεν</rdg>
 </app>
 ```  
   
@@ -1258,13 +1263,13 @@ aufgeteilt und untereinander verlinkt werden.
   
 ##### Kommentierung textkritischer Entscheidungen
   
-Erscheint es nötig oder sinnvoll, textkritische Überlegungen, die über die Typisierung (mit Hilfe des Attributes `@type`) oder die Angabe von Ursachen (mit Hilfe des Attributes `@cause`) hinausgehen, auszuführen, so kann dafür an Ort und Stelle innerhalb des Elementes `<app>` ein Element `<note>` für Bemerkungen, die das gesamte `<app>`-Element betreffen, oder ein Element `<witDetail>` für Bemerkungen, die sich auf eine spezielle Handschrift bezieht, angefügt werden. Das Element `<app>`, `<lem>` oder `<rdg>` erhält in diesem Fall ein Attribut `@xml:id`, auf das im Element `<note>` oder `<witDetail>` in einem Attribut `@target` verwiesen wird. Im Falle von `<witDetail>` wird außerdem in einem Attribut `@wit` auf die ID der Handschrift verwiesen. 
+Erscheint es nötig oder sinnvoll, textkritische Überlegungen, die über die Typisierung (mit Hilfe des Attributes `@type`) oder die Angabe von Ursachen (mit Hilfe des Attributes `@cause`) hinausgehen, auszuführen, so kann dafür an Ort und Stelle innerhalb des Elementes `<app>` ein Element `<note>` für Bemerkungen, die das gesamte `<app>`-Element betreffen, oder ein Element `<witDetail>` für Bemerkungen, die sich auf eine spezielle Handschrift bezieht, angefügt werden. Das Element `<app>` erhält in diesem Fall ein Attribut `@xml:id`, auf das im Element `<note>` in einem Attribut `@target` verwiesen wird; im Falle von `<witDetail>` wird in einem Attribut `@wit` auf die ID der Handschrift verwiesen. 
   
 ```xml
 <app type="variants" xml:id="var1">
   <lem wit="#Pt #Pc #Pb #Pd #My #Ma #Ha #Va #Ab">ἀπαστράπτει</lem>
-  <rdg wit="#Pa #Be" xml:id="lac-Pa">ἀ</rdg>
-  <witDetail wit="#Pa" target="#lac-Pa">Blattausfall.</witDetail>
+  <rdg wit="#Pa #Be">ἀ</rdg>
+  <witDetail wit="#Pa">Blattausfall.</witDetail>
   <note target="#var1">Sich auf die gesamte Variante beziehende Anmerkung</note>
 </app>
 ```  

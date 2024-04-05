@@ -462,13 +462,13 @@ Indirect tradition or ancient as well as modern translations should also be note
   </head>
   <witness xml:id="La" corresp="pta0013.pta003.pta-MsLa.xml">
     <abbr type="siglum">La</abbr>
-    <name corresp="388.1418.0412.xml">Laurentianus Plut. IV 12</name>
+    <name key="PTAMS00566">Laurentianus Plut. IV 12</name>
     <origDate notBefore="1401" notAfter="1500">s. XV</origDate>
     <locus>f. 131v–133v</locus>
   </witness>
   <witness xml:id="Vi" source="#La" corresp="pta0013.pta003.pta-MsVi.xml">
     <abbr type="siglum">Vi</abbr>
-    <name corresp="1297.1341.0190.xml">Vindobonensis theol. gr. 190</name>
+    <name key="PTAMS00569">Vindobonensis theol. gr. 190</name>
     <origDate notBefore="1451" notAfter="1500">s. XV (2. H.)</origDate>
     <locus>f. 113r–115r</locus>
   </witness>
@@ -513,6 +513,8 @@ Authors of conjectures that cannot be bibliographed in the above sense because, 
 </person>
 </listPerson>
 ```  
+  
+The person should be identified by a link to relevant norm data ([GND](https://explore.gnd.network/ ), [ORCID](https://orcid.org/ ), [LCCN](https://lccn.loc.gov/ ), for example) in the attribute `@ref` of the element `<persName>`.
   
   
 #### Encoding of biblical references
@@ -574,7 +576,7 @@ Gal, Eph, Phil, Col, 1Th, 2Th, 1Tim,
 2Jn, 3Jn, Jud, Rev.
 ```  
   
-The passages are formed as follows: Biblical corpus (LXX, Hexapla, Vg [= Vulgata] or NA [= Nestle-Aland]):Book:Chapter:Verse (e.g.: 1,1-2,1.4), e.g. `LXX:Gn:1:1-3`.
+The passages are formed as follows: Biblical corpus (LXX, PES [= Peshitta], Hexapla, Vg [= Vulgata] or NA [= Nestle-Aland]):Book:Chapter:Verse (e.g.: 1,1-2,1.4), e.g. `LXX:Gn:1:1-3`.
   
 #### Indication of the encoded phenomena
   
@@ -749,7 +751,7 @@ The page breaks in the manuscripts and earlier editions are indicated as require
   
 ##### Encoding of biblical and other quotations (and allusions)
   
-Quotations are marked with the help of the `<quote>` element and can be given a `@type` attribute so that a distinction can be made between `marked` and `unmarked` quotations; for paraphrased quotations - insofar as they are marked as quotations at all - the value `paraphrase` can be used. In editions of biblical commentaries, lemma quotations are given the value `lemma` to differentiate them from other quotations.
+Quotations are marked with the help of the `<quote>` element and can be given a `@type` attribute so that a distinction can be made between `marked` and `unmarked` quotations; for paraphrased quotations - insofar as they are marked as quotations at all - the value `paraphrasis` can be used. In editions of biblical commentaries, lemma quotations are given the value `lemma` to differentiate them from other quotations.
   
 Explicit quotations citing the author of the quotation are marked with the element `<cit>` and the phrase in it leading the quotation is marked with the element `<ref>`. Insertions in the quotation (such as “said”) are marked with the help of `<seg type="insertion">` within the quotation.
   
@@ -1031,10 +1033,11 @@ Microscopic text substitutions (such as the substitution of individual letters w
 ```xml
 <app type="variants">
  <lem wit="#Pa #Be #Pb #Va #Ha #Pt #Pc #Pd #Ma #My #Ab">ἔχωμεν</lem>
- <rdg wit="#Ha">ἔχ<subst hand="#m2">
+ <rdg wit="#Ha" varSeq="2">ἔχ<subst hand="#m2">
    <del>ο</del>
    <add place="above">ω</add>
   </subst>μεν</rdg>
+ <rdg wit="#Ha" varSeq="1">ἔχομεν</rdg>
 </app>
 ```  
   
@@ -1231,13 +1234,13 @@ If a variant exceeds a division level, it must be given priority and the `<app>`
   
 ##### Commenting on text-critical decisions
   
-If it seems necessary or feasible to expand on text-critical considerations that go beyond the indication of causes (with the help of the `@cause` attribute) or  typification (with the help of the `@type` attribute), an element `<note>` for remarks that concern the entire `<app>` element or an element `<witDetail>` for remarks that refer to a specific manuscript can be added within the `<app>` element. In this case, the `<app>`, `<lem>` or `<rdg>` element receives an attribute `@xml:id`, which is referred to in the `<note>` or `<witDetail>` element in an attribute `@target`.
+If it seems necessary or feasible to expand on text-critical considerations that go beyond the indication of causes (with the help of the `@cause` attribute) or  typification (with the help of the `@type` attribute), an element `<note>` for remarks that concern the entire `<app>` element or an element `<witDetail>` for remarks that refer to a specific manuscript can be added within the `<app>` element. In this case, the `<app>` element receives an attribute `@xml:id`, which is referred to in the `<note>` in an attribute `@target`. In case of an annotation in `<witDetail>`, the element receives an attribute `@wit` with the ID of the manuscript.
   
 ```xml
 <app type="variants" xml:id="var1">
   <lem wit="#Pt #Pc #Pb #Pd #My #Ma #Ha #Va #Ab">ἀπαστράπτει</lem>
-  <rdg wit="#Pa #Be" xml:id="lac-Pa">ἀ</rdg>
-  <witDetail wit="#Pa" target="#lac-Pa">Blattausfall.</witDetail>
+  <rdg wit="#Pa #Be">ἀ</rdg>
+  <witDetail wit="#Pa">Blattausfall.</witDetail>
   <note target="#var1">Sich auf die gesamte Variante beziehende Anmerkung</note>
 </app>
 ```  
