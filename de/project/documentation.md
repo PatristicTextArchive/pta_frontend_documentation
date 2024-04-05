@@ -49,11 +49,8 @@ Bei Stellen aus der Hexapla wird die entsprechende Seite von *Frederick Field (e
 Es wird ein [Register](https://pta.bbaw.de/indices/biblical-references) aller annotierten Bibelstellen bereitgestellt. ACHTUNG: Nicht alle Texte sind (vollständig) annotiert.
 
 ### Lexikon
-Die Lexikon-Funktion befindet sich noch in Entwicklung. Momentan steht sie nur für griechische Texte (und wegen der vielen orthographischen Abweichungen nicht für Handschriftentranskriptionen) zur Verfügung.
 
-Sie basiert auf einer mit Hilfe des [Classical Language Toolkit (CLTK)](http://cltk.org/) durchgeführten maschinellen (= nicht fehlerfreien) Lemmatisierung.
-
-Für die Lexikon-Daten wird auf *Liddell-Scott-Jones, Greek-English Lexicon (9th ed., 1940)*, auf *Pape, Griechisch-deutsches Handwörterbuch (3. Aufl., 1914)*, in den von [Chaeréphon (André Charbonnet) zur Verfügung gestellten digitalen Versionen](http://chaerephon.e-monsite.com/medias/files/bailly.html) (vermittelt durch [biblissima/eulexis](http://outils.biblissima.fr/resources/eulexis/data.tar.gz)) sowie auf und auf *Bailly 2020 Hugo Chávez: Gérard Gréco, André Charbonnet, Mark De Wilde, Bernard Maréchal & contributeurs / Licence Creative Commons Attribution - Pas d'Utilisation Commerciale - Pas de Modification — « CC BY-NC-ND 4.0 »* (<http://gerardgreco.free.fr/spip.php?article52>) sowie auf *Translators Brief lexicon of Extended Strongs for Greek*, welches auf *Abbot-Smith, A Manual Greek Lexicon of the New Testament (1922)* basiert und so von [StepBible.org (CC BY lizensiert)](https://github.com/STEPBible/STEPBible-Data/blob/master/TBESG%20-%20Translators%20Brief%20lexicon%20of%20Extended%20Strongs%20for%20Greek%20-%20STEPBible.org%20CC%20BY.txt) zur Verfügung gestellt wird, zurückgegriffen.
+Die Lexikon-Funktion greift zur (automatischen) Lemmatisierung und für die [Wörterbücher](https://cld.bbaw.de/documentation/dictionaries) auf den Service des [Classical Language Dictionary](https://cld.bbaw.de) zurück.
 
 ### Analyse mit Hilfe der Voyant Tools
 

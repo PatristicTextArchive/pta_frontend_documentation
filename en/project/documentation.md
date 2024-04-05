@@ -45,12 +45,10 @@ For references to the Hexapla links to *Frederick Field (ed.): Origenis hexaplor
 
 
 An [Index](https://pta.bbaw.de/indices/biblical-references) of all annotated biblical references is provided. CAVEAT: Not all text are (fully) annotated.
+
 ### Dictionary
-The dictionary function is still in development. At the moment, it is also only provided for Greek texts (but not for transcriptions due to the high variability in spelling).
 
-This function is based on an automatic (i.e. not free from errors) lemmatization done with the help of [Clérice, T. (2021). Pie Extended, an extension for Pie with pre-processing and post-processing (Version 0.0.39) [Computer software]](https://doi.org/10.5281/zenodo.3883589).
-
-For the lexical data the following dictionaries are used: *Liddell-Scott-Jones, Greek-English Lexicon (9th ed., 1940)*, *Pape, Griechisch-deutsches Handwörterbuch (3. Aufl., 1914)*, in the digital versions provided by [Chaeréphon (André Charbonnet)](http://chaerephon.e-monsite.com/medias/files/bailly.html) (through [biblissima/eulexis](http://outils.biblissima.fr/resources/eulexis/data.tar.gz)), *Bailly 2020 Hugo Chávez: Gérard Gréco, André Charbonnet, Mark De Wilde, Bernard Maréchal & contributeurs / Licence Creative Commons Attribution - Pas d'Utilisation Commerciale - Pas de Modification — « CC BY-NC-ND 4.0 »* (<http://gerardgreco.free.fr/spip.php?article52>), and *Translators Brief lexicon of Extended Strongs for Greek*, which is based on *Abbot-Smith, A Manual Greek Lexicon of the New Testament (1922)* as provided by [StepBible.org (licensed CC BY)](https://github.com/STEPBible/STEPBible-Data/blob/master/TBESG%20-%20Translators%20Brief%20lexicon%20of%20Extended%20Strongs%20for%20Greek%20-%20STEPBible.org%20CC%20BY.txt)
+The dictionary function uses the service of the [Classical Language Dictionary](https://cld.bbaw.de) for (automatic) lemmatization and its [dictionaries](https://cld.bbaw.de/documentation/dictionaries).
 
 ### Analyse text with Voyant Tools
 
