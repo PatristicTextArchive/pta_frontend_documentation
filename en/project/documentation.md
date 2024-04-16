@@ -114,4 +114,4 @@ The PTA webapp uses the following additional modules and plugins:
 
 
 #### Languages of the interface
-The interface is currently available in German and English, Italian is work in progress. The transaltions are in json format according to i18n standard. More languages are planned. We happily accept [contributions](../project/contributing)!
+The interface is currently available in German and English, Italian is work in progress. The translations are in json format according to i18n standard. More languages are planned. We happily accept [contributions](../project/contributing)!
