@@ -2,7 +2,7 @@
 
 ### Transcription of manuscripts and (critical) editions
 
--> Look here: [Encoding guidelines](../project/encoding-guidelines) (only German at the moment)
+-> Look here: [Encoding guidelines](../project/encoding-guidelines) 
 
 ### Texts
 Where available, each text is linked to the matching entries in the databases of [Clavis Clavium](https://clavis.brepols.net/clacla/Default.aspx) and of [Pinakes](https://pinakes.irht.cnrs.fr/); IDs of the TLG© for authors and works are also shown (no linking is possible).
