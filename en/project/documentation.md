@@ -48,7 +48,7 @@ An [Index](https://pta.bbaw.de/indices/biblical-references) of all annotated bib
 
 ### Dictionary
 
-The dictionary function uses the service of the [Classical Language Dictionary](https://cld.bbaw.de) for (automatic) lemmatization and its [dictionaries](https://cld.bbaw.de/documentation/dictionaries).
+The dictionary function uses the service of the [Classical Language Dictionary](https://cld.bbaw.de) for (automatic) lemmatization and its [dictionaries](https://cld.bbaw.de/documentation/dictionaries). For Syriac, the [SEDRA IV API (v1.0.0)](https://sedra.bethmardutho.org/about/openapi) is used.
 
 ### Analyse text with Voyant Tools
 

@@ -50,7 +50,7 @@ Es wird ein [Register](https://pta.bbaw.de/indices/biblical-references) aller an
 
 ### Lexikon
 
-Die Lexikon-Funktion greift zur (automatischen) Lemmatisierung und für die [Wörterbücher](https://cld.bbaw.de/documentation/dictionaries) auf den Service des [Classical Language Dictionary](https://cld.bbaw.de) zurück.
+Die Lexikon-Funktion greift zur (automatischen) Lemmatisierung und für die [Wörterbücher](https://cld.bbaw.de/documentation/dictionaries) auf den Service des [Classical Language Dictionary](https://cld.bbaw.de) zurück. Für Syrisch wird die [SEDRA IV API (v1.0.0)](https://sedra.bethmardutho.org/about/openapi) benutzt.
 
 ### Analyse mit Hilfe der Voyant Tools
 
