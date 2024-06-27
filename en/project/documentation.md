@@ -22,18 +22,19 @@ The entry in the [Pinakes database](https://pinakes.irht.cnrs.fr/) is linked as 
 The data is available on [Github](https://github.com/PatristicTextArchive/pta_manuscripts).
 
 Each manuscript description is accesible through a **permalink** (using the internal manuscript-ID): for example  <https://pta.bbaw.de/de/manuscripts/PTAMS00325>; the **versioned permalink** reflects a specific  state of publication, for example <https://pta.bbaw.de/de/manuscripts/80476827/PTAMS00325>.
-### People
-People mentioned in the editions are encoded and enriched by other sources as far as possible. This functionality is partially available.
 
-For Biblical persons the [TIPNR - Translators Individualised Proper Names with all References](https://github.com/tyndale/STEPBible-Data) are used, all other persons are referenced via the project's person index, which references GND IDs and [Wikidata](https://www.wikidata.org) IDs where available. For GND Ids the service [lobid-gnd | ein LOD-Dienst des hbz — Hochschulbibliothekszentrum des Landes NRW](https://lobid.org/gnd) is used.
+### People and groups
+People and groups mentioned in the editions are encoded and enriched by other sources as far as possible. 
 
-An [Index](https://pta.bbaw.de/indices/persons) of all annotated persons is provided. The description given is based on the following sources: TIPNR = Translators Individualised Proper Names with all References (see above), AW_III_5 = Athanasius Werke III 5, Verzeichnis der Personen (Berlin/Boston 2020), AvS = Annette von Stockhausen. CAVEAT: Not all text are (fully) annotated.
+For Biblical persons the [TIPNR - Translators Individualised Proper Names with all References](https://github.com/tyndale/STEPBible-Data) are used (as of [commit b83a3cf1 (31 May 2024)](https://github.com/STEPBible/STEPBible-Data/commit/b83a3cf1224af5cf72606d86d6be1789adc69541)), all other persons are referenced via the project's person index, which references GND IDs and [Wikidata](https://www.wikidata.org) IDs where available. For GND Ids the service [lobid-gnd | ein LOD-Dienst des hbz — Hochschulbibliothekszentrum des Landes NRW](https://lobid.org/gnd) is used.
+
+An [Index](https://pta.bbaw.de/indices/persons) of all annotated persons is provided. The description given is based on the following sources: TIPNR = Translators Individualised Proper Names with all References (see above), AW_III_5 = Athanasius Werke III 5, Verzeichnis der Personen (Berlin/Boston 2020), AvS = Annette von Stockhausen, php = Philipp Pilhofer. CAVEAT: Not all texts are (fully) annotated, the status of the annotation of each text is shown in the Reader (and in the teiHeader of the XML file).
 
 ### Places
 
-As far as possible, places mentioned in the editions are encoded and enriched by data from the [Pleiades-Gazetteer](https://pleiades.stoa.org/) and the [Translators Individualized Proper Names with all References](https://github.com/tyndale/STEPBible-Data) list.
+As far as possible, places mentioned in the editions are encoded and enriched by data from the [Pleiades-Gazetteer](https://pleiades.stoa.org/) (using <http://atlantides.org/downloads/pleiades/json/pleiades-places-20240613.json.gz>) and the [Translators Individualized Proper Names with all References](https://github.com/tyndale/STEPBible-Data) (as of [commit b83a3cf1 (31 May 2024)](https://github.com/STEPBible/STEPBible-Data/commit/b83a3cf1224af5cf72606d86d6be1789adc69541)) list.
 
-An [Index](https://pta.bbaw.de/indices/places) of all annotated places is provided. All places as well as the  place selected are shown on a map; for this we make use of the [Digital Atlas of the Roman Empire (DARE)](https://dh.gu.se/dare/). CAVEAT: Not all text are (fully) annotated.
+An [Index](https://pta.bbaw.de/indices/places) of all annotated places is provided. All places as well as the  place selected are shown on a map; for this we make use of the [Digital Atlas of the Roman Empire (DARE)](https://dh.gu.se/dare/). CAVEAT: Not all texts are (fully) annotated, the status of the annotation of each text is shown in the Reader (and in the teiHeader of the XML file).
 
 ### Biblical quotes
 

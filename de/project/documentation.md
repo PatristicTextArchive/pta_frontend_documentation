@@ -25,18 +25,18 @@ Die zugrundliegenden Daten sind auf [Github](https://github.com/PatristicTextArc
 
 Jede Handschriftenbeschreibung ist über einen **Permalink** (unter Verwendung der Handschriften-ID) erreichbar: z.B. <https://pta.bbaw.de/de/manuscripts/PTAMS00325>; seine **versionierte** Fassung, die einen spezifischen Veröffentlichungsstand widerspiegelt, lautet z.B. <https://pta.bbaw.de/de/manuscripts/80476827/PTAMS00325>.
 
-### Personen
+### Personen und Personengruppen
 In den Editionen vorkommende Personen werden nach Möglichkeit ausgezeichnet und mit weiteren Informationen aus anderen Quellen angereichert. Diese Funktionalität steht erst teilweise zur Verfügung.
 
-Für biblische Personen wird dabei auf die [TIPNR - Translators Individualised Proper Names with all References](https://github.com/tyndale/STEPBible-Data) zurückgegriffen, für alle übrigen Personen wird ein eigenes Register geführt, in dem – soweit vorhanden – die IDs der GND bzw. von [Wikidata](https://www.wikidata.org) referenziert werden, wobei für GND-IDs auf den Service [lobid-gnd | ein LOD-Dienst des hbz — Hochschulbibliothekszentrum des Landes NRW](https://lobid.org/gnd) zurückgegriffen wird.
+Für biblische Personen wird dabei auf die [TIPNR - Translators Individualised Proper Names with all References](https://github.com/tyndale/STEPBible-Data) (bei [commit b83a3cf1 (31. Mai 2024)](https://github.com/STEPBible/STEPBible-Data/commit/b83a3cf1224af5cf72606d86d6be1789adc69541)) zurückgegriffen, für alle übrigen Personen wird ein eigenes Register geführt, in dem – soweit vorhanden – die IDs der GND bzw. von [Wikidata](https://www.wikidata.org) referenziert werden, wobei für GND-IDs auf den Service [lobid-gnd | ein LOD-Dienst des hbz — Hochschulbibliothekszentrum des Landes NRW](https://lobid.org/gnd) zurückgegriffen wird.
 
-Es wird ein [Register](https://pta.bbaw.de/indices/persons) aller annotierten Personen bereitgestellt. Die Quelle, auf der die Beschreibung der Person basiert, ist jeweils abgekürzt angegeben: TIPNR = Translators Individualised Proper Names with all References (s.o.), AW_III_5 = Athanasius Werke III 5, Verzeichnis der Personen (Berlin/Boston 2020), AvS = Annette von Stockhausen. ACHTUNG: Nicht alle Texte sind (vollständig) annotiert.
+Es wird ein [Register](https://pta.bbaw.de/indices/persons) aller annotierten Personen bereitgestellt. Die Quelle, auf der die Beschreibung der Person basiert, ist jeweils abgekürzt angegeben: TIPNR = Translators Individualised Proper Names with all References (s.o.), AW_III_5 = Athanasius Werke III 5, Verzeichnis der Personen (Berlin/Boston 2020), AvS = Annette von Stockhausen, php = Philipp Pilhofer. ACHTUNG: Nicht alle Texte sind (vollständig) annotiert, der Stand der Annotation ist im Reader (bzw. im teiHeader der XML-Datei) einzusehen.
 
 ### Orte
 
-In den Editionen vorkommende Orte werden nach Möglichkeit ebenfalls ausgezeichnet und mit weiteren Informationen aus dem [Pleiades-Gazetteer](https://pleiades.stoa.org/) bzw. der [Translators Individualized Proper Names with all References](https://github.com/tyndale/STEPBible-Data)-Liste angereichert.
+In den Editionen vorkommende Orte werden nach Möglichkeit ebenfalls ausgezeichnet und mit weiteren Informationen aus dem [Pleiades-Gazetteer](https://pleiades.stoa.org/) (unter Verwendung von <http://atlantides.org/downloads/pleiades/json/pleiades-places-20240613.json.gz>) bzw. der [Translators Individualized Proper Names with all References](https://github.com/tyndale/STEPBible-Data)-Liste (bei [commit b83a3cf1 (31. Mai 2024)](https://github.com/STEPBible/STEPBible-Data/commit/b83a3cf1224af5cf72606d86d6be1789adc69541)) angereichert.
 
-Es wird ein [Register](https://pta.bbaw.de/indices/places) aller annotierten Orte bereitgestellt. Alle im Register befindlichen Orte und der im Register jeweils ausgewählte Ort werden auf einer Karte dargestellt; dafür wird auf den [Digital Atlas of the Roman Empire (DARE)](https://dh.gu.se/dare/) zurückgegriffen. ACHTUNG: Nicht alle Texte sind (vollständig) annotiert.
+Es wird ein [Register](https://pta.bbaw.de/indices/places) aller annotierten Orte bereitgestellt. Alle im Register befindlichen Orte und der im Register jeweils ausgewählte Ort werden auf einer Karte dargestellt; dafür wird auf den [Digital Atlas of the Roman Empire (DARE)](https://dh.gu.se/dare/) zurückgegriffen. ACHTUNG: Nicht alle Texte sind (vollständig) annotiert, der Stand der Annotation ist im Reader (bzw. im teiHeader der XML-Datei) einzusehen.
 
 ### Bibelstellen
 
