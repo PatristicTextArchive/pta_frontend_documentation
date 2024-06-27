@@ -6,6 +6,11 @@
 - Personens, groups, places, biblical references, manuscripts, texte metadata formatted as LOD 
 
 ## Frontend
+### January – June 2024
+- Dictionaries now via [Classical Language Dictionary (CLD)](https://cld.bbaw.de)
+- New: Lemmatisation and dictionaries for Greek, Latin, and Syriac
+- Bug fixes
+
 ### 21 July 2023
 - New: Lemmatised full text search
 - New: Timeline and map visualisation for manuscript database
@@ -17,8 +22,8 @@
 - Print function improved (plain text and text with annotations)
 
 ### 19 June 2023
-- Fehlerbereinigungen und Verbesserungen (Suche, Variantendarstellung, Gliederung, Praefatio, Handschriftendatenbank)
-- Neu: Faksimile-Anzeige bei Handschriftentranskriptionen und in der Handschriftendatenbank
+- Bug fixes and improvements (Search, display of textual variants, text structure, praefatio, manuscripts databank)
+- New: Display of manuscript digitisations in transcriptions and in the manuscripts database
 
 ### 5 Jul 2022
 - New: Distance search (lemmatised)

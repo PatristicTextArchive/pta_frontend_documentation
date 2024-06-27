@@ -4,7 +4,13 @@
 
 ### 5. Juli 2022
 - Personen, Gruppen, Orte, Bibelreferenzen, Handschriften, Text-Metdaten für LOD aufbereitet 
+
 ## Benutzerschnittstelle
+### Januar–Juni 2024
+- Lexikon-Funktionalität in [Classical Language Dictionary (CLD)](https://cld.bbaw.de) ausgelagert
+- Lemmatisierung und Lexikon für Griechisch, Lateinisch, Syrisch
+- Fehlerbereinigungen
+
 ### 21. Juli 2023
 - Neu: Lemmatisierte Volltextsuche
 - Neu: Zeitleiste und Kartendarstellung für Handschriftendatenbank
