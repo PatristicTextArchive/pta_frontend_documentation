@@ -172,3 +172,7 @@ Der ausgewählte Text wird dann in einem zweiten „Fenster“ rechts neben dem 
 | ↥ Sigle | Zeuge endet an dieser Stelle | 
 | ⇣ Sigle | Lücke im Zeugen beginnt an dieser Stelle |
 | ⇡ Sigle | Lücke im Zeugen endet an dieser Stelle |
+
+## Probleme beim Laden
+
+Sollte der Text nicht laden bzw. das Laden bei „Indices“ steckenbleiben, ist sehr wahrscheinlich eine veraltete Version der Index-Dateien noch im Browser-Cache gespeichert. In diesem Fall hilft es, den Cache mit STRG+F5 (Windows, Linux) oder Hochstelltaste+R (Mac) zu löschen.
