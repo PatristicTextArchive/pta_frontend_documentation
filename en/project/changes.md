@@ -6,6 +6,10 @@
 - Personens, groups, places, biblical references, manuscripts, texte metadata formatted as LOD 
 
 ## Frontend
+### 15 November 2024
+- Bug fixes
+- Enhancement of the [Classical Language Dictionary (CLD)](https://cld.bbaw.de) analytical pipeline
+
 ### January – June 2024
 - Dictionaries now via [Classical Language Dictionary (CLD)](https://cld.bbaw.de)
 - New: Lemmatisation and dictionaries for Greek, Latin, and Syriac

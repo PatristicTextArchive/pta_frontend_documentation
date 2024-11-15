@@ -6,6 +6,10 @@
 - Personen, Gruppen, Orte, Bibelreferenzen, Handschriften, Text-Metdaten für LOD aufbereitet 
 
 ## Benutzerschnittstelle
+### 15. November 2024
+- Fehlerbereinigungen
+- Verbesserung der Analyse-Pipeline des [Classical Language Dictionary (CLD)](https://cld.bbaw.de)
+
 ### Januar–Juni 2024
 - Lexikon-Funktionalität in [Classical Language Dictionary (CLD)](https://cld.bbaw.de) ausgelagert
 - Lemmatisierung und Lexikon für Griechisch, Lateinisch, Syrisch
