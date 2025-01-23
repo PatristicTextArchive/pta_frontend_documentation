@@ -224,6 +224,15 @@ Titel werden mit dem Element `<title>` innerhalb des Elementes
 </head>
 ```  
   
+Überschriftsähnliche Elemente, wie z.B. die Zuschreibung eines Zitates zu einem am Rand angeführten oder im Text hervorgehobenen Autors, werden mit dem Element `<label>` ausgezeichnet, das ein Attribut `@type` mit dem Wert `attribution` erhält.
+  
+```xml
+<p><label type="attribution">
+    <persName key="PTA_P00001">Χρυσοστόμου</persName>.
+</label> Προκαταλαμβάνει τὸν ἀκροατὴν τοῖς ἐπαίνοις· 
+ὥστε μηδὲ ἄκοντα ἀποστῆναι. </p>
+```  
+  
 #### Zeilen-, Spalten-, Seiten-, Bogenanfänge
   
 Zeilenanfänge werden mit `<lb/>`, Spaltenanfänge mit `<cb/>`, 
@@ -675,7 +684,9 @@ Schließlich erhält das Element `<revisionDesc>` ein Attribut `@status`, in dem
   
 - `draft`: Entwurf, Edition in Arbeit
 - `unfinished`: Noch in Bearbeitung, zum Beispiel fehlen noch Annotationen
+- `final`: Finale, (noch) nicht freigegebene Version
 - `approved`: Freigegebene, finale Version
+  
 ### Edition
   
 Die gesamte kritische Edition steht im `<text>`-Teil der Datei. Sie besteht mindestens aus einem Element `<div>`, das den edierten Text enthält. Das Element hat die folgenden Attribute: 
@@ -767,6 +778,25 @@ Innerhalb des Elements `<div type="edition">` wird die vom Editor rekonstruierte
 Das Attribute `@n` enthält die Stellenreferenz, normalerweise eine Zahl, sie kann aber auch Text wie „pr”, „hypopsalmos”, „hypothesis”, „perioche” usw. enthalten. Sie darf aber kein Leerzeichen enthalten, sondern nur Buchstaben, Zahlen, Symbole und Interpunktionszeichen. 
   
 Absätze innerhalb dieser Unterabschnitte werden mit Hilfe des Elements `<p>` ausgezeichnet. Jedes Element `<div>` enthält mindestens ein Element `<p>`. Listen sind ebenfalls erlaubt: Sie werden (anstelle von `<p>`) mit dem Element `<list>`, die einzelnen Listeneinträge mit dem Element `<item>` ausgezeichnet. Hat eine Liste eine Überschrift, so wird diese mit Hilfe des Elementes `<head>` ausgezeichnet. 
+  
+#### Titel und titelähnliche Elemente
+  
+Titel werden mit dem Element `<title>` innerhalb des Elementes `<head>` ausgezeichnet:
+  
+```xml
+<head>
+ <title>Τοῦ αὐτοῦ ὁμιλία</title>
+</head>
+```  
+  
+Überschriftsähnliche Elemente, wie z.B. die Zuschreibung eines Zitates zu einem am Rand angeführten oder im Text hervorgehobenen Autors, werden mit dem Element `<label>` ausgezeichnet, das ein Attribut `@type` mit dem Wert `attribution` erhält. (Für die Auszeichnung von Sprechern in Dialogen siehe [unten](#auszeichnung-von-dialogen ).)
+  
+```xml
+<p><label type="attribution">
+    <persName key="PTA_P00001">Χρυσοστόμου</persName>.
+</label> Προκαταλαμβάνει τὸν ἀκροατὴν τοῖς ἐπαίνοις· 
+ὥστε μηδὲ ἄκοντα ἀποστῆναι. </p>
+```  
   
   
 ##### Auszeichnung weiterer struktureller Elemente
@@ -889,11 +919,11 @@ Im Attribut `@key` wird die `org_id` der [PTA-Oranganisationen-Liste](https://gi
   
 ##### Bezeugung des Textes
   
-Die handschriftliche Bezeugung des Textes wird im Element `<app>`, das ein Attribut `@type` mit dem Wert `witnesses` erhält, dokumentiert. Das Element erhält im Attribut `@xml:id` einen eindeutigen Identifikator, im Attribut `@prev` bzw. `@next` wird auf den korrespondierenden Eintrag (`<witStart/>`/`<lacunaStart/>` -> `<witEnd/>`/`<lacunaEnd/>` und umgekehrt) verwiesen. Gegegebenenfalls kann im Attribut `@corresp` auf eine entsprechende textkritische Variante oder Lesart verwiesen werden, die dann ebenfalls einen eindeutigen Identifikator benötigt.
+Die handschriftliche Bezeugung des Textes wird im Element `<app>`, das ein Attribut `@type` mit dem Wert `witnesses` erhält, dokumentiert. Das Element erhält im Attribut `@xml:id` einen eindeutigen Identifikator, im optionalen Attribut `@prev` bzw. `@next` wird auf den korrespondierenden Eintrag (`<witStart/>`/`<lacunaStart/>` -> `<witEnd/>`/`<lacunaEnd/>` und umgekehrt) verwiesen. Gegegebenenfalls kann im Attribut `@corresp` auf eine entsprechende textkritische Variante oder Lesart verwiesen werden, die dann ebenfalls einen eindeutigen Identifikator benötigt.
 Das Element enthält nur das Element `<rdg>` mit dem Attribut `@wit`, in dem eines der selbst-schließenden Elemente `<witStart/>` (= Beginn eines Zeugen), `<witEnd/>` (= Ende eines Zeugen), `<lacunaStart/>` (= Beginn einer Lücke) oder `<lacunaEnd/>` (= Ende einer Lücke) eingefügt wird. Das Element enthält keinen Text, sondern wird (vergleichbar mit einem Milestone-Element wie `<pb>`) an der passenden Stelle im Text eingefügt: In Fall von `<witStart>` und `<lacunaEnd>` steht es vor dem ersten Wort, das im Zeugen vorhanden ist bzw. nachdem die Lücke zu Ende ist, im Fall von `<witEnd>` und `<lacunaStart>` steht es nach dem letzten Wort, das im Zeugen vorhanden ist bzw. vor dem die Lücke beginnt. 
   
 ```xml
-<app type="textcritical">
+<app type="variants">
     <lem wit="#Pt #Pc #Pb #Pd #My #Ma #Ha #Va #Ab">ἀπαστράπτει</lem>
     <rdg wit="#Pa #Be" xml:id="lac-Pa">ἀ</rdg>
     <witDetail wit="#Pa" target="#lac-Pa">Blattausfall.</witDetail>
@@ -1263,14 +1293,14 @@ aufgeteilt und untereinander verlinkt werden.
   
 ##### Kommentierung textkritischer Entscheidungen
   
-Erscheint es nötig oder sinnvoll, textkritische Überlegungen, die über die Typisierung (mit Hilfe des Attributes `@type`) oder die Angabe von Ursachen (mit Hilfe des Attributes `@cause`) hinausgehen, auszuführen, so kann dafür an Ort und Stelle innerhalb des Elementes `<app>` ein Element `<note>` für Bemerkungen, die das gesamte `<app>`-Element betreffen, oder ein Element `<witDetail>` für Bemerkungen, die sich auf eine spezielle Handschrift bezieht, angefügt werden. Das Element `<app>` erhält in diesem Fall ein Attribut `@xml:id`, auf das im Element `<note>` in einem Attribut `@target` verwiesen wird; im Falle von `<witDetail>` wird in einem Attribut `@wit` auf die ID der Handschrift verwiesen. 
+Erscheint es nötig oder sinnvoll, textkritische Überlegungen, die über die Typisierung (mit Hilfe des Attributes `@type`) oder die Angabe von Ursachen (mit Hilfe des Attributes `@cause`) hinausgehen, auszuführen, so kann dafür an Ort und Stelle innerhalb des Elementes `<app>` ein Element `<note>` für Bemerkungen, die das gesamte `<app>`-Element betreffen, oder ein Element `<witDetail>` für Bemerkungen, die sich auf eine spezielle Handschrift bezieht, angefügt werden; im Falle von `<witDetail>` wird in einem Attribut `@wit` auf die ID der Handschrift verwiesen. 
   
 ```xml
-<app type="variants" xml:id="var1">
+<app type="variants">
   <lem wit="#Pt #Pc #Pb #Pd #My #Ma #Ha #Va #Ab">ἀπαστράπτει</lem>
   <rdg wit="#Pa #Be">ἀ</rdg>
   <witDetail wit="#Pa">Blattausfall.</witDetail>
-  <note target="#var1">Sich auf die gesamte Variante beziehende Anmerkung</note>
+  <note>Sich auf die gesamte Variante beziehende Anmerkung</note>
 </app>
 ```  
   

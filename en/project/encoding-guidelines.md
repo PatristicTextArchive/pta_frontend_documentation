@@ -206,6 +206,15 @@ Titles are marked with the element `<title>` within the element
 </head>
 ```  
   
+Heading-like elements, such as the attribution of a quote to an author listed in the margin or highlighted in the text, are marked with the element `<label>`, which is given an attribute `@type` with the value `attribution`.
+  
+```xml
+<p><label type="attribution">
+    <persName key="PTA_P00001">Χρυσοστόμου</persName>.
+</label> Προκαταλαμβάνει τὸν ἀκροατὴν τοῖς ἐπαίνοις· 
+ὥστε μηδὲ ἄκοντα ἀποστῆναι. </p>
+```  
+  
   
 #### Line, column, page, gathering beginnings
   
@@ -661,6 +670,7 @@ A special case is `metacritical-edition-with-app`, which is used for the [SBLGNT
 Finally, the element `<revisionDesc>` receives an attribute `@status`, in which the status of the edition is specified. The following values are possible:
 - `draft`: Draft version, work in progress
 - `unfinished`: Work not yet finished, for example annotations need to be done
+- `final`: Final Version, not (yet) approved
 - `approved`: Approved (final) version
   
 ### Edition
@@ -739,6 +749,26 @@ Within the element `<div type="edition">` the text structure reconstructed by th
 The `@n` attribute receives the reference indicator (which is used for citing the respective passage), usually a number, but text like “pr”, “hypopsalmos”, “hypothesis”, “perioche” etc. are also possible. Please note that the attribute may not contain whitespace, but only letters, numbers, symbols and punctuation signs.
   
 Paragraphs within these subsections are marked with the help of the `<p>` element. Each `<div>` element contains at least one `<p>` element. Lists are also allowed: They are marked (instead of `<p>`) with the element `<list>`,  the individual list entries with the element `<item>`. If a list has a heading,  it is marked with the help of the element `<head>`.
+  
+##### Title and title-like elements
+  
+Titles are marked with the element `<title>` within the element
+`<head>`:
+  
+```xml
+<head>
+ <title>Τοῦ αὐτοῦ ὁμιλία</title>
+</head>
+```  
+  
+Heading-like elements, such as the attribution of a quote to an author listed in the margin or highlighted in the text, are marked with the element `<label>`, which is given an attribute `@type` with the value `attribution`. (For the encoding of speakers in dialogues see [below](#encoding-of-direct-speech ).)
+  
+```xml
+<p><label type="attribution">
+    <persName key="PTA_P00001">Χρυσοστόμου</persName>.
+</label> Προκαταλαμβάνει τὸν ἀκροατὴν τοῖς ἐπαίνοις· 
+ὥστε μηδὲ ἄκοντα ἀποστῆναι. </p>
+```  
   
 ##### Marking up further structural elements
   
@@ -827,7 +857,16 @@ Direct speech is marked up with the help of the `<said>` element.
   
 Dialogue is marked up with the help of `<sp>` (instead of `<p>`). For the person speaking `<speaker>` is used, the spoken text is marked up with `<p>`.
   
-@import “examples/ed_speech.xml” {class=“lines-numbers”}
+```xml
+<sp>
+    <speaker>ΠΑΛΛΑΔΙΟΣ.</speaker>
+    <p> Ἀληθές. </p>
+</sp>
+<sp>
+    <speaker>ΚΥΡΙΛΛΟΣ.</speaker>
+    <p> Δέλτιον δὲ δή σοι τουτὶ τὸ ἐν χεροῖν, ὅ τι; </p>
+</sp>
+```  
   
 ##### Encoding of people, organisations and places
   
@@ -850,11 +889,11 @@ Dialogue is marked up with the help of `<sp>` (instead of `<p>`). For the person
   
 ##### Text witnesses
   
-The manuscripts witnessing the text are documented in the element `<app>` with the attribute `@type="witnesses"`. The element receives a unique identifier in the attribute `@xml:id`, in the attribute `@prev` or `@next` reference is made to the corresponding entry (`<witStart/>`/`<lacunaStart/>` -> `<witEnd/>`/`<lacunaEnd/>` and vice versa). If necessary, a reference to a corresponding text-critical variant or reading can be made in the attribute `@corresp`.
+The manuscripts witnessing the text are documented in the element `<app>` with the attribute `@type="witnesses"`. The element receives a unique identifier in the attribute `@xml:id`, in the optional attribute `@prev` or `@next` reference is made to the corresponding entry (`<witStart/>`/`<lacunaStart/>` -> `<witEnd/>`/`<lacunaEnd/>` and vice versa). If necessary, a reference to a corresponding text-critical variant or reading can be made in the attribute `@corresp`.
 The element contains only the element `<rdg>` with the attribute `@wit`, in which one of the self-closing elements `<witStart/>` (= beginning of a witness), `<witEnd/>` (= end of a witness), `<lacunaStart/>` (= beginning of a gap) or `<lacunaEnd/>` (= end of a gap) is inserted. The element does not contain any text, but is inserted (comparable to a milestone element like `<pb>`) at the appropriate place in the text: In the case of `<witStart>` and `<lacunaEnd>` it comes before the first word present in the witness or after the gap ends, in the case of `<witEnd>` and `<lacunaStart>` it comes after the last word present in the witness or before which the gap begins. 
   
 ```xml
-<app type="textcritical">
+<app type="variants">
     <lem wit="#Pt #Pc #Pb #Pd #My #Ma #Ha #Va #Ab">ἀπαστράπτει</lem>
     <rdg wit="#Pa #Be" xml:id="lac-Pa">ἀ</rdg>
     <witDetail wit="#Pa" target="#lac-Pa">Blattausfall.</witDetail>
@@ -1234,14 +1273,14 @@ If a variant exceeds a division level, it must be given priority and the `<app>`
   
 ##### Commenting on text-critical decisions
   
-If it seems necessary or feasible to expand on text-critical considerations that go beyond the indication of causes (with the help of the `@cause` attribute) or  typification (with the help of the `@type` attribute), an element `<note>` for remarks that concern the entire `<app>` element or an element `<witDetail>` for remarks that refer to a specific manuscript can be added within the `<app>` element. In this case, the `<app>` element receives an attribute `@xml:id`, which is referred to in the `<note>` in an attribute `@target`. In case of an annotation in `<witDetail>`, the element receives an attribute `@wit` with the ID of the manuscript.
+If it seems necessary or feasible to expand on text-critical considerations that go beyond the indication of causes (with the help of the `@cause` attribute) or typification (with the help of the `@type` attribute), an element `<note>` for remarks that concern the entire `<app>` element or an element `<witDetail>` for remarks that refer to a specific manuscript can be added within the `<app>` element; in that case, the element `<witDetail>` receives an attribute `@wit` with the ID of the manuscript.
   
 ```xml
-<app type="variants" xml:id="var1">
+<app type="variants">
   <lem wit="#Pt #Pc #Pb #Pd #My #Ma #Ha #Va #Ab">ἀπαστράπτει</lem>
   <rdg wit="#Pa #Be">ἀ</rdg>
   <witDetail wit="#Pa">Blattausfall.</witDetail>
-  <note target="#var1">Sich auf die gesamte Variante beziehende Anmerkung</note>
+  <note>Sich auf die gesamte Variante beziehende Anmerkung</note>
 </app>
 ```  
   
