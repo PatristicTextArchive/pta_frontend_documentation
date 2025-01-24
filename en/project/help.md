@@ -174,3 +174,7 @@ The selected text is displayed to the right of the current text, it is navigated
 | ↥ Sigle | Witness ends here | 
 | ⇣ Sigle | Lacuna in witness starts here |
 | ⇡ Sigle | Lacuna in witness ends here |
+
+## Loading problems
+
+If the text does not load or loading gets stuck at “Indices”, it is very likely that an outdated version of the index files is still stored in the browser cache. In this case, it helps to delete the cache with CTRL+F5 (Windows, Linux) or Shift+R (Mac).
