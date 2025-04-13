@@ -6,6 +6,10 @@
 - Personens, groups, places, biblical references, manuscripts, texte metadata formatted as LOD 
 
 ## Frontend
+### 30 April 2025
+- New search
+- Enhancement of the [Classical Language Dictionary (CLD)](https://cld.bbaw.de) analytical pipeline
+
 ### 15 November 2024
 - Bug fixes
 - Enhancement of the [Classical Language Dictionary (CLD)](https://cld.bbaw.de) analytical pipeline
