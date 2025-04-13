@@ -19,7 +19,7 @@ Folgende **logische Verknüpfungen** gibt es:
     - `|` = `OR`
     - `!` = `NOT`
 - zwischen CQL-Ausdrücken:
-    - `( cql ) innerhalb ( cql )` – Findet einen CQL-Ausdruck innerhalb eines anderen CQL-Ausdrucks 
+    - `( cql ) within ( cql )` – Findet einen CQL-Ausdruck innerhalb eines anderen CQL-Ausdrucks 
     - `( cql ) !within ( cql )` – Findet einen CQL-Ausdruck, der nicht innerhalb eines anderen CQL-Ausdrucks steht
     - `( cql ) containing ( cql )` – Findet einen CQL-Ausdruck, der einen anderen CQL-Ausdruck enthält 
     - `( cql ) !containing ( cql )`– Findet einen CQL-Ausdruck, der einen anderen CQL-Ausdruck nicht enthält 
@@ -30,7 +30,13 @@ Folgende **logische Verknüpfungen** gibt es:
 
 Ausdrücke können mit Hilfe von Klammern `()` gruppiert werden. 
 
+Editionen und Übersetzungen (Achtung: keine Transkriptionen) in den folgenden Sprachen sind mit Hilfe von SpaCy-Modellen automatisch analysiert worden: Griechisch, Lateinisch, Armenisch, Englisch, Deutsch. (Das Syrische wird momentan für die Lexikonfunktion des Readers ebenfalls automatisch analysiert; diese Analyse über die Sedra-API steht aber leider nicht für die Suche zur Verfügung; die Einbindung eines SpaCy-Modells für Syrisch ist in Planung.)
+
 Für die Suche nach **Wortarten** (POS, Part of Speech) sind folgende Abkürzungen zu verwenden: ADJ (Adjektiv), ADV (Adverb), INTJ (Interjektion), NOUN (Substantiv), PROPN (Eigenname), VERB (Verb), ADP (Prä-/Postposition), AUX (Hilfsverb), CCONJ (koordinierende Konjunktion), DET (Bestimmungswort), NUM (Zahlwort), PART (Partikel), PRON (Pronomen), SCONJ (unterordnende Konjunktion), PUNCT (Interpunktion).
+
+Für die Suche nach **morphologischen** Attributen XXXX
+
+Für die Suche nach **syntaktischen** Abhängigkeiten XXXX
 
 ## Beispiele
 
@@ -45,3 +51,5 @@ Für die Suche nach **Wortarten** (POS, Part of Speech) sind folgende Abkürzung
 - `([lemma="ἀγάπη"]|[lemma="γράμμα"])[]? followedby ([lemma="ἀγάπη"]|[lemma="γράμμα"])` – findet alle Formen von *ἀγάπη oder γράμμα* mit einem oder keinem nachfolgenden Wort, dem Formen von *ἀγάπη oder γράμμα* folgen, also z.B. *ἀγάπης ὑμῶν*; das nachfolgende *γράμματα* ist nur Kontext
 - `[pos="ADJ"] within [pos="DET"] []{1} [pos="NOUN"]` – findet alle *Adjektive*, die direkt zwischen einem Artikel und einem Substantiv stehen, also z.B. *ἁγίαν*, *τὴν* und *σύνοδον* sind Kontext
 - `[pos="DET"] []{1} [pos="NOUN"] containing [pos="ADJ"]` – findet alle Ausdrücke aus *Artikel*, einem folgendem *Wort*, das ein *Adjektiv* ist, und einem diesem folgenden *Substantiv*, also z.B. *τὴν ἁγίαν σύνοδον*
+
+TODO Beispiele für Morphologie und Syntax

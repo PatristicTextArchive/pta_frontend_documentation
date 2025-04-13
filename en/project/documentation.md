@@ -47,61 +47,12 @@ For references to the Hexapla links to *Frederick Field (ed.): Origenis hexaplor
 
 An [Index](https://pta.bbaw.de/indices/biblical-references) of all annotated biblical references is provided. CAVEAT: Not all text are (fully) annotated.
 
-### Dictionary
-
-The dictionary function uses the service of the [Classical Language Dictionary](https://cld.bbaw.de) for (automatic) lemmatization and its [dictionaries](https://cld.bbaw.de/documentation/dictionaries). For Syriac, the [SEDRA IV API (v1.0.0)](https://sedra.bethmardutho.org/about/openapi) is used.
-
-### Analyse text with Voyant Tools
-
-You can forward the XML of the current text to [Voyant Tools](https://voyant-tools.org/) and analyse it with the tools provided there. 
-Please note that the texts are not lemmatised. We'll make lemmatized texts available for the feature in the future.
-
-### Cover picture
-
-The cover picture of PTA is a detail of [f. 78r der Handschrift Paris, BnF, Grec 510](https://gallica.bnf.fr/ark:/12148/btv1b84522082/f169) (Source gallica.bnf.fr / BnF).
-
-
 ## Technical Implementation
-
-### API (ediarum.Web)
-
-Data can be accessed through a public API. The API is provided by [ediarum.WEB](https://github.com/ediarum/ediarum.WEB). The endpoints are defined by a eXist-db application and a central manifest file compatible with ediarum.WEB. For further reference see the [ediarum.WEB documentation](https://github.com/ediarum/ediarum.WEB/blob/master/APPCONF.md).
-
-There are several types of endpoints (more information on endpoints and parameters is to be found in the [ediarum.WEB documentation](https://github.com/ediarum/ediarum.WEB/blob/master/API.md)):
-
-- via `/api` you get the manifest file (`appconf.xml`), which has the definition of endpoints.
-- The endpoints for object types (`/api/<object-type>`) and endpoints for objects (`/api/<object-type>/<object-id>`) provide access to the following object types:
-  - `cts` provides a [CTS compatible API](https://github.com/cite-architecture/cts_spec/blob/master/md/specification.md) (only GetPassage is currently implemented)
-    - Example for getting a passage via the CTS API: <http://pta.bbaw.de/api/cts?request=GetPassage&urn=urn:cts:pta:pta0036.pta001.pta-grc1:2.1.4>.
-  - `pta` provides the editions
-  - `pta-textgroup` provides metadata to the textgroups (authors)
-  - `pta-work` provides metadata to the works
-  - `pta-version` provides metadata to editions of the works (editions, translations)
-  - `msdesc` provides manuscript transcriptions
-  - `msitem` provides information on the works in the manuscripts transcriptions
-  - `persons` provides an index of persons
-  - `places` provides an index of places 
-  - `bible-references` provides biblical quotes
-- endpoints for relations between objects
-- endpoints for search; `/api/search/<search-id>` has the following searches:
-  - `fulltext` search in full text without variants and notes
-  - `metadata` search in the metadata of the texts
-  - `readings` search in variants
-  - `notes` search in notes
-
-The search is based on the lucene search integrated into eXist-db. endpoints of the API are made available through ediarum.WEB  (please refer to the [documentation](https://github.com/ediarum/ediarum.WEB/blob/master/API.md#3-searching)).
-
-### Backend (eXist-DB)
-
-The data for the API and for the search used by the web application are stored in a [eXist-db](http://www.exist-db.org/), which fetches the data with the eXistdb-App Tuttle from the [data repositories](data.md) befüllt wird; the database is administered by the [ediarum](https://www.ediarum.org/) module [ediarum.DB](https://github.com/ediarum/ediarum.DB). It is possible to access data through the public API (see above).
-
-
-### Frontend 
 
 The PTA Web application ist a [Vue.js Single Page Application](https://vuejs.org/) on top of a [Laravel PHP backend](https://laravel.com/). The backend provides serveral internal restful APIs for including the versioned data in the repositories used ([pta_data](https://github.com/PatristicTextArchive/pta_data), [pta_lexika](https://github.com/PatristicTextArchive/pta_lexika), [pta_manuscripts](https://github.com/PatristicTextArchive/pta_manuscripts), [pta_metadata](https://github.com/PatristicTextArchive/pta_metadata), [pta_frontend_documentation](https://github.com/PatristicTextArchive/pta_frontend_documentation)). The search functions use (amongst others) the public PTA API (see above).
 
 
-#### Modules & plugins
+### Modules & plugins
 The PTA webapp uses the following additional modules and plugins:
 
 - [Vue Router](https://router.vuejs.org/)
@@ -114,5 +65,19 @@ The PTA webapp uses the following additional modules and plugins:
 - [greek-utils](https://github.com/vbarzokas/greek-utils)
 
 
-#### Languages of the interface
+### Languages of the interface
 The interface is currently available in German and English, Italian is work in progress. The translations are in json format according to i18n standard. More languages are planned. We happily accept [contributions](../project/contributing)!
+
+
+### Dictionary
+
+The dictionary function uses the service of the [Classical Language Dictionary](https://cld.bbaw.de) for (automatic) lemmatization and its [dictionaries](https://cld.bbaw.de/documentation/dictionaries). For Syriac, the [SEDRA IV API (v1.0.0)](https://sedra.bethmardutho.org/about/openapi) is used.
+
+### Analyse text with Voyant Tools
+
+You can forward the XML of the current text to [Voyant Tools](https://voyant-tools.org/) and analyse it with the tools provided there. 
+Please note that the texts are not lemmatised. We'll make lemmatized texts available for the feature in the future.
+
+### Cover picture
+
+The cover picture of PTA is a detail of [f. 78r der Handschrift Paris, BnF, Grec 510](https://gallica.bnf.fr/ark:/12148/btv1b84522082/f169) (Source gallica.bnf.fr / BnF).
