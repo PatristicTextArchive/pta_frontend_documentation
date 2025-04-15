@@ -606,9 +606,58 @@ Also in the `<encodingDesc>` section, the `<editorialDecl>` section within the `
        ana="fully/partially/not-annotated fully/partially/not-identified">Persons are fully/partially annotated and/but not fully/partially referenced with IDs according to the <ref target="https://github.com/PatristicTextArchive/tipnr_data">TIPNR - Tyndale Individualised Proper Names with all References</ref> list for biblical persons and IDs of <ref target="https://github.com/PatristicTextArchive/pta_metadata/blob/main/pta_persons.json">PTA persons index</ref> for all other persons.</p>
     <p xml:id="groups"
        ana="fully/partially/not-annotated fully/partially/not-identified">Groups of persons and organisations are fully/partially annotated and/but not fully/partially referenced with IDs according to the IDs of <ref target="https://github.com/PatristicTextArchive/pta_metadata/blob/main/pta_groups.json">PTA groups index</ref> for all other groups.</p>
+    <p xml:id="text-analysis" 
+       ana="automatically/manually/not-tagged automatically/manually/not-analyzed">Words are automatically/manually/not tagged and automatically/manually/not analyzed.</p>
  </interpretation>
   ...
 </editorialDecl>
+```  
+  
+All categories used are defined in the `<classDecl>` element in a `<taxonomy>` with `@xml:id="annotationstatus"` and `@xml:id="analysisstatus"`. 
+  
+```xml
+<classDecl>
+    ...
+    <taxonomy xml:id="annotationstatus">
+       <bibl>Patristic Text Archive Status of annotation</bibl>
+       <category xml:id="fully-annotated">
+          <catDesc>All instances of a phenomenon (e.g. biblical quotations, persons, places) are encoded with the respective element.</catDesc>
+       </category>
+       <category xml:id="partially-annotated">
+          <catDesc>Some instances of a phenomenon (e.g. biblical quotations, persons, places) are encoded with the respective element.</catDesc>
+       </category>
+       <category xml:id="fully-identified">
+          <catDesc>All encoded instances of a phenomenon (e.g. biblical quotations, persons, places) are identified with the respective norm data.</catDesc>
+       </category>
+       <category xml:id="partially-identified">
+          <catDesc>Some encoded instances of a phenomenon (e.g. biblical quotations, persons, places) are identified with the respective norm data.</catDesc>
+       </category>
+       <category xml:id="not-identified">
+          <catDesc>No encoded instances of a phenomenon (e.g. biblical quotations, persons, places) are identified with the respective norm data.</catDesc>
+       </category>
+    </taxonomy>
+    <taxonomy xml:id="analysisstatus">
+       <bibl>Patristic Text Archive Status of linguistic analysis</bibl>
+       <category xml:id="automatically-tagged">
+          <catDesc>Words are automatically tagged.</catDesc>
+       </category>
+       <category xml:id="manually-tagged">
+          <catDesc>Words are manually tagged.</catDesc>
+       </category>
+       <category xml:id="not-tagged">
+          <catDesc>Words are not tagged.</catDesc>
+       </category>
+       <category xml:id="automatically-analyzed">
+          <catDesc>Words are automatically analyzed.</catDesc>
+       </category>
+       <category xml:id="manually-analyzed">
+          <catDesc>Words are manually analyzed.</catDesc>
+       </category>
+       <category xml:id="not-analyzed">
+          <catDesc>Words are not analyzed.</catDesc>
+       </category>
+    </taxonomy>
+ </classDecl>
 ```  
   
 The annotation status is defined as follows:
@@ -617,12 +666,22 @@ The annotation status is defined as follows:
 - `partially-annotated`: Some instances of a phenomenon (e.g. biblical quotations, persons, places) are encoded with the respective element.
 - `not-annotated`: No instance of a phenomenon (e.g. biblical quotations, persons, places) is encoded with the respective element.
   
-The extension to which the annotations are identified with norm data is defined as follows:
+The extent to which the annotations are identified with norm data is defined as follows:
   
 - `fully-identified`: All encoded instances of a phenomenon (e.g. biblical quotations, persons, places) are identified with the respective norm data.
 - `partially-identified`: Some encoded instances of a phenomenon (e.g. biblical quotations, persons, places) are identified with the respective norm data.
 - `not-identified`: No encoded instances of a phenomenon (e.g. biblical quotations, persons, places) are identified with the respective norm data.
   
+The status of linguistic analysis is defined as follows:
+  
+- `automatically-tagged`: Words are automatically tagged.
+- `manually-tagged`: Words are manually tagged.
+- `not-tagged`: Words are not tagged.
+- `automatically-analyzed`: Words are automatically analyzed.
+- `manually-analyzed`: Words are manually analyzed.
+- `not-analyzed`: Words are not analyzed.
+  
+Normally, words are automatically tagged and analyzed in the course of publication in the PTA web frontend.
   
 #### Normalisation
   
@@ -664,7 +723,32 @@ Within the `<profileDesc>` section, the type of edition is provided in the  `<te
   
 -   `pre-critical-edition` for pre-modern editions (e.g. in the Patrologia Graeca or Latina).
   
+The terms are defined in `<classDecl>` element in a `<taxonomy>` with `@xml:id="editionstatus"`
+  
+```xml
+<classDecl>
+    ...
+    <taxonomy xml:id="editionstatus">
+       <bibl>Patristic Text Archive Status of edition</bibl>
+       <category xml:id="critical-edition">
+          <catDesc>Critical edition in which the text-critical variants have been encoded.</catDesc>
+       </category>
+       <category xml:id="critical-edition-no-app">
+          <catDesc>Critical edition in which the text-critical variants have not been encoded, e.g. because it is a retro-digitisation of a printed critical edition and for copyright reasons the apparatus cannot be included in the retro-digitisation.</catDesc>
+       </category>
+       <category xml:id="critical-edition-outdated">
+          <catDesc>Edition which notes text-critical variants, but does not, for example, comprehensively include the manuscripts.</catDesc>
+       </category>
+       <category xml:id="pre-critical-edition">
+          <catDesc>Pre-modern editions (e.g. editions in the Patrologia Graeca or Latina)</catDesc>
+       </category>
+    </taxonomy>
+    ...
+ </classDecl>
+```  
+  
 A special case is `metacritical-edition-with-app`, which is used for the [SBLGNT edition](https://www.sblgnt.com/ ) of the New Testament.
+  
 #### Status of edition
   
 Finally, the element `<revisionDesc>` receives an attribute `@status`, in which the status of the edition is specified. The following values are possible:
