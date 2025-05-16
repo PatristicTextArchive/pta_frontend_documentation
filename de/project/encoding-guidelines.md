@@ -1166,9 +1166,6 @@ Umstellungen, die längere Textpassagen betreffen, werden – besonders wenn sie
   
 Korrekturen des Textes durch den Schreiber oder einen späteren Korrektor werden so ausgezeichnet, dass im Element `<rdg>` mit Hilfe des Attributes `@varSeq` die Reihenfolge der verschiedenen Stadien der Überlieferung angegeben wird.
   
-Ist eine durch Korrektur entstandene Variante mit einer anderen Variante identisch, so kann dieser anderen Variante ein eindeutiger Identifikator
-im Attribut `@xml:id` gegeben werden und die korrigierende Variante im Attribut `@copyOf` auf diesen Identifikator verweisen; das Element `<rdg>` ist in diesem Falle leer („self-closing”).
-  
 Das Element `<rdg>` kann zusätzlich das Attribut `@hand` enthalten, wobei der Schreiber (`#m1`) und die Korrektoren (`#m2`, `#m3`, … – allgemein `#mr` für *manus recentior*) unterschieden werden sollten. Ist nicht zu entscheiden, von welcher Hand eine Korrektur vorgenommen worden ist, erhält das Attribut den Wert `unknown`.
   
 Der Ort der Korrektur wird mit Hilfe der entsprechenden Elemente für Löschung, Hinzufügung, etc. mit ihren jeweiligen Attributen wiedergegeben, [siehe oben in den Transkriptionsregeln](#edition-der-transkription ).
@@ -1176,10 +1173,24 @@ Der Ort der Korrektur wird mit Hilfe der entsprechenden Elemente für Löschung,
   
 ```xml
 <app type="variants">
- <rdgGrp><lem wit="#Pa #Pb #Ha #Va">ὁ γενναῖος ἐκεῖνος</lem>
- <rdg wit="#Be" varSeq="2" hand="m2"><add place="above">ὁ γενναῖος ἐκεῖνος</add></rdg></rdgGrp>
- <rdg wit="#Be" varSeq="1" type="transposition">ἐκεῖνος ὁ γενναῖος</rdg>
+    <rdgGrp>
+        <lem wit="#Pa #Pb #Ha #Va">ὁ γενναῖος ἐκεῖνος</lem>
+        <rdg wit="#Be" varSeq="2" hand="m2"><add place="above">ὁ γενναῖος ἐκεῖνος</add></rdg>
+    </rdgGrp>
+    <rdg wit="#Be" varSeq="1" type="transposition">ἐκεῖνος ὁ γενναῖος</rdg>
 </app>
+<app type="variants">
+    <lem wit="#Ax #Be #Eb #Is #Kc #Ox #Pa #Pu #Sm #Sn #To"/>
+    <rdg wit="#Ad #Af #Ap #Ga #Hb #Ka #Mp #Mz #Oe #Pb #Pc #Pd #Pt #St #Vf #Vl" type="addition">τὴν</rdg>
+    <rdg wit="#Pi" varSeq="2">
+        <subst>
+            <del type="strikethrough">τῆς</del>
+            <add place="above">τὴν</add>
+        </subst>
+    </rdg>
+    <rdg wit="#Pi" varSeq="1">τῆς</rdg>
+    <rdg wit="#Mo"><gap reason="illegible" unit="character" quantity="6"/></rdg>
+</app> 
 ```  
   
 Auch mikroskopische Textersetzungen (wie z.B. die Ersetzung einzelner Buchstaben innerhalb eines Wortes) werden entsprechend dem Vorgehen bei der Handschriftentranskription innerhalb eines `<subst>`-Elementes mit dem Element `<del>` (ersetzter Text) und dem Element `<add>` (ergänzter Text) ausgezeichnet. Das Element `<subst>` erhält in diesem Fall das Attribut `@hand`. 
