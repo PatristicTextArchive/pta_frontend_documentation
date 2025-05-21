@@ -68,12 +68,17 @@ Folgende Zusatzmodule finden Einsatz in der PTA Webapp:
 ### Interface-Sprachen
 Das Interface ist aktuell in den Sprachen Deutsch und Englisch verfügbar, Italienisch ist in Vorbereitung. Technisch verwaltet werden Übersetzungen im i18n-Standard als JSON-Dateien. In Zukunft sind auch weitere Sprachen für das Interface geplant. Eine aktive [Mitwirkung](../project/contributing) ist sehr willkommen!
 
+### Automatisierte, KI-gestützte Textanalyse
+
+Editionen und Übersetzungen (Achtung: keine Transkriptionen) in den folgenden Sprachen werden mit Hilfe von SpaCy-Modellen mit Hilfe einer im Frontend integrierten Pipeline, die auf den Service des [Classical Language Dictionary](https://cld.bbaw.de) zurückgreift, automatisch analysiert (Lemma, POS, Morphologie; Dependency): Griechisch, Lateinisch, Armenisch, Englisch, Deutsch. Die durch ein Python-Skript gesteuerte Pipeline generiert TEI-XML-Dateien, in denen die Worte als [w-Element mit Attributen (@xml:id, @lemma, @pos, @msd; @m:dep, @m:anc)](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-w.html) annotiert sind. Das jeweils verwendete Modell ist im TEI-Header vermerkt. Transkriptionen und Dateien in anderen als den oben genannten Sprachen werden nur als w-Element (mit Attribut @xml:id) ausgezeichnet. Diese werden im [pta_data-Repositorium](https://github.com/PatristicTextArchive/pta_data) in einem eigenen Ordner [analyzed](https://github.com/PatristicTextArchive/pta_data/tree/public/analyzed) abgelegt, auf den die PTA Webapp für die Suche und die Darstellung im Reader (inklusive Lexikon-Funktion) zurückgreift. 
+
 ### Suche
 
+Die Suche verwendet im Backend [Solr](https://solr.apache.org/) und [Multi Tier Annotation Search](https://textexploration.github.io/mtas/) und greift auf die automatisiert analysierten Daten zu.
 
 ### Lexikon
 
-Die Lexikon-Funktion greift zur (automatischen) Lemmatisierung und für die [Wörterbücher](https://cld.bbaw.de/documentation/dictionaries) auf den Service des [Classical Language Dictionary](https://cld.bbaw.de) zurück. Für Syrisch wird die [SEDRA IV API (v1.0.0)](https://sedra.bethmardutho.org/about/openapi) benutzt.
+Die Lexikon-Funktion greift für die [Wörterbücher](https://cld.bbaw.de/documentation/dictionaries) auf den Service des [Classical Language Dictionary](https://cld.bbaw.de) zurück. Für Syrisch wird die [SEDRA IV API (v1.0.0)](https://sedra.bethmardutho.org/about/openapi) benutzt.
 
 ### Analyse mit Hilfe der Voyant Tools
 

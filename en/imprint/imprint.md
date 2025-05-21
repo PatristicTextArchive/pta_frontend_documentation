@@ -24,8 +24,8 @@ Dr. Annette von Stockhausen (AV Die alexandrinische und antiochenische Bibelexeg
 ## Technical Realization
 TELOTA (Berlin-Brandenburgische Akademie der Wissenschaften) 
 telota@bbaw.de  
-API (ediarum.Web), eXist-db: Dr. Martin Fechner
 Web-App: Jan Köster
+Search-Backend (Ediarum.Search): Marcus Lampert ( with help of Gregor Middell)
 
 ## Copyright
 
