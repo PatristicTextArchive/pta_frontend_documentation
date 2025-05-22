@@ -149,6 +149,7 @@ Der ausgewählte Text wird dann in einem zweiten „Fenster“ rechts neben dem 
 | >> | Doppelte Diple |
 | ⸏ | Paragraphos |
 | * | Asteriskos |
+| <span style="color:gray;">✍</span> | Schreiberwechsel |
 | <span style="color:gray; font-size: 80%;">[[illegible (1 line)]]</span> | Nicht lesbarer Text (ggfs. von geschätzter Länge) |
 | <span style="color:gray; font-size: 80%;">[[damage (1 character)]]</span> | Physische Beschädigung (ggfs. von geschätzter Länge) |
 | <span style="color:gray; font-size: 80%;">[[fenestra (1 character)]]</span> | Fenestra (ggfs. von geschätzter Länge) |

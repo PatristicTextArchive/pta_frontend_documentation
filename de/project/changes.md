@@ -8,7 +8,8 @@
 ## Benutzerschnittstelle
 
 ### 30 April 2025
-- Neue Suche
+- Neue Suche, basierend auf automatisierter, KI-gestützter Textanalyse und Corpus Query Language (CQL)
+- Neue Metadatensuche
 - Verbesserung der Analyse-Pipeline des [Classical Language Dictionary (CLD)](https://cld.bbaw.de)
 
 ### 15. November 2024

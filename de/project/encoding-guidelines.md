@@ -619,9 +619,58 @@ wurden und in welchem Ausmaß. Dadurch können Nutzer der Edition schnell erkenn
        ana="fully/partially/not-annotated fully/partially/not-identified">Persons are fully/partially annotated and/but not fully/partially referenced with IDs according to the <ref target="https://github.com/PatristicTextArchive/tipnr_data">TIPNR - Tyndale Individualised Proper Names with all References</ref> list for biblical persons and IDs of <ref target="https://github.com/PatristicTextArchive/pta_metadata/blob/main/pta_persons.json">PTA persons index</ref> for all other persons.</p>
     <p xml:id="groups"
        ana="fully/partially/not-annotated fully/partially/not-identified">Groups of persons and organisations are fully/partially annotated and/but not fully/partially referenced with IDs according to the IDs of <ref target="https://github.com/PatristicTextArchive/pta_metadata/blob/main/pta_groups.json">PTA groups index</ref> for all other groups.</p>
+    <p xml:id="text-analysis" 
+       ana="automatically/manually/not-tagged automatically/manually/not-analyzed">Words are automatically/manually/not tagged and automatically/manually/not analyzed.</p>
  </interpretation>
   ...
 </editorialDecl>
+```  
+  
+Alle verwendeten Kategorien werden innerhalb des `<classDecl>`-Elements in einem `<taxonomy>`-Element mit `@xml:id="annotationstatus"` und `@xml:id="analysisstatus"` definiert. 
+  
+```xml
+<classDecl>
+    ...
+    <taxonomy xml:id="annotationstatus">
+       <bibl>Patristic Text Archive Status of annotation</bibl>
+       <category xml:id="fully-annotated">
+          <catDesc>All instances of a phenomenon (e.g. biblical quotations, persons, places) are encoded with the respective element.</catDesc>
+       </category>
+       <category xml:id="partially-annotated">
+          <catDesc>Some instances of a phenomenon (e.g. biblical quotations, persons, places) are encoded with the respective element.</catDesc>
+       </category>
+       <category xml:id="fully-identified">
+          <catDesc>All encoded instances of a phenomenon (e.g. biblical quotations, persons, places) are identified with the respective norm data.</catDesc>
+       </category>
+       <category xml:id="partially-identified">
+          <catDesc>Some encoded instances of a phenomenon (e.g. biblical quotations, persons, places) are identified with the respective norm data.</catDesc>
+       </category>
+       <category xml:id="not-identified">
+          <catDesc>No encoded instances of a phenomenon (e.g. biblical quotations, persons, places) are identified with the respective norm data.</catDesc>
+       </category>
+    </taxonomy>
+    <taxonomy xml:id="analysisstatus">
+       <bibl>Patristic Text Archive Status of linguistic analysis</bibl>
+       <category xml:id="automatically-tagged">
+          <catDesc>Words are automatically tagged.</catDesc>
+       </category>
+       <category xml:id="manually-tagged">
+          <catDesc>Words are manually tagged.</catDesc>
+       </category>
+       <category xml:id="not-tagged">
+          <catDesc>Words are not tagged.</catDesc>
+       </category>
+       <category xml:id="automatically-analyzed">
+          <catDesc>Words are automatically analyzed.</catDesc>
+       </category>
+       <category xml:id="manually-analyzed">
+          <catDesc>Words are manually analyzed.</catDesc>
+       </category>
+       <category xml:id="not-analyzed">
+          <catDesc>Words are not analyzed.</catDesc>
+       </category>
+    </taxonomy>
+ </classDecl>
 ```  
   
 Der Status der Annotationen ist folgendermaßen definiert:
@@ -635,6 +684,17 @@ Der Umfang der Identifikation mit Normdaten ist folgendermaßen definiert:
 - `fully-identified`: Alle markierten Fälle eines Phänomens (z.B. biblische Zitate, Personen, Orte) werden mit den entsprechenden Normdaten identifiziert.
 - `partially-identified`: Einige markierte Fälle eines Phänomens (z.B. biblische Zitate, Personen, Orte) werden mit den entsprechenden Normdaten identifiziert.
 - `not-identified`: Keine markierten Fälle eines Phänomens (z.B. Bibelzitate, Personen, Orte) werden mit den entsprechenden Normdaten identifiziert.
+  
+Der Status der sprachlichen Analyse ist folgendermaßen definiert:
+  
+- `automatically-tagged`: Worte sind automatisch ausgezeichnet.
+- `manually-tagged`: Worte sind manuell ausgezeichnet.
+- `not-tagged`: Worte sind nicht ausgezeichnet.
+- `automatically-analyzed`: Worte sind automatisch analysiert.
+- `manually-analyzed`: Worte sind manuell analysiert.
+- `not-analyzed`: Worte sind nicht analysiert.
+  
+Normalerweise werden Worte im Zuge der Publikation im Webfrontend des PTA automatisch ausgezeichnet und analysiert.
   
 #### Normalisierung
   
@@ -675,6 +735,30 @@ Die Art der Edition wird innerhalb des Abschnittes `<profileDesc>` im Unterabsch
   
 -   `pre-critical-edition` für vormoderne Editionen (z.B. in der
     Patrologia Graeca oder Latina).
+  
+Die Kategorien sind innerhalb des `<classDecl>`-Elements in einem `<taxonomy>`-Element mit `@xml:id="editionstatus"` definiert:
+  
+```xml
+<classDecl>
+    ...
+    <taxonomy xml:id="editionstatus">
+       <bibl>Patristic Text Archive Status of edition</bibl>
+       <category xml:id="critical-edition">
+          <catDesc>Critical edition in which the text-critical variants have been encoded.</catDesc>
+       </category>
+       <category xml:id="critical-edition-no-app">
+          <catDesc>Critical edition in which the text-critical variants have not been encoded, e.g. because it is a retro-digitisation of a printed critical edition and for copyright reasons the apparatus cannot be included in the retro-digitisation.</catDesc>
+       </category>
+       <category xml:id="critical-edition-outdated">
+          <catDesc>Edition which notes text-critical variants, but does not, for example, comprehensively include the manuscripts.</catDesc>
+       </category>
+       <category xml:id="pre-critical-edition">
+          <catDesc>Pre-modern editions (e.g. editions in the Patrologia Graeca or Latina)</catDesc>
+       </category>
+    </taxonomy>
+    ...
+ </classDecl>
+```  
   
 Ein Sonderfall ist `metacritical-edition-with-app`, das für die [SBLGNT-Edition](https://www.sblgnt.com/ ) des neuen Testamentes Verwendung findet.
   
@@ -1082,9 +1166,6 @@ Umstellungen, die längere Textpassagen betreffen, werden – besonders wenn sie
   
 Korrekturen des Textes durch den Schreiber oder einen späteren Korrektor werden so ausgezeichnet, dass im Element `<rdg>` mit Hilfe des Attributes `@varSeq` die Reihenfolge der verschiedenen Stadien der Überlieferung angegeben wird.
   
-Ist eine durch Korrektur entstandene Variante mit einer anderen Variante identisch, so kann dieser anderen Variante ein eindeutiger Identifikator
-im Attribut `@xml:id` gegeben werden und die korrigierende Variante im Attribut `@copyOf` auf diesen Identifikator verweisen; das Element `<rdg>` ist in diesem Falle leer („self-closing”).
-  
 Das Element `<rdg>` kann zusätzlich das Attribut `@hand` enthalten, wobei der Schreiber (`#m1`) und die Korrektoren (`#m2`, `#m3`, … – allgemein `#mr` für *manus recentior*) unterschieden werden sollten. Ist nicht zu entscheiden, von welcher Hand eine Korrektur vorgenommen worden ist, erhält das Attribut den Wert `unknown`.
   
 Der Ort der Korrektur wird mit Hilfe der entsprechenden Elemente für Löschung, Hinzufügung, etc. mit ihren jeweiligen Attributen wiedergegeben, [siehe oben in den Transkriptionsregeln](#edition-der-transkription ).
@@ -1092,10 +1173,24 @@ Der Ort der Korrektur wird mit Hilfe der entsprechenden Elemente für Löschung,
   
 ```xml
 <app type="variants">
- <rdgGrp><lem wit="#Pa #Pb #Ha #Va">ὁ γενναῖος ἐκεῖνος</lem>
- <rdg wit="#Be" varSeq="2" hand="m2"><add place="above">ὁ γενναῖος ἐκεῖνος</add></rdg></rdgGrp>
- <rdg wit="#Be" varSeq="1" type="transposition">ἐκεῖνος ὁ γενναῖος</rdg>
+    <rdgGrp>
+        <lem wit="#Pa #Pb #Ha #Va">ὁ γενναῖος ἐκεῖνος</lem>
+        <rdg wit="#Be" varSeq="2" hand="m2"><add place="above">ὁ γενναῖος ἐκεῖνος</add></rdg>
+    </rdgGrp>
+    <rdg wit="#Be" varSeq="1" type="transposition">ἐκεῖνος ὁ γενναῖος</rdg>
 </app>
+<app type="variants">
+    <lem wit="#Ax #Be #Eb #Is #Kc #Ox #Pa #Pu #Sm #Sn #To"/>
+    <rdg wit="#Ad #Af #Ap #Ga #Hb #Ka #Mp #Mz #Oe #Pb #Pc #Pd #Pt #St #Vf #Vl" type="addition">τὴν</rdg>
+    <rdg wit="#Pi" varSeq="2">
+        <subst>
+            <del type="strikethrough">τῆς</del>
+            <add place="above">τὴν</add>
+        </subst>
+    </rdg>
+    <rdg wit="#Pi" varSeq="1">τῆς</rdg>
+    <rdg wit="#Mo"><gap reason="illegible" unit="character" quantity="6"/></rdg>
+</app> 
 ```  
   
 Auch mikroskopische Textersetzungen (wie z.B. die Ersetzung einzelner Buchstaben innerhalb eines Wortes) werden entsprechend dem Vorgehen bei der Handschriftentranskription innerhalb eines `<subst>`-Elementes mit dem Element `<del>` (ersetzter Text) und dem Element `<add>` (ergänzter Text) ausgezeichnet. Das Element `<subst>` erhält in diesem Fall das Attribut `@hand`. 

@@ -151,6 +151,7 @@ The selected text is displayed to the right of the current text, it is navigated
 | >> | double diple |
 | ⸏ | paragraphos |
 | * | asteriskos |
+| <span style="color:gray;">✍</span> | shift of hand |
 | <span style="color:gray; font-size: 80%;">[[illegible (1 line)]]</span> | illegible text (of length, if available) |
 | <span style="color:gray; font-size: 80%;">[[damage (1 character)]]</span> | physical damage (of length, if available)  |
 | <span style="color:gray; font-size: 80%;">[[fenestra (1 character)]]</span> | fenestra (of length, if available) |
