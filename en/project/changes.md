@@ -6,7 +6,7 @@
 - Persons, groups, places, biblical references, manuscripts, text metadata formatted as LOD 
 
 ## Frontend
-### 30 April 2025
+### 19 May 2025
 - New search, based on automated, AI-supported text analysis and Corpus Query Language (CQL)
 - New metadata search
 - Enhancement of the [Classical Language Dictionary (CLD)](https://cld.bbaw.de) analytical pipeline

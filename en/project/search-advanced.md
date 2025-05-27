@@ -30,7 +30,9 @@ The following **logical links** exist:
 
 Expressions can be grouped using parentheses `()`. 
 
-Editions and translations (note: no transcriptions) in the following languages have been automatically analyzed with the help of SpaCy models: Greek, Latin, Armenian, English, German. (Syriac is currently also automatically analyzed for the lexicon function of the reader; unfortunately, this analysis via the Sedra API is not available for the search; the integration of a SpaCy model for Syriac is being planned).
+**Editions and translations (note: no transcriptions) in the following languages have been automatically analyzed with the help of SpaCy models: Greek, Latin, Armenian, English, German. (Syriac is currently also automatically analyzed for the lexicon function of the reader; unfortunately, this analysis via the Sedra API is not available for the search; the integration of a SpaCy model for Syriac is being planned. It is also planned to add Armenian and Church Slavonic. Currently, you can only do searches for WORD, not for LEMMA or POS in these languages.)**
+
+**The search uses the automatically analyzed data as soon as lemma or POS (or in future morphology or dependency) is used. Errors in the analyzed data (especially in lemmatization) therefore have an impact on the search results; it may be better to resort to word searches and the use of wildcards.  Unanalyzed texts only have hits in word searches.**
 
 The following abbreviations should be used when searching for **Part of Speech** (POS): ADJ (adjective), ADV (adverb), INTJ (interjection), NOUN (noun), PROPN (proper noun), VERB (verb), ADP (prep/postposition), AUX (auxiliary verb), CCONJ (coordinating conjunction), DET (determiner), NUM (numeral), PART (particle), PRON (pronoun), SCONJ (subordinating conjunction), PUNCT (punctuation).
 

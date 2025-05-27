@@ -863,7 +863,7 @@ Das Attribute `@n` enthält die Stellenreferenz, normalerweise eine Zahl, sie ka
   
 Absätze innerhalb dieser Unterabschnitte werden mit Hilfe des Elements `<p>` ausgezeichnet. Jedes Element `<div>` enthält mindestens ein Element `<p>`. Listen sind ebenfalls erlaubt: Sie werden (anstelle von `<p>`) mit dem Element `<list>`, die einzelnen Listeneinträge mit dem Element `<item>` ausgezeichnet. Hat eine Liste eine Überschrift, so wird diese mit Hilfe des Elementes `<head>` ausgezeichnet. 
   
-#### Titel und titelähnliche Elemente
+##### Titel und titelähnliche Elemente
   
 Titel werden mit dem Element `<title>` innerhalb des Elementes `<head>` ausgezeichnet:
   
@@ -921,7 +921,7 @@ Bei Bibelzitaten wird die jeweilige Bibelstelle innerhalb des Elementes `<ref>` 
 </p>
 ```  
   
-Werden nicht-biblische Texte zitiert, so wird die Stellenreferenz ebenfalls mit Hilfe des Elements `<ref>` angegeben: Ist der referenzierte Text im Patristischen Textarchiv vorhanden, so wird die PTA-URN mit Verweis auf die Spezifikationen im `<teiHeader>` (`@decls="#pta"`) im Attribut `@cRef` angegeben. Ist der referenzierte Text in der [Perseus Digital Library](https://scaife.perseus.org/ ) vorhanden, so wird die CTS-URN mit Verweis auf die Spezifikationen im `<teiHeader>` (`@decls="#perseus"`) im Attribut `@cRef` angegeben. Ist der referenzierte Text in keinem der beiden Repositorien vorhanden, so wird die Stellenangabe für den referenzierten Text im Attribut `@source` in der Form „Autorkürzel_Werkkürzel_Stelle“ angegeben; antike griechische Autoren sollten dabei nach den Verzeichnissen von [H. G. Liddell/R. Scott/H. S. Jones, A Greek — English Lexicon, Oxford ^9^1968](https://lsj.gr/wiki/Index:AuthorsWorks/All ) und G. W. H. Lampe, A Patristic Greek Lexicon, Oxford ^3^1987 abgekürzt werden, für lateinische sollten die Abkürzungen des Thesaurus Linguae Latinae (cf. [Index librorum scriptorum inscriptionum ex quibus exempla afferuntur](https://thesaurus.badw.de/en/tll-digital/index/ )) verwendet werden, wobei Punkte in den Abkürzungen ersatzlos gestrichen werden.
+Werden nicht-biblische Texte zitiert, so wird die Stellenreferenz ebenfalls mit Hilfe des Elements `<ref>` angegeben: Ist der referenzierte Text im Patristischen Textarchiv vorhanden, so wird die PTA-URN mit Verweis auf die Spezifikationen im `<teiHeader>` (`@decls="#pta"`) im Attribut `@cRef` angegeben. Ist der referenzierte Text in der [Perseus Digital Library](https://scaife.perseus.org/ ) vorhanden, so wird die CTS-URN mit Verweis auf die Spezifikationen im `<teiHeader>` (`@decls="#perseus"`) im Attribut `@cRef` angegeben. Ist der referenzierte Text Teil des [Corpus Liberatum Linguae Graecae](https://gitlab.inria.fr/almanach/cllg/freed-corpus ) vorhanden, so wird die CTS-URN mit Verweis auf die Spezifikationen im `<teiHeader>` (`@decls="#cllg"`) im Attribut `@cRef` angegeben. Ist der referenzierte Text in keinem der drei Repositorien vorhanden, so wird die Stellenangabe für den referenzierten Text im Attribut `@source` in der Form „Autorkürzel_Werkkürzel_Stelle“ angegeben; antike griechische Autoren sollten dabei nach den Verzeichnissen von [H. G. Liddell/R. Scott/H. S. Jones, A Greek — English Lexicon, Oxford ^9^1968](https://lsj.gr/wiki/Index:AuthorsWorks/All ) und G. W. H. Lampe, A Patristic Greek Lexicon, Oxford ^3^1987 abgekürzt werden, für lateinische sollten die Abkürzungen des Thesaurus Linguae Latinae (cf. [Index librorum scriptorum inscriptionum ex quibus exempla afferuntur](https://thesaurus.badw.de/en/tll-digital/index/ )) verwendet werden, wobei Punkte in den Abkürzungen ersatzlos gestrichen werden.
   
 ```xml
 <p>ἐν δὲ <bibl>τῷ Ποιμένι</bibl> γέγραπται,
@@ -1388,15 +1388,18 @@ aufgeteilt und untereinander verlinkt werden.
   
 ##### Kommentierung textkritischer Entscheidungen
   
-Erscheint es nötig oder sinnvoll, textkritische Überlegungen, die über die Typisierung (mit Hilfe des Attributes `@type`) oder die Angabe von Ursachen (mit Hilfe des Attributes `@cause`) hinausgehen, auszuführen, so kann dafür an Ort und Stelle innerhalb des Elementes `<app>` ein Element `<note>` für Bemerkungen, die das gesamte `<app>`-Element betreffen, oder ein Element `<witDetail>` für Bemerkungen, die sich auf eine spezielle Handschrift bezieht, angefügt werden; im Falle von `<witDetail>` wird in einem Attribut `@wit` auf die ID der Handschrift verwiesen. 
+Erscheint es nötig oder sinnvoll, textkritische Überlegungen, die über die Typisierung (mit Hilfe des Attributes `@type`) oder die Angabe von Ursachen (mit Hilfe des Attributes `@cause`) hinausgehen, auszuführen, so kann dafür an Ort und Stelle innerhalb des Elementes `<app>` ein Element `<note>` für Bemerkungen, die das gesamte `<app>`-Element betreffen, angefügt werden. Bezieht sich die Anmerkung auf eine spezielle Lesart innerhalb des Apparats, erhält das Element `<note>` zusätzlich ein Attribut `@corresp`, in dem auf die im Attribut `@wit`, `@resp` oder `@source` dieser Lesart verwendete ID verwiesen wird. Der Urheber der Kommentierung wird im Attribut `@resp` angegeben. 
   
 ```xml
 <app type="variants">
   <lem wit="#Pt #Pc #Pb #Pd #My #Ma #Ha #Va #Ab">ἀπαστράπτει</lem>
   <rdg wit="#Pa #Be">ἀ</rdg>
-  <witDetail wit="#Pa">Blattausfall.</witDetail>
-  <note>Sich auf die gesamte Variante beziehende Anmerkung</note>
+  <note corresp="#Pa" resp="#CB">Blattausfall.</note>
+  <rdg source="#X" type="conjecture">ἀπαστράπτεις</rdg>
+  <note corresp="#X" resp="#CB">Diese Konjektur erscheint nicht sinnvoll, weil...</note>
+  <note resp="#CB">Sich auf die gesamte Variante beziehende Anmerkung</note>
 </app>
+  
 ```  
   
   

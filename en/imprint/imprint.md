@@ -25,7 +25,7 @@ Dr. Annette von Stockhausen (AV Die alexandrinische und antiochenische Bibelexeg
 TELOTA (Berlin-Brandenburgische Akademie der Wissenschaften) 
 telota@bbaw.de  
 Web-App: Jan Köster
-Search-Backend (Ediarum.Search): Marcus Lampert ( with help of Gregor Middell)
+Search-Backend (Ediarum.Search): Marcus Lampert (with help of Gregor Middell)
 
 ## Copyright
 

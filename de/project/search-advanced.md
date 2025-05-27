@@ -1,4 +1,4 @@
-Die **erweiterte Suche** ermöglicht komplexe Suchanfragen und verwendet dafür die die Corpus-Query-Language (CQL).
+Die **erweiterte Suche** ermöglicht komplexe Suchanfragen und verwendet dafür die Corpus-Query-Language (CQL).
 
 Folgende **Platzhalter** gibt es: 
 - `.` ein einzelnes Zeichen
@@ -20,7 +20,6 @@ Folgende **logische Verknüpfungen** gibt es:
     - `!` = `NOT`
 - zwischen CQL-Ausdrücken:
     - `( cql ) within ( cql )` – Findet einen CQL-Ausdruck innerhalb eines anderen CQL-Ausdrucks 
-    - `( cql ) within ( cql )` – Findet einen CQL-Ausdruck innerhalb eines anderen CQL-Ausdrucks 
     - `( cql ) !within ( cql )` – Findet einen CQL-Ausdruck, der nicht innerhalb eines anderen CQL-Ausdrucks steht
     - `( cql ) containing ( cql )` – Findet einen CQL-Ausdruck, der einen anderen CQL-Ausdruck enthält 
     - `( cql ) !containing ( cql )`– Findet einen CQL-Ausdruck, der einen anderen CQL-Ausdruck nicht enthält 
@@ -31,7 +30,9 @@ Folgende **logische Verknüpfungen** gibt es:
 
 Ausdrücke können mit Hilfe von Klammern `()` gruppiert werden. 
 
-Editionen und Übersetzungen (Achtung: keine Transkriptionen) in den folgenden Sprachen sind mit Hilfe von SpaCy-Modellen automatisch analysiert worden: Griechisch, Lateinisch, Armenisch, Englisch, Deutsch. (Das Syrische wird momentan für die Lexikonfunktion des Readers ebenfalls automatisch analysiert; diese Analyse über die Sedra-API steht aber leider nicht für die Suche zur Verfügung; die Einbindung eines SpaCy-Modells für Syrisch ist in Planung.)
+**Editionen und Übersetzungen (Achtung: keine Transkriptionen) in den folgenden Sprachen sind mit Hilfe von SpaCy-Modellen automatisch analysiert worden: Griechisch, Lateinisch, Englisch, Deutsch. (Das Syrische wird momentan für die Lexikonfunktion des Readers ebenfalls automatisch analysiert; diese Analyse über die Sedra-API steht aber leider nicht für die Suche zur Verfügung; die Einbindung eines SpaCy-Modells für Syrisch ist in Planung, ebenso die Analyse armenischer und altkirchenslavischer Texte. Für diese Sprachen funktioniert daher nur die WORT-Suche, nicht die LEMMA- oder POS-Suche.)**
+
+**Die Suche verwendet die automatisiert analysierten Daten, sobald auf Lemma oder POS (oder zukünftig Morphologie oder Dependency) zurückgegriffen wird. Fehler in den analysierten Daten (v.a. bei der Lemmatisierung) haben daher Auswirkungen auf die Suchergebnisse; u.U. ist es besser, auf die Wortsuche und die Verwendung von Platzhaltern zurückzugreifen. Nicht analysierte Texte haben nur bei Wort-Suchen Treffer.**
 
 Für die Suche nach **Wortarten** (POS, Part of Speech) sind folgende Abkürzungen zu verwenden: ADJ (Adjektiv), ADV (Adverb), INTJ (Interjektion), NOUN (Substantiv), PROPN (Eigenname), VERB (Verb), ADP (Prä-/Postposition), AUX (Hilfsverb), CCONJ (koordinierende Konjunktion), DET (Bestimmungswort), NUM (Zahlwort), PART (Partikel), PRON (Pronomen), SCONJ (unterordnende Konjunktion), PUNCT (Interpunktion).
 

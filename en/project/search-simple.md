@@ -15,7 +15,9 @@ Press the corresponding button for the element to be searched for (word, lemma, 
 
 The following abbreviations should be used when searching for **Part of Speech** (POS): ADJ (adjective), ADV (adverb), INTJ (interjection), NOUN (noun), PROPN (proper noun), VERB (verb), ADP (prep/postposition), AUX (auxiliary verb), CCONJ (coordinating conjunction), DET (determiner), NUM (numeral), PART (particle), PRON (pronoun), SCONJ (subordinating conjunction), PUNCT (punctuation).
 
-Editions and translations (note: no transcriptions) in the following languages have been automatically analyzed with the help of SpaCy models: Greek, Latin, Armenian, English, German. (Syriac is currently also automatically analyzed for the lexicon function of the reader; unfortunately, this analysis via the Sedra API is not available for the search; the integration of a SpaCy model for Syriac is being planned).
+**Editions and translations (note: no transcriptions) in the following languages have been automatically analyzed with the help of SpaCy models: Greek, Latin, Armenian, English, German. (Syriac is currently also automatically analyzed for the lexicon function of the reader; unfortunately, this analysis via the Sedra API is not available for the search; the integration of a SpaCy model for Syriac is being planned).**
+
+**The search uses the automatically analyzed data as soon as lemma or POS (or in future morphology or dependency) is used. Errors in the analyzed data (especially in lemmatization) therefore have an impact on the search results; it may be better to resort to word searches and the use of wildcards.  Unanalyzed texts only have hits in word searches.**
 
 ## Examples
 

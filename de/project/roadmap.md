@@ -1,8 +1,9 @@
-## 2025
+## 2026
 ### Daten
 - weitere Texte (Bibelexegese, GCS-Retrodigitalisierung, Texte aus anderen Quellen)
 - weitere Annotation der Texte (und Verlinkung mit Normdaten)
 
 ### Benutzerschnittstelle
+- Verbesserung der Analyse
 - Fehlerbereinigungen
 - CTS/DTS-API

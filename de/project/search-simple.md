@@ -15,7 +15,9 @@ Für das zu suchende Element (Wort, Lemma, Wortart) ist der entsprechende Schalt
 
 Für die Suche nach **Wortarten** (POS, Part of Speech) sind folgende Abkürzungen zu verwenden: ADJ (Adjektiv), ADV (Adverb), INTJ (Interjektion), NOUN (Substantiv), PROPN (Eigenname), VERB (Verb), ADP (Prä-/Postposition), AUX (Hilfsverb), CCONJ (koordinierende Konjunktion), DET (Bestimmungswort), NUM (Zahlwort), PART (Partikel), PRON (Pronomen), SCONJ (unterordnende Konjunktion), PUNCT (Interpunktion).
 
-Editionen und Übersetzungen (Achtung: keine Transkriptionen) in den folgenden Sprachen sind mit Hilfe von SpaCy-Modellen automatisch analysiert worden: Griechisch, Lateinisch, Armenisch, Englisch, Deutsch. (Das Syrische wird momentan für die Lexikonfunktion des Readers ebenfalls automatisch analysiert; diese Analyse über die Sedra-API steht aber leider nicht für die Suche zur Verfügung; die Einbindung eines SpaCy-Modells für Syrisch ist in Planung.)
+**Editionen und Übersetzungen (Achtung: keine Transkriptionen) in den folgenden Sprachen sind mit Hilfe von SpaCy-Modellen automatisch analysiert worden: Griechisch, Lateinisch, Armenisch, Englisch, Deutsch. (Das Syrische wird momentan für die Lexikonfunktion des Readers ebenfalls automatisch analysiert; diese Analyse über die Sedra-API steht aber leider nicht für die Suche zur Verfügung; die Einbindung eines SpaCy-Modells für Syrisch ist in Planung.)**
+
+**Die Suche verwendet die automatisiert analysierten Daten, sobald auf Lemma oder POS (oder zukünftig Morphologie oder Dependency) zurückgegriffen wird. Fehler in den analysierten Daten (v.a. bei der Lemmatisierung) haben daher Auswirkungen auf die Suchergebnisse; u.U. ist es besser, auf die Wortsuche und die Verwendung von Platzhaltern zurückzugreifen. Nicht analysierte Texte haben nur bei Wort-Suchen Treffer.**
 
 ## Beispiele
 

@@ -9,7 +9,7 @@ Soweit vorhanden werden für alle Texte Links auf die entsprechenden Werk-Eintr�
 
 Die zugrundliegenden Daten sind auf [Github](https://github.com/PatristicTextArchive/pta_data) oder [Zenodo](https://doi.org/10.5281/zenodo.4066796) erhältlich.
 
-Jede Edition ist über einen **Permalink** (unter Verwendung der CTS-URN) erreichbar: z.B. <https://pta.bbaw.de/text/urn:cts:pta:pta0013.pta003.pta-grc1>; seine **versionierte** Fassung, die einen spezifischen Veröffentlichungsstand widerspiegelt, lautet z.B. <https://pta.bbaw.de/text/9970133a/urn:cts:pta:pta0013.pta003.pta-grc1>. Der jeweilige Permalink ist in der Leseoberfläche unter der Rubrik `Nachnutzung` angeführt. Permalinks existieren auch für Autoren/Textgruppen: <https://pta.bbaw.de/text/urn:cts:pta:pta0013> sowie für Werke: <https://pta.bbaw.de/text/urn:cts:pta:pta0013.pta003>.
+Jede Edition ist über einen **Permalink** (unter Verwendung der CTS-URN) erreichbar: z.B. <https://pta.bbaw.de/text/urn:cts:pta:pta0013.pta003.pta-grc1>; seine **versionierte** Fassung, die einen spezifischen Veröffentlichungsstand widerspiegelt, lautet z.B. <https://pta.bbaw.de/text/9970133a/urn:cts:pta:pta0013.pta003.pta-grc1>. Der jeweilige Permalink ist in der Leseoberfläche unter der Rubrik `Nachnutzung` angeführt; dort kann auch ein Permalink für vorher markierte Textpassagen erstellt werden. Permalinks existieren auch für Autoren/Textgruppen: <https://pta.bbaw.de/text/urn:cts:pta:pta0013> sowie für Werke: <https://pta.bbaw.de/text/urn:cts:pta:pta0013.pta003>. 
 
 Eine Übersicht der textbezogenen Funktionalitäten findet sich [hier](../project/help).
 
@@ -19,7 +19,7 @@ Eine Übersicht der textbezogenen Funktionalitäten findet sich [hier](../projec
 Die Handschriftendatenbank umfasst momentan nur rudimentäre Daten zu den Handschriften, die im PTA edierte Werke überliefern.
 Die Daten basieren auf den Angaben der [Pinakes-Datenbank](https://pinakes.irht.cnrs.fr/) (= »Entwurf«-Status), die von den jeweiligen Bearbeitern durch Autopsie ergänzt wurden.
 
-Verlinkt sind neben dem jeweiligen Eintrag in der [Pinakes-Datenbank](https://pinakes.irht.cnrs.fr/) (soweit vorhanden) Digitalisate und IIIF-Manifeste sowie für die in der Handschrift überlieferten Texte die Editionen im PTA bzw. der entsprechende Eintrag in der [Clavis Clavium-Datenbank](https://clavis.brepols.net/clacla/Default.aspx) oder der [Database of Byzantine Book Epigrams](https://www.dbbe.ugent.be). Stehen Digitalisate (per IIIF) zur Verfügung kann auf sie im Viewer direkt zugegriffen werden.
+Verlinkt sind neben dem jeweiligen Eintrag in der [Pinakes-Datenbank](https://pinakes.irht.cnrs.fr/) (soweit vorhanden) Digitalisate und IIIF-Manifeste sowie für die in der Handschrift überlieferten Texte die Editionen im PTA bzw. der entsprechende Eintrag in der [Clavis Clavium-Datenbank](https://clavis.brepols.net/clacla/Default.aspx) oder der [Database of Byzantine Book Epigrams](https://www.dbbe.ugent.be). Stehen Digitalisate (per IIIF) zur Verfügung, kann auf sie im Viewer direkt zugegriffen werden.
 
 Die zugrundliegenden Daten sind auf [Github](https://github.com/PatristicTextArchive/pta_manuscripts) erhältlich.
 
@@ -53,9 +53,6 @@ Es wird ein [Register](https://pta.bbaw.de/indices/biblical-references) aller an
 Die PTA Webapplikation ist eine [Vue.js Single Page Application](https://vuejs.org/), die auf einem [Laravel PHP-Backend](https://laravel.com/) aufsitzt. Das Backend stellt zudem verschiedene interne restful Schnittstellen für den Zugriff auf den versionierten Inhalt der genutzten Repositorien ([pta_data](https://github.com/PatristicTextArchive/pta_data), [pta_lexika](https://github.com/PatristicTextArchive/pta_lexika), [pta_manuscripts](https://github.com/PatristicTextArchive/pta_manuscripts), [pta_metadata](https://github.com/PatristicTextArchive/pta_metadata), [pta_frontend_documentation](https://github.com/PatristicTextArchive/pta_frontend_documentation)) bereit. 
 
 ### Module & Plugins
-Die PTA Webapplikation ist eine [Vue.js Single Page Application](https://vuejs.org/), die auf einem [Laravel PHP-Backend](https://laravel.com/) aufsitzt. Das Backend stellt zudem verschiedene interne restful Schnittstellen für den Zugriff auf den versionierten Inhalt der genutzten Repositorien ([pta_data](https://github.com/PatristicTextArchive/pta_data), [pta_lexika](https://github.com/PatristicTextArchive/pta_lexika), [pta_manuscripts](https://github.com/PatristicTextArchive/pta_manuscripts), [pta_metadata](https://github.com/PatristicTextArchive/pta_metadata), [pta_frontend_documentation](https://github.com/PatristicTextArchive/pta_frontend_documentation)) bereit. 
-
-### Module & Plugins
 Folgende Zusatzmodule finden Einsatz in der PTA Webapp:
 
 - [Vue Router](https://router.vuejs.org/)
@@ -69,19 +66,21 @@ Folgende Zusatzmodule finden Einsatz in der PTA Webapp:
 
 
 ### Interface-Sprachen
-Das Interface ist aktuell in den Sprachen Deutsch und Englisch verfügbar, Italienisch ist in Vorbereitung. Technisch verwaltet werden Übersetzungen im i18n-Standard als JSON-Dateien. In Zukunft sind auch weitere Sprachen für das Interface geplant. Eine aktive [Mitwirkung](../project/contributing) ist sehr willkommen!
+Das Interface ist aktuell in den Sprachen Deutsch und Englisch verfügbar, Italienisch und Neugriechisch sind in Vorbereitung. Technisch verwaltet werden Übersetzungen im i18n-Standard als JSON-Dateien. In Zukunft sind auch weitere Sprachen für das Interface geplant. Eine aktive [Mitwirkung](../project/contributing) ist sehr willkommen!
 
 ### Automatisierte, KI-gestützte Textanalyse
 
-Editionen und Übersetzungen (Achtung: keine Transkriptionen) in den folgenden Sprachen werden mit Hilfe von SpaCy-Modellen mit Hilfe einer im Frontend integrierten Pipeline, die auf den Service des [Classical Language Dictionary](https://cld.bbaw.de) zurückgreift, automatisch analysiert (Lemma, POS, Morphologie; Dependency): Griechisch, Lateinisch, Armenisch, Englisch, Deutsch. Die durch ein Python-Skript gesteuerte Pipeline generiert TEI-XML-Dateien, in denen die Worte als [w-Element mit Attributen (@xml:id, @lemma, @pos, @msd; @m:dep, @m:anc)](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-w.html) annotiert sind. Das jeweils verwendete Modell ist im TEI-Header vermerkt. Transkriptionen und Dateien in anderen als den oben genannten Sprachen werden nur als w-Element (mit Attribut @xml:id) ausgezeichnet. Diese werden im [pta_data-Repositorium](https://github.com/PatristicTextArchive/pta_data) in einem eigenen Ordner [analyzed](https://github.com/PatristicTextArchive/pta_data/tree/public/analyzed) abgelegt, auf den die PTA Webapp für die Suche und die Darstellung im Reader (inklusive Lexikon-Funktion) zurückgreift. 
+Editionen und Übersetzungen (Achtung: keine Transkriptionen) in den folgenden Sprachen werden mit Hilfe von SpaCy-Modellen und einer im Frontend integrierten Pipeline, die auf den Service des [Classical Language Dictionary](https://cld.bbaw.de) zurückgreift, automatisch analysiert (Lemma, POS, Morphologie; Dependency): Griechisch, Lateinisch, Armenisch, Englisch, Deutsch. Die durch ein Python-Skript gesteuerte Pipeline generiert TEI-XML-Dateien, in denen die Worte als [w-Element mit Attributen (@xml:id, @lemma, @pos, @msd; @m:dep, @m:anc)](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-w.html) annotiert sind. Das jeweils verwendete Modell ist im TEI-Header vermerkt. Transkriptionen und Dateien in anderen als den oben genannten Sprachen werden nur als [w-Element (mit Attribut @xml:id)](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-w.html) ausgezeichnet. Die annotierten Dateien werden im [pta_data-Repositorium](https://github.com/PatristicTextArchive/pta_data) in einem eigenen Ordner [analyzed](https://github.com/PatristicTextArchive/pta_data/tree/public/analyzed) abgelegt, auf den die PTA Webapp für die Suche und die Darstellung im Reader (inklusive der Lexikon-Funktion) zurückgreift. 
+
+Die automatische Analyse ist so gut wie die verwendeten Modelle (und daher fehlerbehaftet!). Zukünftig wird auch die manuelle Korrektur der automatisch analysierten Daten möglich sein.
 
 ### Suche
 
-Die Suche verwendet im Backend [Solr](https://solr.apache.org/) und [Multi Tier Annotation Search](https://textexploration.github.io/mtas/) und greift auf die automatisiert analysierten Daten zu.
+Die Suche basiert im Backend auf [Solr](https://solr.apache.org/) und auf [Multi Tier Annotation Search](https://textexploration.github.io/mtas/), das als Abfragesprache die Corpus Query Language (CQL) bereitstellt. Die Möglichkeiten der [einfachen Suche](../project/search-simple) und der [erweiterten Suche](../project/search-advanced) sind eigens dokumentiert.
 
 ### Lexikon
 
-Die Lexikon-Funktion greift für die [Wörterbücher](https://cld.bbaw.de/documentation/dictionaries) auf den Service des [Classical Language Dictionary](https://cld.bbaw.de) zurück. Für Syrisch wird die [SEDRA IV API (v1.0.0)](https://sedra.bethmardutho.org/about/openapi) benutzt.
+Die Lexikon-Funktion greift für die [Wörterbücher](https://cld.bbaw.de/documentation/dictionaries) auf den Service des [Classical Language Dictionary](https://cld.bbaw.de) und die automatisch analysierten Daten (s.o.) zurück. Fehler der automatischen Lemmatisierung werden nach Möglichkeit durch Rückgriff auf eine Lookup-Tabelle ausgeglichen (Achtung: auch nicht fehlerfrei!). Für Syrisch wird die [SEDRA IV API (v1.0.0)](https://sedra.bethmardutho.org/about/openapi) benutzt.
 
 ### Analyse mit Hilfe der Voyant Tools
 
