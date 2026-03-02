@@ -863,7 +863,7 @@ Das Attribute `@n` enthält die Stellenreferenz, normalerweise eine Zahl, sie ka
   
 Absätze innerhalb dieser Unterabschnitte werden mit Hilfe des Elements `<p>` ausgezeichnet. Jedes Element `<div>` enthält mindestens ein Element `<p>`. Listen sind ebenfalls erlaubt: Sie werden (anstelle von `<p>`) mit dem Element `<list>`, die einzelnen Listeneinträge mit dem Element `<item>` ausgezeichnet. Hat eine Liste eine Überschrift, so wird diese mit Hilfe des Elementes `<head>` ausgezeichnet. 
   
-#### Titel und titelähnliche Elemente
+##### Titel und titelähnliche Elemente
   
 Titel werden mit dem Element `<title>` innerhalb des Elementes `<head>` ausgezeichnet:
   
@@ -1388,15 +1388,18 @@ aufgeteilt und untereinander verlinkt werden.
   
 ##### Kommentierung textkritischer Entscheidungen
   
-Erscheint es nötig oder sinnvoll, textkritische Überlegungen, die über die Typisierung (mit Hilfe des Attributes `@type`) oder die Angabe von Ursachen (mit Hilfe des Attributes `@cause`) hinausgehen, auszuführen, so kann dafür an Ort und Stelle innerhalb des Elementes `<app>` ein Element `<note>` für Bemerkungen, die das gesamte `<app>`-Element betreffen, oder ein Element `<witDetail>` für Bemerkungen, die sich auf eine spezielle Handschrift bezieht, angefügt werden; im Falle von `<witDetail>` wird in einem Attribut `@wit` auf die ID der Handschrift verwiesen. 
+Erscheint es nötig oder sinnvoll, textkritische Überlegungen, die über die Typisierung (mit Hilfe des Attributes `@type`) oder die Angabe von Ursachen (mit Hilfe des Attributes `@cause`) hinausgehen, auszuführen, so kann dafür an Ort und Stelle innerhalb des Elementes `<app>` ein Element `<note>` für Bemerkungen, die das gesamte `<app>`-Element betreffen, angefügt werden. Bezieht sich die Anmerkung auf eine spezielle Lesart innerhalb des Apparats, erhält das Element `<note>` zusätzlich ein Attribut `@corresp`, in dem auf die im Attribut `@wit`, `@resp` oder `@source` dieser Lesart verwendete ID verwiesen wird. Der Urheber der Kommentierung wird im Attribut `@resp` angegeben. 
   
 ```xml
 <app type="variants">
   <lem wit="#Pt #Pc #Pb #Pd #My #Ma #Ha #Va #Ab">ἀπαστράπτει</lem>
   <rdg wit="#Pa #Be">ἀ</rdg>
-  <witDetail wit="#Pa">Blattausfall.</witDetail>
-  <note>Sich auf die gesamte Variante beziehende Anmerkung</note>
+  <note corresp="#Pa" resp="#CB">Blattausfall.</note>
+  <rdg source="#X" type="conjecture">ἀπαστράπτεις</rdg>
+  <note corresp="#X" resp="#CB">Diese Konjektur erscheint nicht sinnvoll, weil...</note>
+  <note resp="#CB">Sich auf die gesamte Variante beziehende Anmerkung</note>
 </app>
+  
 ```  
   
   
