@@ -6,6 +6,12 @@
 - Personen, Gruppen, Orte, Bibelreferenzen, Handschriften, Text-Metdaten für LOD aufbereitet 
 
 ## Benutzerschnittstelle
+
+### 19. Mai 2026
+- Neue Suche, basierend auf automatisierter, KI-gestützter Textanalyse und Corpus Query Language (CQL)
+- Neue Metadatensuche
+- Verbesserung der Analyse-Pipeline des [Classical Language Dictionary (CLD)](https://cld.bbaw.de)
+
 ### 15. November 2024
 - Fehlerbereinigungen
 - Verbesserung der Analyse-Pipeline des [Classical Language Dictionary (CLD)](https://cld.bbaw.de)

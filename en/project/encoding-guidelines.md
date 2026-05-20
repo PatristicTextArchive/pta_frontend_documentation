@@ -893,7 +893,7 @@ For bible quotations, the respective bible passage is given within the `<ref>` e
 </p>
 ```  
   
-If non-biblical texts are cited, the passage reference is also indicated by means of the `<ref>` element: If the referenced text is available in the Patristic Text Archive, the PTA-URN is given with reference to the specifications in the `<teiHeader>` (`@decls="#pta"`) in the attribute `@cRef`. If the referenced text is present in the [Perseus Digital Library](https://scaife.perseus.org/ ), the CTS-URN with reference to the specifications in the `<teiHeader>` (`@decls="#perseus"`) is given in the attribute `@cRef`. If the referenced text is not available in either repository, the reference for the referenced text is given in the attribute `@source` in the form “Authorabbrev_Workabbrev_Location”; ancient Greek authors should be referenced according to the lists of [H. G. Liddell/R. Scott/H. S. Jones, A Greek - English Lexicon, Oxford ^9^1968](https://lsj.gr/wiki/Index:AuthorsWorks/All ) and G. W. H. Lampe, A Patristic Greek Lexicon, Oxford ^3^1987, for Latin ones the abbreviations of the Thesaurus Linguae Latinae (cf. [Index librorum scriptorum inscriptionum ex quibus exempla afferuntur](https://thesaurus.badw.de/en/tll-digital/index/ )) should be used, with dots in the abbreviations deleted without replacement.
+If non-biblical texts are cited, the passage reference is also indicated by means of the `<ref>` element: If the referenced text is available in the Patristic Text Archive, the PTA-URN is given with reference to the specifications in the `<teiHeader>` (`@decls="#pta"`) in the attribute `@cRef`. If the referenced text is present in the [Perseus Digital Library](https://scaife.perseus.org/ ), the CTS-URN with reference to the specifications in the `<teiHeader>` (`@decls="#perseus"`) is given in the attribute `@cRef`. If the referenced text is available in the [Corpus Liberatum Linguae Graecae](https://gitlab.inria.fr/almanach/cllg/freed-corpus ), the CTS-URN with reference to the specifications in the `<teiHeader>` (`@decls="#cllg"`) is given in the attribute `@cRef`. If the referenced text is not available in any of these repositories, the reference for the referenced text is given in the attribute `@source` in the form “Authorabbrev_Workabbrev_Location”; ancient Greek authors should be referenced according to the lists of [H. G. Liddell/R. Scott/H. S. Jones, A Greek - English Lexicon, Oxford ^9^1968](https://lsj.gr/wiki/Index:AuthorsWorks/All ) and G. W. H. Lampe, A Patristic Greek Lexicon, Oxford ^3^1987, for Latin ones the abbreviations of the Thesaurus Linguae Latinae (cf. [Index librorum scriptorum inscriptionum ex quibus exempla afferuntur](https://thesaurus.badw.de/en/tll-digital/index/ )) should be used, with dots in the abbreviations deleted without replacement.
   
 ```xml
 <p>ἐν δὲ <bibl>τῷ Ποιμένι</bibl> γέγραπται,
@@ -1369,15 +1369,18 @@ If a variant exceeds a division level, it must be given priority and the `<app>`
   
 ##### Commenting on text-critical decisions
   
-If it seems necessary or feasible to expand on text-critical considerations that go beyond the indication of causes (with the help of the `@cause` attribute) or typification (with the help of the `@type` attribute), an element `<note>` for remarks that concern the entire `<app>` element or an element `<witDetail>` for remarks that refer to a specific manuscript can be added within the `<app>` element; in that case, the element `<witDetail>` receives an attribute `@wit` with the ID of the manuscript.
+If it seems necessary or useful to elaborate on text-critical considerations that go beyond typification (using the attribute `@type`) or the indication of causes (using the attribute `@cause`), an element `<note>` can be added within the element `<app>` for remarks concerning the entire `<app>` element. If the note refers to a specific reading, the element `<note>` additionally receives an attribute `@corresp`, in which the ID used in the attribute `@wit`, `@resp` or `@source` of the reading is referenced. The author of the annotation is specified in the `@resp` attribute.
   
 ```xml
 <app type="variants">
   <lem wit="#Pt #Pc #Pb #Pd #My #Ma #Ha #Va #Ab">ἀπαστράπτει</lem>
   <rdg wit="#Pa #Be">ἀ</rdg>
-  <witDetail wit="#Pa">Blattausfall.</witDetail>
-  <note>Sich auf die gesamte Variante beziehende Anmerkung</note>
+  <note corresp="#Pa" resp="#CB">Blattausfall.</note>
+  <rdg source="#X" type="conjecture">ἀπαστράπτεις</rdg>
+  <note corresp="#X" resp="#CB">Diese Konjektur erscheint nicht sinnvoll, weil...</note>
+  <note resp="#CB">Sich auf die gesamte Variante beziehende Anmerkung</note>
 </app>
+  
 ```  
   
   

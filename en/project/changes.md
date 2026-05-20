@@ -3,9 +3,14 @@
 - Manuscripts: <https://github.com/PatristicTextArchive/pta_manuscripts/commits/public>
 
 ### 5 Jul 2022
-- Personens, groups, places, biblical references, manuscripts, texte metadata formatted as LOD 
+- Persons, groups, places, biblical references, manuscripts, text metadata formatted as LOD 
 
 ## Frontend
+### 19 May 2025
+- New search, based on automated, AI-supported text analysis and Corpus Query Language (CQL)
+- New metadata search
+- Enhancement of the [Classical Language Dictionary (CLD)](https://cld.bbaw.de) analytical pipeline
+
 ### 15 November 2024
 - Bug fixes
 - Enhancement of the [Classical Language Dictionary (CLD)](https://cld.bbaw.de) analytical pipeline
