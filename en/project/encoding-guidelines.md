@@ -914,9 +914,9 @@ If non-biblical texts are cited, the passage reference is also indicated by mean
 </quote></p>
 ```  
   
-##### Encoding of similia and sources
+##### Encoding of similia, testimonia and sources
   
-Similia are marked up with the help of `<seg type="similar">`, sources (as far as it is not a citation) with the help of `<seg type="source>`. The source is indicated within the `<seg>` element in a `<ref>` element.
+Similia are marked up using `<seg type="similar">`, testimonia using `<seg type="testimonium">`, and sources (as far as it is not a citation) using `<seg type="source>`. The source is indicated within the `<seg>` element in a `<ref>` element.
   
 ```xml
 <seg type="similar">
