@@ -49,11 +49,13 @@ Bei jedem Zugriff eines Nutzers auf das Internet-Angebot der Berlin-Brandenburgi
 *  Meldung, ob der Zugriff/Abruf erfolgreich war
 Zweck der Datenerhebung ist der verpflichtende Schutz vor Angriffen des Netzwerks, die Verbesserung des Angebots sowie die Erstellung von Nutzungsstatistiken. Diese Daten werden eine Woche gespeichert.
 
-Rechtsgrundlage für die Datenverarbeitung ist Art. 6 Abs. 1 S. 1 lit. b DSGVO (Erforderlichkeit zur Wahrung berechtigter Interessen).
+Rechtsgrundlage für die Datenverarbeitung ist Art. 6 Abs. 1 lit. f DSGVO (Erforderlichkeit zur Wahrung berechtigter Interessen).
 
 Für das reibungslose Funktionieren einiger Seiten müssen Cookies gesetzt werden. Diese Cookies beinhalten keine personenbezogenen Daten und werden nicht weiter ausgewertet. Da es sich um eine technische Notwendigkeit handelt, bedarf es keiner ausdrücklichen Zustimmung durch den Nutzer.
 
 Diese Website benutzt Matomo (vormals Piwik), eine Open-Source-Software zur statistischen Auswertung der Besucherzugriffe. Matomo verwendet keine Tracker Cookies (Es arbeitet mit der Funktion: Tracking ohne Cookies erzwingen)! 
 Die IP-Adresse wird sofort nach der Verarbeitung und vor deren Speicherung anonymisiert.
 
-Zweck der Datenerhebung ist die Verbesserung des Angebots sowie die Erstellung von Nutzungsstatistiken. Rechtsgrundlage für die Datenverarbeitung ist Art. 6 Abs. 1 S. 1 lit. b DSGVO (Erforderlichkeit zur Wahrung berechtigter Interessen).
+Zweck der Datenerhebung ist die Verbesserung des Angebots sowie die Erstellung von Nutzungsstatistiken. Rechtsgrundlage für die Datenverarbeitung ist Art. 6 Abs. 1 lit. f DSGVO (Erforderlichkeit zur Wahrung berechtigter Interessen).
+
+S. auch <https://www.bbaw.de/datenschutz>

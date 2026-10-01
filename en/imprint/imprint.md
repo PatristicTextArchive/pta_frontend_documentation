@@ -55,3 +55,5 @@ Cookies must be set for the correct functioning of some pages. These cookies do 
  
 This website uses Matomo (formerly Piwik), an open source software for statistical analysis of visitor traffic. Matomo does not use tracker cookies (It works with the function: force tracking without cookies)! 
 The IP address is anonymized immediately after processing and before it is stored.
+
+See also <https://www.bbaw.de/datenschutz>
