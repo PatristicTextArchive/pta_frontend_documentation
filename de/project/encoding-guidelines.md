@@ -1003,22 +1003,21 @@ Im Attribut `@key` wird die `org_id` der [PTA-Oranganisationen-Liste](https://gi
   
 ##### Bezeugung des Textes
   
-Die handschriftliche Bezeugung des Textes wird im Element `<app>`, das ein Attribut `@type` mit dem Wert `witnesses` erhält, dokumentiert. Das Element erhält im Attribut `@xml:id` einen eindeutigen Identifikator, im optionalen Attribut `@prev` bzw. `@next` wird auf den korrespondierenden Eintrag (`<witStart/>`/`<lacunaStart/>` -> `<witEnd/>`/`<lacunaEnd/>` und umgekehrt) verwiesen. Gegegebenenfalls kann im Attribut `@corresp` auf eine entsprechende textkritische Variante oder Lesart verwiesen werden, die dann ebenfalls einen eindeutigen Identifikator benötigt.
+Die handschriftliche Bezeugung des Textes wird im Element `<app>`, das ein Attribut `@type` mit dem Wert `witnesses` erhält, dokumentiert. 
 Das Element enthält nur das Element `<rdg>` mit dem Attribut `@wit`, in dem eines der selbst-schließenden Elemente `<witStart/>` (= Beginn eines Zeugen), `<witEnd/>` (= Ende eines Zeugen), `<lacunaStart/>` (= Beginn einer Lücke) oder `<lacunaEnd/>` (= Ende einer Lücke) eingefügt wird. Das Element enthält keinen Text, sondern wird (vergleichbar mit einem Milestone-Element wie `<pb>`) an der passenden Stelle im Text eingefügt: In Fall von `<witStart>` und `<lacunaEnd>` steht es vor dem ersten Wort, das im Zeugen vorhanden ist bzw. nachdem die Lücke zu Ende ist, im Fall von `<witEnd>` und `<lacunaStart>` steht es nach dem letzten Wort, das im Zeugen vorhanden ist bzw. vor dem die Lücke beginnt. 
   
 ```xml
 <app type="variants">
     <lem wit="#Pt #Pc #Pb #Pd #My #Ma #Ha #Va #Ab">ἀπαστράπτει</lem>
-    <rdg wit="#Pa #Be" xml:id="lac-Pa">ἀ</rdg>
-    <witDetail wit="#Pa" target="#lac-Pa">Blattausfall.</witDetail>
+    <rdg wit="#Pa #Be">ἀ</rdg>
 </app> 
-<app type="witnesses" xml:id="x1" next="#x2" corresp="#lac-Pa">
+<app type="witnesses">
     <rdg wit="#Pa #Be"><lacunaStart/></rdg>
 </app> ... καθʼ ἑαυτὴν ἔσωσεν. 
-<app type="witnesses" xml:id="x2" prev="#x1" corresp="#lac-Pa">
+<app type="witnesses">
     <rdg wit="#Pa #Be"><lacunaEnd/></rdg>
 </app>
-<app type="witnesses" xml:id="x3" next="#x4">
+<app type="witnesses">
     <rdg wit="#Ecl114"><witStart/></rdg>
 </app> μεμαρτύρητο ...
 ```  

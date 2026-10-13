@@ -973,22 +973,21 @@ Dialogue is marked up using `<sp>` (instead of `<p>`). For the person speaking `
   
 ##### Text witnesses
   
-The manuscripts witnessing the text are documented in the element `<app>` with the attribute `@type="witnesses"`. The element receives a unique identifier in the attribute `@xml:id`, in the optional attribute `@prev` or `@next` reference is made to the corresponding entry (`<witStart/>`/`<lacunaStart/>` -> `<witEnd/>`/`<lacunaEnd/>` and vice versa). If necessary, a reference to a corresponding text-critical variant or reading can be made in the attribute `@corresp`.
+The manuscripts witnessing the text are documented in the element `<app>` with the attribute `@type="witnesses"`. 
 The element contains only the element `<rdg>` with the attribute `@wit`, in which one of the self-closing elements `<witStart/>` (= beginning of a witness), `<witEnd/>` (= end of a witness), `<lacunaStart/>` (= beginning of a gap) or `<lacunaEnd/>` (= end of a gap) is inserted. The element does not contain any text, but is inserted (comparable to a milestone element like `<pb>`) at the appropriate place in the text: In the case of `<witStart>` and `<lacunaEnd>` it comes before the first word present in the witness or after the gap ends, in the case of `<witEnd>` and `<lacunaStart>` it comes after the last word present in the witness or before which the gap begins. 
   
 ```xml
 <app type="variants">
     <lem wit="#Pt #Pc #Pb #Pd #My #Ma #Ha #Va #Ab">ἀπαστράπτει</lem>
-    <rdg wit="#Pa #Be" xml:id="lac-Pa">ἀ</rdg>
-    <witDetail wit="#Pa" target="#lac-Pa">Blattausfall.</witDetail>
+    <rdg wit="#Pa #Be">ἀ</rdg>
 </app> 
-<app type="witnesses" xml:id="x1" next="#x2" corresp="#lac-Pa">
+<app type="witnesses">
     <rdg wit="#Pa #Be"><lacunaStart/></rdg>
 </app> ... καθʼ ἑαυτὴν ἔσωσεν. 
-<app type="witnesses" xml:id="x2" prev="#x1" corresp="#lac-Pa">
+<app type="witnesses">
     <rdg wit="#Pa #Be"><lacunaEnd/></rdg>
 </app>
-<app type="witnesses" xml:id="x3" next="#x4">
+<app type="witnesses">
     <rdg wit="#Ecl114"><witStart/></rdg>
 </app> μεμαρτύρητο ...
 ```  
