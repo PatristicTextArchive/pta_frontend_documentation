@@ -1174,7 +1174,7 @@ Der Ort der Korrektur wird mit Hilfe der entsprechenden Elemente für Löschung,
 <app type="variants">
     <rdgGrp>
         <lem wit="#Pa #Pb #Ha #Va">ὁ γενναῖος ἐκεῖνος</lem>
-        <rdg wit="#Be" varSeq="2" hand="m2"><add place="above">ὁ γενναῖος ἐκεῖνος</add></rdg>
+        <rdg wit="#Be" varSeq="2" hand="#m2"><add place="above">ὁ γενναῖος ἐκεῖνος</add></rdg>
     </rdgGrp>
     <rdg wit="#Be" varSeq="1" type="transposition">ἐκεῖνος ὁ γενναῖος</rdg>
 </app>
