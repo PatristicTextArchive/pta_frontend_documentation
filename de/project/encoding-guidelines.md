@@ -333,12 +333,12 @@ Der *hinzugefügte Text* wird mit `<add>` ausgezeichnet. Der Ort der Hinzufügun
 </subst>
 ```  
   
-Handelt es sich bei der Korrektur um die Hinzufügung von Diakritika zu Buchstaben, so wird der Buchstabe vor der Hinzufügung mit `<del>` und dem Attribut `@rend` mit dem Wert `repurposed` ausgezeichnet, nach der Hinzufügung mit `<add>` und dem Attribut `@rend` mit dem Wert `inline`.
+Handelt es sich bei der Korrektur um die Hinzufügung von Diakritika zu Buchstaben, so wird der Buchstabe vor der Hinzufügung mit `<del>` und dem Attribut `@rend` mit dem Wert `repurposed` ausgezeichnet, nach der Hinzufügung mit `<add>` und dem Attribut `@place` mit dem Wert `inline`.
   
 ```xml
 <subst>
     <del rend="repurposed">α</del>
-    <add rend="inline">ά</add>
+    <add place="inline">ά</add>
 </subst>
 ```  
   

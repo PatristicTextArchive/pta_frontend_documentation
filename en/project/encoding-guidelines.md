@@ -316,12 +316,12 @@ The *added text* is marked with `<add>`. The place of the addition is specified 
 </subst>
 ```  
   
-If the correction is the addition of diacritics to a letter, the letter without is marked with  `<del>` and the attribute `@rend` with the value `repurposed`, the letter with the added diacritic is marked with `<add>` and the attribute `@rend` with the value `inline`.
+If the correction is the addition of diacritics to a letter, the letter without is marked with  `<del>` and the attribute `@rend` with the value `repurposed`, the letter with the added diacritic is marked with `<add>` and the attribute `@place` with the value `inline`.
   
 ```xml
 <subst>
     <del rend="repurposed">α</del>
-    <add rend="inline">ά</add>
+    <add place="inline">ά</add>
 </subst>
 ```  
   
