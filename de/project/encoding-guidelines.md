@@ -595,7 +595,7 @@ Gal, Eph, Phil, Col, 1Th, 2Th, 1Tim,
 ```  
   
 Die Stellenangaben werden folgendermaßen gebildet:
-Bibl. Korpus (LXX, PES [= Peshitta], Hexapla, Vg [= Vulgata] oder NA [= Neues Testament = Nestle-Aland]):Buch:Kapitel:Vers (z.B.: 1,1-2,1.4), z.B. `LXX:Gn:1:1-3`.
+Bibl. Korpus (LXX, Peshitta, Hexapla, Vg [= Vulgata] oder NA [= Neues Testament = Nestle-Aland]):Buch:Kapitel:Vers (z.B.: 1,1-2,1.4), z.B. `LXX:Gn:1:1-3`. Referenztext für Bibelstellen (Verszählung und Wortlaut) ist die Bibel im PTA (`urn:cts:pta:pta9999`).
   
 #### Angabe der ausgezeichneten Phänomene
   
@@ -725,7 +725,7 @@ Als letztes Element im Abschnitt `<encodingDesc>` wird die Art der Auszeichnung 
   
 #### Art der Edition
   
-Die Art der Edition wird innerhalb des Abschnittes `<profileDesc>` im Unterabschnitt `<textClass>` unter `<keywords scheme="#editionstatus">` angegeben. Das Element `<term>` kann folgende Inhalte annehmen:
+Die Art der Edition wird innerhalb des Abschnittes `<profileDesc>` im Unterabschnitt `<textClass>` unter `<keywords scheme="<a class="tag" data-tag="editionstatus" href="tag://editionstatus">#editionstatus</a>">` angegeben. Das Element `<term>` kann folgende Inhalte annehmen:
   
 -   `critical-edition` für eine kritische Edition, bei der die textkritischen Varianten kodiert worden sind. Das sollte der Normalfall für Neueditionen sein, die dem hier vorgestellten Modell folgen.
   
@@ -893,7 +893,17 @@ Die Seitenumbrüche in den Handschriften und früheren Editionen werden nach Bed
   
 ##### Auszeichnung von Bibel- und anderen Zitaten (und Anspielungen)
   
-Zitate werden mit Hilfe des Elementes `<quote>` ausgezeichnet und können ein Attribut `@type` erhalten, so dass zwischen markierten (`marked`) und nicht-markierten (`unmarked`) Zitaten unterschieden werden kann; für paraphrasierende Zitate – soweit sie überhaupt als Zitat markiert werden – kann der Wert `paraphrasis` verwendet werden. Bei Editionen biblischer Kommentare erhalten Lemma-Zitate den Wert `lemma`, um sie von anderen Zitaten zu differenzieren.
+Zitate werden mit Hilfe des Elementes `<quote>` ausgezeichnet und können ein Attribut `@type` erhalten, so dass zwischen markierten (`marked`) und nicht-markierten (`unmarked`) Zitaten unterschieden werden kann; für paraphrasierende Zitate – soweit sie überhaupt als Zitat markiert werden – kann der Wert `paraphrasis` verwendet werden. Bei Editionen biblischer Kommentare erhalten Lemma-Zitate den Wert `lemma`, um sie von anderen Zitaten zu differenzieren. Zitate aus der Hexapla erhalten den Wert `hexaplaric`; der bzw. die zitierten Übersetzer werden im Attribut `@ana` verzeichnet (`Secunda` = Transliteration aus dem Hebräischen, `Ἀ` = Aquila, `Σ` = Symmachus, `Θ` = Theodotion, `εʹ` = Quinta, `ϛʹ` = Sexta); mehrere Werte werden durch Leerzeichen getrennt.
+  
+```xml
+<p>… ἀντὶ δὲ <quote type="lemma">τῶν ἐκτετιναγμένων<ref decls="#biblical" cRef="LXX:Ps:126:4"/></quote>
+   λευκότερον ὁ <persName>Σύμμαχος</persName> καὶ ὁ <persName>Θεοδοτίων</persName> καὶ
+   <bibl>ἡ πέμπτη ἔκδοσις</bibl> ἡρμήνευσαν εἰπόντες
+   <quote type="hexaplaric" ana="Σ Θ εʹ">τέκνα νεανιότητος <seg type="insertion">ἢ</seg> υἱοὶ νεανιότητος<ref decls="#biblical" cRef="Hexapla:Ps:126:4" type="cf"/></quote>,
+   ὁ δὲ <persName>Ἀκύλας</persName> φησὶν
+   <quote type="hexaplaric" ana="Ἀ">υἱοὶ τῶν παιδοτήτων<ref decls="#biblical" cRef="Hexapla:Ps:126:4"/></quote> …
+</p>
+```  
   
 Explizite Zitate unter Anführung des Autors des Zitates werden mit dem Element `<cit>` ausgezeichnet und die das Zitat anführende Phrase darin mit dem Element `<ref>`. Einschübe im Zitat (wie z.B. „sagte“) werden mit Hilfe von `<seg type="insertion">` innerhalb des Zitates ausgezeichnet.
   
@@ -1007,22 +1017,40 @@ Die handschriftliche Bezeugung des Textes wird im Element `<app>`, das ein Attri
 Das Element enthält nur das Element `<rdg>` mit dem Attribut `@wit`, in dem eines der selbst-schließenden Elemente `<witStart/>` (= Beginn eines Zeugen), `<witEnd/>` (= Ende eines Zeugen), `<lacunaStart/>` (= Beginn einer Lücke) oder `<lacunaEnd/>` (= Ende einer Lücke) eingefügt wird. Das Element enthält keinen Text, sondern wird (vergleichbar mit einem Milestone-Element wie `<pb>`) an der passenden Stelle im Text eingefügt: In Fall von `<witStart>` und `<lacunaEnd>` steht es vor dem ersten Wort, das im Zeugen vorhanden ist bzw. nachdem die Lücke zu Ende ist, im Fall von `<witEnd>` und `<lacunaStart>` steht es nach dem letzten Wort, das im Zeugen vorhanden ist bzw. vor dem die Lücke beginnt. 
   
 ```xml
-<app type="variants">
-    <lem wit="#Pt #Pc #Pb #Pd #My #Ma #Ha #Va #Ab">ἀπαστράπτει</lem>
-    <rdg wit="#Pa #Be">ἀ</rdg>
-</app> 
+ <app type="variants">
+     <lem wit="#Pt #Pc #Pb #Pd #My #Ma #Ha #Va #Ab">ἀπαστράπτει</lem>
+     <rdg wit="#Pa #Be">ἀ</rdg>
+    <note corresp="#Pa" resp="#CB">Blattausfall.</note>
+ </app> 
+ <app type="witnesses">
+     <rdg wit="#Pa #Be"><lacunaStart/></rdg>
+ </app> ... καθʼ ἑαυτὴν ἔσωσεν. 
 <app type="witnesses">
-    <rdg wit="#Pa #Be"><lacunaStart/></rdg>
-</app> ... καθʼ ἑαυτὴν ἔσωσεν. 
+     <rdg wit="#Pa #Be"><lacunaEnd/></rdg>
+ </app>
 <app type="witnesses">
-    <rdg wit="#Pa #Be"><lacunaEnd/></rdg>
-</app>
-<app type="witnesses">
-    <rdg wit="#Ecl114"><witStart/></rdg>
+     <rdg wit="#Ecl114"><witStart/></rdg>
 </app> μεμαρτύρητο ...
+  
 ```  
   
 (Diese etwas umständliche Art der Notation ist nötig, weil nach den [TEI-Richtlinien](https://tei-c.org/Vault/P5/2.0.0/doc/tei-p5-doc/en/html/ref-model.rdgPart.html ) die Elemente `<witStart/>`, `<lacunaStart/>`, `<witEnd/>`, `<lacunaEnd/>` nur innerhalb eines `<rdg>` oder `<lem>` in einem `<app>` stehen dürfen und der sinvolle [Änderungswunsch, diese Elemente auch außerhalb im Text zuzulassen, vom TEI Technical Council zurückgewiesen wurde](https://github.com/TEIC/TEI/issues/301 ).)
+  
+Nähere Angaben zur Bezeugung (z.B. Folia, Zuschreibung des Exzerptes in der Handschrift, Umfang) werden – wie die Anmerkungen zu den Varianten in `<app type="variants">` – in Elementen `<note>` gemacht, die innerhalb des *öffnenden* `<app type="witnesses">` (also des Eintrags mit `<witStart/>` bzw. `<lacunaStart/>`) jeweils nach dem `<rdg>` stehen, auf das sie sich beziehen. Für jede Handschrift bzw. Edition wird eine eigene `<note>` angelegt, die im Attribut `@corresp` auf die `@xml:id` des Zeugen (`<witness>`) bzw. der Edition (`<bibl>`) verweist; eine Anmerkung, die sich auf die gesamte Bezeugung bezieht, erhält kein `@corresp`. Alle Anmerkungen erhalten im Attribut `@resp` einen Verweis auf die verantwortliche Person.
+  
+```xml
+<app type="witnesses">
+    <rdg wit="#P #A #Ca #Cb"><witStart/></rdg>
+    <note corresp="#A" resp="#FXR">110v–111r: Eusebius</note>
+    <note corresp="#P" resp="#FXR">113r: Eusebius</note>
+    <note corresp="#Ca" resp="#FXR">330r: Eusebius</note>
+    <note corresp="#Cb" resp="#FXR">312r: Eusebius</note>
+    <note resp="#FXR">Sich auf die gesamte Bezeugung beziehende Anmerkung</note>
+</app>Νοήσεις τὸν ἐνταῦθα λεγόμενον <quote type="lemma">πτωχὸν</quote> … κατὰ τὸν Σύμμαχον.
+<app type="witnesses">
+    <rdg wit="#P #A #Ca #Cb"><witEnd/></rdg>
+</app>
+```  
   
 ##### Auszeichnung der Varianten
   

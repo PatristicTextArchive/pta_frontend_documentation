@@ -585,7 +585,7 @@ Gal, Eph, Phil, Col, 1Th, 2Th, 1Tim,
 2Jn, 3Jn, Jud, Rev.
 ```  
   
-The passages are formed as follows: Biblical corpus (LXX, PES [= Peshitta], Hexapla, Vg [= Vulgata] or NA [= Nestle-Aland]):Book:Chapter:Verse (e.g.: 1,1-2,1.4), e.g. `LXX:Gn:1:1-3`.
+The passages are formed as follows: Biblical corpus (LXX, Peshitta, Hexapla, Vg [= Vulgata] or NA [= Nestle-Aland]):Book:Chapter:Verse (e.g.: 1,1-2,1.4), e.g. `LXX:Gn:1:1-3`. The reference text for biblical references (verse numbering and wording) is the Bible in the PTA (`urn:cts:pta:pta9999`).
   
 #### Indication of the encoded phenomena
   
@@ -713,7 +713,7 @@ The last element in the `<encodingDesc>` section is the type of marking up of th
   
 #### Type of edition
   
-Within the `<profileDesc>` section, the type of edition is provided in the  `<textClass>` subsection in `<keywords scheme="#editionstatus">`. The element `<term>` has one of the following phrases:
+Within the `<profileDesc>` section, the type of edition is provided in the  `<textClass>` subsection in `<keywords scheme="<a class="tag" data-tag="editionstatus" href="tag://editionstatus">#editionstatus</a>">`. The element `<term>` has one of the following phrases:
   
 -   `critical-edition` for a critical edition in which the text-critical variants have been coded. This should be the normal case for new editions that follow the model presented here.
   
@@ -865,7 +865,18 @@ The page breaks in the manuscripts and earlier editions are indicated as require
   
 ##### Encoding of biblical and other quotations (and allusions)
   
-Quotations are marked up using the `<quote>` element and can be given a `@type` attribute so that a distinction can be made between `marked` and `unmarked` quotations; for paraphrased quotations - insofar as they are marked as quotations at all - the value `paraphrasis` can be used. In editions of biblical commentaries, lemma quotations are given the value `lemma` to differentiate them from other quotations.
+Quotations are marked up using the `<quote>` element and can be given a `@type` attribute so that a distinction can be made between `marked` and `unmarked` quotations; for paraphrased quotations - insofar as they are marked as quotations at all - the value `paraphrasis` can be used. In editions of biblical commentaries, lemma quotations are given the value `lemma` to differentiate them from other quotations. Quotations from the Hexapla are given the value `hexaplaric`; the translator(s) quoted are recorded in the attribute `@ana` (`Secunda` = transliteration from Hebrew, `Ἀ` = Aquila, `Σ` = Symmachus, `Θ` = Theodotion, `εʹ` = Quinta, `ϛʹ` = Sexta); several values are separated by whitespace.
+  
+```xml
+<p>… ἀντὶ δὲ <quote type="lemma">τῶν ἐκτετιναγμένων<ref decls="#biblical" cRef="LXX:Ps:126:4"/></quote>
+   λευκότερον ὁ <persName>Σύμμαχος</persName> καὶ ὁ <persName>Θεοδοτίων</persName> καὶ
+   <bibl>ἡ πέμπτη ἔκδοσις</bibl> ἡρμήνευσαν εἰπόντες
+   <quote type="hexaplaric" ana="Σ Θ εʹ">τέκνα νεανιότητος <seg type="insertion">ἢ</seg> υἱοὶ νεανιότητος<ref decls="#biblical" cRef="Hexapla:Ps:126:4" type="cf"/></quote>,
+   ὁ δὲ <persName>Ἀκύλας</persName> φησὶν
+   <quote type="hexaplaric" ana="Ἀ">υἱοὶ τῶν παιδοτήτων<ref decls="#biblical" cRef="Hexapla:Ps:126:4"/></quote> …
+</p>
+```  
+  
   
 Explicit quotations citing the author of the quotation are marked with the element `<cit>` and the phrase in it leading the quotation is marked with the element `<ref>`. Insertions in the quotation (such as “said”) are marked up using `<seg type="insertion">` within the quotation.
   
@@ -974,25 +985,43 @@ Dialogue is marked up using `<sp>` (instead of `<p>`). For the person speaking `
 ##### Text witnesses
   
 The manuscripts witnessing the text are documented in the element `<app>` with the attribute `@type="witnesses"`. 
-The element contains only the element `<rdg>` with the attribute `@wit`, in which one of the self-closing elements `<witStart/>` (= beginning of a witness), `<witEnd/>` (= end of a witness), `<lacunaStart/>` (= beginning of a gap) or `<lacunaEnd/>` (= end of a gap) is inserted. The element does not contain any text, but is inserted (comparable to a milestone element like `<pb>`) at the appropriate place in the text: In the case of `<witStart>` and `<lacunaEnd>` it comes before the first word present in the witness or after the gap ends, in the case of `<witEnd>` and `<lacunaStart>` it comes after the last word present in the witness or before which the gap begins. 
+The element contains the element `<rdg>` with the attribute `@wit` (for manuscripts) or `@source` (for earlier editions on which the attestation is based), in which one of the self-closing elements `<witStart/>` (= beginning of a witness), `<witEnd/>` (= end of a witness), `<lacunaStart/>` (= beginning of a gap) or `<lacunaEnd/>` (= end of a gap) is inserted. The element does not contain any text, but is inserted (comparable to a milestone element like `<pb>`) at the appropriate place in the text: In the case of `<witStart>` and `<lacunaEnd>` it comes before the first word present in the witness or after the gap ends, in the case of `<witEnd>` and `<lacunaStart>` it comes after the last word present in the witness or before which the gap begins. 
   
 ```xml
-<app type="variants">
-    <lem wit="#Pt #Pc #Pb #Pd #My #Ma #Ha #Va #Ab">ἀπαστράπτει</lem>
-    <rdg wit="#Pa #Be">ἀ</rdg>
-</app> 
+ <app type="variants">
+     <lem wit="#Pt #Pc #Pb #Pd #My #Ma #Ha #Va #Ab">ἀπαστράπτει</lem>
+     <rdg wit="#Pa #Be">ἀ</rdg>
+    <note corresp="#Pa" resp="#CB">Blattausfall.</note>
+ </app> 
+ <app type="witnesses">
+     <rdg wit="#Pa #Be"><lacunaStart/></rdg>
+ </app> ... καθʼ ἑαυτὴν ἔσωσεν. 
 <app type="witnesses">
-    <rdg wit="#Pa #Be"><lacunaStart/></rdg>
-</app> ... καθʼ ἑαυτὴν ἔσωσεν. 
+     <rdg wit="#Pa #Be"><lacunaEnd/></rdg>
+ </app>
 <app type="witnesses">
-    <rdg wit="#Pa #Be"><lacunaEnd/></rdg>
-</app>
-<app type="witnesses">
-    <rdg wit="#Ecl114"><witStart/></rdg>
+     <rdg wit="#Ecl114"><witStart/></rdg>
 </app> μεμαρτύρητο ...
+  
 ```  
   
 (This somewhat awkward way of notation is necessary because according to the [TEI Guidelines](https://tei-c.org/Vault/P5/2.0.0/doc/tei-p5-doc/en/html/ref-model.rdgPart.html ) the elements `<witStart/>`, `<lacunaStart/>`, `<witEnd/>`, `<lacunaEnd/>` are only allowed to be inside a `<rdg>` or `<lem>` in an `<app>` and the sensible [amendment request to allow these elements also outside in the text was rejected by the TEI Technical Council](https://github.com/TEIC/TEI/issues/301 ).)
+  
+Further details on the attestation (e.g. folios, attribution of the excerpt in the manuscript, extent) are given – like the notes on variants in `<app type="variants">` – in `<note>` elements placed within the *opening* `<app type="witnesses">` (i.e. the entry containing `<witStart/>` or `<lacunaStart/>`), each after the `<rdg>` it refers to. A separate `<note>` is created for each manuscript or edition, referring in the attribute `@corresp` to the `@xml:id` of the witness (`<witness>`) or the edition (`<bibl>`); a note concerning the attestation as a whole has no `@corresp`. All notes receive a reference to the responsible person in the attribute `@resp`.
+  
+```xml
+<app type="witnesses">
+    <rdg wit="#P #A #Ca #Cb"><witStart/></rdg>
+    <note corresp="#A" resp="#FXR">110v–111r: Eusebius</note>
+    <note corresp="#P" resp="#FXR">113r: Eusebius</note>
+    <note corresp="#Ca" resp="#FXR">330r: Eusebius</note>
+    <note corresp="#Cb" resp="#FXR">312r: Eusebius</note>
+    <note resp="#FXR">Sich auf die gesamte Bezeugung beziehende Anmerkung</note>
+</app>Νοήσεις τὸν ἐνταῦθα λεγόμενον <quote type="lemma">πτωχὸν</quote> … κατὰ τὸν Σύμμαχον.
+<app type="witnesses">
+    <rdg wit="#P #A #Ca #Cb"><witEnd/></rdg>
+</app>
+```  
   
   
 ##### Encoding the variants
